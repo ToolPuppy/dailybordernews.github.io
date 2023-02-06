@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html><head><title>TITLE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+body { margin: 30px; text-align: center; }
+label { background: #A5D6A7; padding: 0.5rem 1rem; border-radius: 0.5rem; margin: 100px; }
+
+.visually-hidden { visibility: hidden; /* */ /* display: none; */ }
+.dummy { margin:10px; }
+.block-border {border: 2px solid black;}
+#parent { position:relative; }
+.control-me { position: absolute; top: 0px;  left: 0px;   z-index:2;
+background:green; color:white; padding: 0; font-size: 50px; width: 80% ; }
+.control-x  { position: absolute; top: 20px;  left: 20px; z-index:1;
+background: red;
+background-image: url("FgkpzQxX0AEXy0E.jpg");
+background-repeat: no-repeat;
+background-size: contain;
+color:white; padding: 0; font-size: 50px; width: 80% ; }
+.control-be { position: absolute; top: 40px;  left: 40px; z-index:0;
+background:blue; color:white; padding: 0; font-size: 50px; width: 80% ; }
+
+/* #toggle:checked + #hello { z-index:4; } */
+
+</style>
+</head>
+<body>
+<div>
+    <label class=dummy for="toggle1">Toggle</label>   
+    <input type="checkbox" id="toggle1" class="visually-hidden">
+
+    <label class=dummy for="toggle2">Toggle</label>   
+    <input type="checkbox" id="toggle2" class="visually-hidden">
+
+    <label class=dummy for="toggle3">Toggle</label>   
+    <input type="checkbox" id="toggle3" class="visually-hidden">
+
+    <div id=parent>
+      <div id=hello  class="control-me block-border" >hello</div>
+      <div id=heck   class="control-x  block-border" >heck</div>
+      <div id=faster class="control-be block-border" >faster</div>
+    </div>
+
+
+</div>
+</body>
+<script>
+
+const checkbox1 = document.getElementById('toggle1')
+const checkbox2 = document.getElementById('toggle2')
+const checkbox3 = document.getElementById('toggle3')
+
+checkbox1.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    document.getElementById('hello').style.background = 'orange';
+    document.getElementById('hello').style.zIndex     = 4;
+  } else {
+    document.getElementById('hello').style.background = 'green';
+    document.getElementById('hello').style.zIndex     = 2;
+  }
+})
+
+checkbox2.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    // document.getElementById('heck').style.background = 'orange';
+    document.getElementById('heck').style.zIndex     = 4;
+  } else {
+    // document.getElementById('heck').style.background = '';
+    document.getElementById('heck').style.zIndex     = 1;
+  }
+})
+
+checkbox3.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    document.getElementById('faster').style.background = 'orange';
+    document.getElementById('faster').style.zIndex     = 4;
+  } else {
+    document.getElementById('faster').style.background = 'blue';
+    document.getElementById('faster').style.zIndex     = 0;
+  }
+})
+
+/* https://developer.mozilla.org/en-US/docs/Web/API/Node */
+
+</script>
+
+</html>
