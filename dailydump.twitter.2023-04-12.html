@@ -5043,78 +5043,7 @@ READ MORE: https://t.co/yqCnO1M8Gh https://t.co/SovCodBZpR<span id=thecheck clas
 .profileImage {display:none;} .accountName {display:none;}
 </style>
 <script>
-let TAGDATE = "2023-02-27";
-let TAGID   = "CBP";
 
-/* 
-   Multiple checkbox validation in javascript
-   https://codelearningpoint.com/post/Multiple-checkbox-validation-in-javascript
-*/
-
-// theform
-var itemForm = document.getElementById('theform'); // getting the parent container of all the checkbox inputs
-var checkBoxes = itemForm.querySelectorAll('input[type="checkbox"]'); // get all the check box
-
-// trap [submit] button
-document.getElementById('submit').addEventListener('click', checkChecked); //add a click event to the save button
-
-
-let   error = true;
-let   number_total = 0;
-let   number_check = 0;
-
-//
-const theTweetIdArray    = [];
-var   theTweetIdFile     = "";
-var   theTweetIdNotFile  = "";
-
-//
-// https://www.tutorialspoint.com/how-to-stop-refreshing-the-page-on-submit-in-javascript
-//
-function checkChecked(event) {
-    //alert("checkChecked");
-    theTweetIdFile = "";
-    tmp_text     = "";
-    number_total = 0;
-    number_check = 0;
-
-    checkBoxes.forEach(item => { // loop all the checkbox item
-      if (item.id) {
-        number_total = number_total + 1;
-        if (item.checked) {      //if the check box is checked
-            number_check = number_check + 1;
-            theTweetIdArray.push(item.id)
-            // console.log("item.id:", item.id);
-        } else {
-            // console.log("NO:", item.id);
-        }
-      }
-    });
-
-   category_type = document.getElementById('category');
-   // console.log("category_type:",category_type.value);
-
-    /*
-       5 Ways To Create & Save Files In Javascript (Simple Examples)
-       https://code-boxx.com/create-save-files-javascript/
-       ALSO
-       https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js
-    */
-    var tmp_text = "";
-    tmp_text  = tmp_text + "category:" + category_type.value + "\{{M}}";
-    tmp_text  = tmp_text + "number_total:" + number_total + "\{{M}}";
-    tmp_text  = tmp_text + theTweetIdArray.toString() + "\{{M}}";
-    // console.log(tmp_text);
-    document.getElementById('results').value = tmp_text;
-
-    //var a = document.createElement("a");
-    //a.href = window.URL.createObjectURL(new Blob([tmp_text], {type: "text/plain"}));
-    //a.download = TAGID + "." + TAGDATE + ".txt";
-    //a.click();
-
-    event.preventDefault();
-    //return false;
-}
 
 </script>
 </html>
