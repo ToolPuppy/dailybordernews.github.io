@@ -99,7 +99,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 </span>
 <span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
 <span id=banner-stats style=clear:both;>
-<b>SEARCH ENGINE</b> <span id=number_good>24</span> positive hits from <a href=list-fetch.html>110 sources</a>
+<b>SEARCH ENGINE</b> <span id=number_good>21</span> positive hits from <a href=list-fetch.html>110 sources</a>
 </span>
 
 <span id=banner-nav >
@@ -110,6 +110,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <center><b>NEWS LINKS OPEN IN A NEW TAB OR PAGE.</b></center>
 
 <form id="theform">
+<input id="submit" type="submit">
 
 <div id=daily-body>
 <ol>
@@ -246,22 +247,6 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-03.newsday.com.rst.62" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/mexican-president-tells-americans-not-to-vote-for-desantis-because-of-floridas-tough-migrant-law-t6o9n8co">Mexican president tells Americans not to vote for DeSantis because of Florida's tough migrant law</a><br />
-<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-07-03 14H 45M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-03.newsday.com.rst.85" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/greece-urges-eu-border-agency-not-to-pull-out-of-the-country-as-questions-mount-over-migrant-deaths-aah4b0el">Greece urges EU border agency not to pull out of the country as questions mount over migrant deaths</a><br />
-<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-07-03 12H 29M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
 <input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-03.abc7chicago.com.rst.11" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7chicago.com/chicago-migrants-brandon-johnson-beatriz-ponce-de-leon-mayor-of-immigrant-migrant-and-refugee-rights/13457984/">Chicago Mayor Brandon Johnson appoints Deputy Mayor of Immigrant, Migrant and Refugee Rights</a><br />
 <span class=small id="SourceDomain">abc7chicago.com</span>&nbsp;&#183;&nbsp;
 <span class=small id="DatePublished">2023-07-03 19H 44M MDT</span>&nbsp;&#183;&nbsp;
@@ -283,14 +268,6 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <span class=small id="DatePublished">2023-07-03 20H 15M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">illegal immigrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-refugee" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-03.cbc.ca.rst.9" class="control-refugee"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.cbc.ca/news/world/israel-troops-drone-strokes-west-bank-jenin-1.6895576?cmp=rss">At least 8 Palestinians killed as Israeli troops launch drone strikes on West Bank refugee camp</a><br />
-<span class=small id="SourceDomain">cbc.ca</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-07-03 12H 03M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">refugee</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
@@ -344,6 +321,122 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <script>
 
 let TAGDATE = "2023-07-03";
+
+
+/* 
+   Multiple checkbox validation in javascript
+   https://codelearningpoint.com/post/Multiple-checkbox-validation-in-javascript
+*/
+
+// theform
+var itemForm = document.getElementById('theform'); // getting the parent container of all the checkbox inputs
+
+var checkBoxes = itemForm.querySelectorAll('input[type="checkbox"]'); // get all the check box
+
+// trap [submit] button
+document.getElementById('submit').addEventListener('click', checkChecked); //add a click event to the save button
+
+let   error = true;
+let   number_good   = 0;
+let   number_remove = 0;
+let   number_bad    = 0;
+let   number_total  = 0;
+//
+const theHREFarray = [];
+var   theHREFfile     = "";
+var   theHREFnotfile  = "";
+var   theHREFremovefile  = "";
+
+//
+// https://www.tutorialspoint.com/how-to-stop-refreshing-the-page-on-submit-in-javascript
+//
+function checkChecked(event) {
+    // alert("checkChecked");
+    theHREFfile = "";
+    theHREFnotfile  = "";
+    theHREFremovefile  = "";
+
+    tmp_text    = "";
+    number_good  = 0;
+    number_bad   = 0;
+    number_total = 0;
+
+    checkBoxes.forEach(item => { // loop all the checkbox item
+        if (item.checked) {      //if the check box is checked
+            error = false;
+            //theElement = item.parent;
+            // nextSibling
+            console.log("item.id: ", item.id);
+            //console.log("item.nextSibling: ", item.nextSibling);
+            console.log("item.nextSibling.id: ", item.nextSibling.id);
+            theHREFremovefile = theHREFremovefile + item.nextSibling.id + ".*\n";
+
+            //console.log("item.nextSibling.firstElementChild: ", item.nextSibling.firstElementChild);
+            //console.log("item.nextSibling.firstElementChild.firstElementChild: ", item.nextSibling.firstElementChild.firstElementChild);
+            //console.log("item.nextSibling.firstElementChild.firstElementChild.href: ", item.nextSibling.firstElementChild.firstElementChild.href);
+            TheHREF = item.nextSibling.firstElementChild.firstElementChild.href;
+            theHREFnotfile = theHREFnotfile + TheHREF + "\n";
+            number_bad  = number_bad + 1;
+            number_total = number_total + 1;
+        } else {
+            if (item.nextSibling.firstElementChild.firstElementChild.href) {
+               // theHREFarray.unshift(item.nextSibling.firstElementChild.firstElementChild.href + "");
+               // theHREFarray.push(item.nextSibling.firstElementChild.firstElementChild.href + "");
+               theHREFfile = theHREFfile + item.nextSibling.firstElementChild.firstElementChild.href + "\n"
+               number_good  = number_good + 1;
+               number_total = number_total + 1;
+            }
+        }
+    });
+    /*
+       5 Ways To Create & Save Files In Javascript (Simple Examples)
+       https://code-boxx.com/create-save-files-javascript/
+       ALSO
+       https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js
+    */
+    var tmp_text = "";
+    tmp_text  = tmp_text + "number_good: "    + number_good + "\n";
+    tmp_text  = tmp_text + "number_remove: "  + number_bad + "\n";
+    tmp_text  = tmp_text + "number_bad: "     + number_bad + "\n";
+    tmp_text  = tmp_text + "number_total: "   + number_total + "\n";
+    //tmp_text  = theHREFfile + "\n" + tmp_text + "\n" + theHREFnotfile + "\n";
+    tmp_text  = theHREFfile + "\n" + tmp_text + "\n" + theHREFnotfile + "\nREMOVE\n\n" + theHREFremovefile + "\n";
+
+    var a = document.createElement("a");
+    a.href = window.URL.createObjectURL(new Blob([tmp_text], {type: "text/plain"}));
+    a.download = "THELIST." + TAGDATE + ".lst.final";
+    a.click();
+
+    event.preventDefault();
+    //return false;
+}
+
+/*
+   Update Checkmarked/Uncheckmarked item count
+
+   ADD TO every Checkbox: onclick="updateCheckedCount()"
+
+*/
+// theform
+var show_good = document.getElementById('number_good'); // getting the parent container of all the checkbox inputs
+
+let   item_checked = 0;
+let   item_unchecked = 0;
+
+function updateCheckedCount(event) {
+    item_checked = 0;
+    item_unchecked = 0;
+    checkBoxes.forEach(item => { // loop all the checkbox item
+        if (item.checked) {      //if the check box is checked
+            item_checked   = item_checked + 1;
+        } else {
+            item_unchecked = item_unchecked + 1;
+        }
+    });
+    show_good.innerText = item_unchecked;
+    //alert("checked " + item_checked + "\n" + "unchecked " + item_unchecked);
+}
+
 
 </script>
 
