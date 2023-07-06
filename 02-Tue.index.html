@@ -99,7 +99,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 </span>
 <span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
 <span id=banner-stats style=clear:both;>
-<b>SEARCH ENGINE</b> <span id=number_good>17</span> positive hits from <a href=list-fetch.html>110 sources</a>
+<b>SEARCH ENGINE</b> <span id=number_good>{{TOTAL_HITS}}41 </span> positive hits from <a href=list-fetch.html>110 sources</a>
 </span>
 
 <span id=banner-nav >
@@ -110,7 +110,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <center><b>NEWS LINKS OPEN IN A NEW TAB OR PAGE.</b></center>
 
 <form id="theform">
-
+<input id="submit" type="submit">
 
 <div id=daily-body>
 <ol>
@@ -199,25 +199,9 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-04.abc7ny.com.rst.13" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7ny.com/migrant-drownings-eagle-pass-tx-rio-grande-valley-texas-border-crisis/13459719/">4 migrants, including infant, drown in Rio Grande in Eagle Pass, Texas, since Saturday</a><br />
-<span class=small id="SourceDomain">abc7ny.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-07-04 17H 40M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
 <input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-04.newsday.com.rst.153" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/business/greek-foreign-minister-says-athens-is-ready-for-talks-with-turkey-to-resolve-sea-borders-dispute-cpyhv80i">Greek foreign minister says Athens is ready for talks with Turkey to resolve sea borders dispute</a><br />
 <span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
 <span class=small id="DatePublished">2023-07-04 05H 00M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-04.newsday.com.rst.85" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/un-urges-security-council-to-extend-turkey-border-crossing-into-northwest-syria-for-1-year-aqptcgnj">UN urges Security Council to extend Turkey border crossing into northwest Syria for 1 year</a><br />
-<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-07-04 12H 50M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
@@ -228,22 +212,6 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <span class=small id="DatePublished">2023-07-04 07H 23M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">immigrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-04.abc7chicago.com.rst.13" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7chicago.com/migrant-drownings-eagle-pass-tx-rio-grande-valley-texas-border-crisis/13459719/">4 migrants, including infant, drown in Rio Grande in Eagle Pass, Texas, since Saturday</a><br />
-<span class=small id="SourceDomain">abc7chicago.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-07-04 17H 40M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-07-04.6abc.com.rst.12" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://6abc.com/migrant-drownings-eagle-pass-tx-rio-grande-valley-texas-border-crisis/13459719/">4 migrants, including infant, drown in Rio Grande in Eagle Pass, Texas, since Saturday</a><br />
-<span class=small id="SourceDomain">6abc.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-07-04 17H 40M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
@@ -289,6 +257,122 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <script>
 
 let TAGDATE = "2023-07-04";
+
+
+/* 
+   Multiple checkbox validation in javascript
+   https://codelearningpoint.com/post/Multiple-checkbox-validation-in-javascript
+*/
+
+// theform
+var itemForm = document.getElementById('theform'); // getting the parent container of all the checkbox inputs
+
+var checkBoxes = itemForm.querySelectorAll('input[type="checkbox"]'); // get all the check box
+
+// trap [submit] button
+document.getElementById('submit').addEventListener('click', checkChecked); //add a click event to the save button
+
+let   error = true;
+let   number_good   = 0;
+let   number_remove = 0;
+let   number_bad    = 0;
+let   number_total  = 0;
+//
+const theHREFarray = [];
+var   theHREFfile     = "";
+var   theHREFnotfile  = "";
+var   theHREFremovefile  = "";
+
+//
+// https://www.tutorialspoint.com/how-to-stop-refreshing-the-page-on-submit-in-javascript
+//
+function checkChecked(event) {
+    // alert("checkChecked");
+    theHREFfile = "";
+    theHREFnotfile  = "";
+    theHREFremovefile  = "";
+
+    tmp_text    = "";
+    number_good  = 0;
+    number_bad   = 0;
+    number_total = 0;
+
+    checkBoxes.forEach(item => { // loop all the checkbox item
+        if (item.checked) {      //if the check box is checked
+            error = false;
+            //theElement = item.parent;
+            // nextSibling
+            console.log("item.id: ", item.id);
+            //console.log("item.nextSibling: ", item.nextSibling);
+            console.log("item.nextSibling.id: ", item.nextSibling.id);
+            theHREFremovefile = theHREFremovefile + item.nextSibling.id + ".*\n";
+
+            //console.log("item.nextSibling.firstElementChild: ", item.nextSibling.firstElementChild);
+            //console.log("item.nextSibling.firstElementChild.firstElementChild: ", item.nextSibling.firstElementChild.firstElementChild);
+            //console.log("item.nextSibling.firstElementChild.firstElementChild.href: ", item.nextSibling.firstElementChild.firstElementChild.href);
+            TheHREF = item.nextSibling.firstElementChild.firstElementChild.href;
+            theHREFnotfile = theHREFnotfile + TheHREF + "\n";
+            number_bad  = number_bad + 1;
+            number_total = number_total + 1;
+        } else {
+            if (item.nextSibling.firstElementChild.firstElementChild.href) {
+               // theHREFarray.unshift(item.nextSibling.firstElementChild.firstElementChild.href + "");
+               // theHREFarray.push(item.nextSibling.firstElementChild.firstElementChild.href + "");
+               theHREFfile = theHREFfile + item.nextSibling.firstElementChild.firstElementChild.href + "\n"
+               number_good  = number_good + 1;
+               number_total = number_total + 1;
+            }
+        }
+    });
+    /*
+       5 Ways To Create & Save Files In Javascript (Simple Examples)
+       https://code-boxx.com/create-save-files-javascript/
+       ALSO
+       https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js
+    */
+    var tmp_text = "";
+    tmp_text  = tmp_text + "number_good: "    + number_good + "\n";
+    tmp_text  = tmp_text + "number_remove: "  + number_bad + "\n";
+    tmp_text  = tmp_text + "number_bad: "     + number_bad + "\n";
+    tmp_text  = tmp_text + "number_total: "   + number_total + "\n";
+    //tmp_text  = theHREFfile + "\n" + tmp_text + "\n" + theHREFnotfile + "\n";
+    tmp_text  = theHREFfile + "\n" + tmp_text + "\n" + theHREFnotfile + "\nREMOVE\n\n" + theHREFremovefile + "\n";
+
+    var a = document.createElement("a");
+    a.href = window.URL.createObjectURL(new Blob([tmp_text], {type: "text/plain"}));
+    a.download = "THELIST." + TAGDATE + ".lst.final";
+    a.click();
+
+    event.preventDefault();
+    //return false;
+}
+
+/*
+   Update Checkmarked/Uncheckmarked item count
+
+   ADD TO every Checkbox: onclick="updateCheckedCount()"
+
+*/
+// theform
+var show_good = document.getElementById('number_good'); // getting the parent container of all the checkbox inputs
+
+let   item_checked = 0;
+let   item_unchecked = 0;
+
+function updateCheckedCount(event) {
+    item_checked = 0;
+    item_unchecked = 0;
+    checkBoxes.forEach(item => { // loop all the checkbox item
+        if (item.checked) {      //if the check box is checked
+            item_checked   = item_checked + 1;
+        } else {
+            item_unchecked = item_unchecked + 1;
+        }
+    });
+    show_good.innerText = item_unchecked;
+    //alert("checked " + item_checked + "\n" + "unchecked " + item_unchecked);
+}
+
 
 </script>
 
