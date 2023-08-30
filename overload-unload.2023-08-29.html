@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html><head><title>Overload unload for 29 Aug 2023</title>
+<link rel='icon' type='image/png' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5wEcDAAQ9JepDQAAAsBJREFUOMu1k11IU3EYxp9zjttxnp2Zzdyc5VzL2oiyWLpmTee2rDm1LIqQ6IuIoF0EdWFJkBdBRFREJIV9QkJEBVlSF1kRhZZNt6nZh0SR21K3nW1tUo3+XRmh3QT1Xv7e9/1dPQ/wv6dhn4tx2K1zAWDD2tVT9tRksL6uFtdv3YatfPmiooVFWzoePlo4I1tujUSFwVQqZVmg14VpkUh6+eq1yByNGmmTBcPDQarUuOQFx3EGVZ4KOTnZePzkGXJmyHUjY+FAJCL8MC01MvO0mqbXQ+8P0ROPdrMJAJBKfY1J0tMNDocDPW43fL4+HGxswAq7DUqFgspVKhi9Xo/MTNleAGAmBM5qpzQeCYfXrKuTZknTcONWGzy+fuj0WjAiFslEEh6PF6tWVqK8vABu9xtxJs9/YADAXGq0jo6MvKqvrxeLWRbNZy8hKgiQyWTEsERHlRiKQNMsWLEIcvl05Crk6OrqQygUVqbt3eOqevf2011LxXLYKq3Y43IhLESRzrIx7vs3WcuFm1l+//hMEUN8/kAAWdOkGAsVIiIIEIvF59Pevn7T9CmWgQtP+9DZ048X3b3gef5MRBB2f0kmIRHRlEKRhbgQi0szMnh7pQMdHQ8xFvAjOy+/mwZFPx8e6gYrIfg4/gO8jMc8rfrAfJ0OAFBWVkYuXm5NhkZDiYbG/eB5Hl6vB3KlKuXtG+ilb7ff260vVA8VJATEBnqwfdvmxs6Xnmj/4CAA4P6DR9i0ccPFYrNFGRwVEI/HEQx+BsdxRwEArVfO/8oAIYQBgFMnj//O5CajiSyuriOapWXEXFFLZBxHlhmLS/8Y3fY7bVOY1WIOqfLyyWxDMSmx1RGbpYK4du6QEEJATz6uqq6ZIqhxOrW6OeqoimUgSvihKZi16/S5lnGKov6uWM2nTqiPHTmcDwA7t2/9N239CWyLATcN6+tgAAAAAElFTkSuQmCC'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style> a:link {color:black} a:hover {color:grey}
+
+li {padding: 0}
+li.link-page {padding:0.4em}
+a.link-page {font-size:1.0em;text-decoration:none;}
+li.front-page {list-style-type:none;}
+
+label {
+  padding:0.2em;
+  background:#A5D6A7;
+  border:solid 2px black;
+  display:inline-block;
+  min-height:1.2em;
+  min-width:100px;
+  border-radius:5px;
+  text-align:center;
+  text-decoration:none;margin:0 0.1em;
+}
+.labelclass {margin:10px;color:green;}
+.navclass { margin:10px; color:white; background:#F08080; padding:0.4em 2em; font-weight: bold; }
+.visually-hidden { /* visibility: hidden; */ display: none; /* */ }
+
+/* Keyword buttons */
+.keywords-wrapper {padding:0.4em;border:solid 1px black;width:50%;text-align:center;margin:auto;}
+.Keyword-button {padding:0.2em;border:solid 2px black;display:inline-block;min-height:1.2em;
+min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
+
+/* each below is used in the 'li.ArticleDiv' */
+.link-text {font-size:1.2em;text-decoration:none;} .small {font-size:0.8em}
+.ArticleDiv {padding: 5px 2px; border: 1px #D3D3D3 solid;
+  animation-name:startup;
+  animation-duration:2.5s;
+}
+.FoundWord {color:black;}
+/* There is one and only one HTML element for each of the IDs below */
+#trademk {padding:5px}
+#banner {font-size:2em;} #banner-sub {font-size:0.8em;}
+#banner-date  { float:right;text-align:right;font-size:0.8em;padding:10px; border: 2px solid #ffb0b0; border-radius: 5px; }
+#banner-stats { float:left; text-align:left ;font-size:0.8em;padding:10px; border: 2px solid lightblue; border-radius: 5px; clear:right; }
+#TOP-NAVIGATION { text-align:center;clear:both;padding:5px 25px;margin:auto; }
+#keyword-div {color:green;}
+#daily-body {color:gray;clear:both;padding:5px 25px;}
+#section-break {margin:auto; width:60%; clear:both;}
+#trailer-body {color:green;clear:both;}
+</style>
+</head><body>
+<img id=trademk align=left src="data:image/png;base64,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">
+<span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
+
+
+<p style=clear:both;></p>
+<center><b>NEWS LINKS OPEN IN A NEW TAB OR PAGE.</b></center>
+
+<form id="theform">
+
+<div id=daily-body>
+<ol>
+
+
+<li class=link-page><a class=link-page href="#001">The FBI is Searching for Migrants from Uzbekistan that were Assisted by a Human-Smuggler Linked to ISIS</a></li>
+<li class=link-page><a class=link-page href="#002">National Archives Admits Having Thousands Of Biden EMails Under His Business Pseudonyms </a></li>
+<li class=link-page><a class=link-page href="#003">A 29-year-old Migrant Woman in CBP Custody was Pronounced Dead at a Hospital in Harlingen, TX, After Suffering a "medical emergency"</a></li>
+<li class=link-page><a class=link-page href="#004">NY Governor Hochul and NYC Mayor Adams Continue to Exchange Words Amid Migrant Crisis</a></li>
+<li class=link-page><a class=link-page href="#005">Texas National Guard Disbanded Intelligence Unit After Violation of Long-Standing Rules</a></li>
+<li class=link-page><a class=link-page href="#006">California Senators Feinstein and Padilla Request $310M for Ongoing Border-Sewage Fix</a></li>
+<li class=link-page><a class=link-page href="#007">Houston Murder Suspect Arrested at Brownsville Border Bridge returning from Mexico</a></li>
+<li class=link-page><a class=link-page href="#008">Beyond U.S. Border Migrant Stories Saudi Arabia and Mexico</a></li>
+
+</ol>
+
+<div style=clear:both;> </div>
+
+<ol>
+
+
+<hr /><a name="001"></a><p><h3>The FBI is Searching for Migrants from Uzbekistan that were Assisted by a Human-Smuggler Linked to ISIS</h3><p><p><b>washingtonexaminer.com</b> The FBI is scrambling to locate immigrants from Uzbekistan who were released into the United States after they illegally crossed the southern border with the help of a human smuggler who has ties to the Islamic State terrorist group, according to a new report.</p></p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.kvia.com.rst.31" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/ap-national/2023/08/29/us-says-a-smuggler-with-terrorist-ties-helped-get-migrants-from-uzbekistan-into-the-country/">US says a smuggler with terrorist ties helped get migrants from Uzbekistan into the country</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 15H 53M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.sandiegouniontribune.com.rst.23" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.sandiegouniontribune.com/news/nation-world/story/2023-08-29/us-says-a-smuggler-with-terrorist-ties-helped-get-migrants-from-uzbekistan-into-the-country">U.S. says a smuggler with terrorist ties helped get migrants from Uzbekistan into the country</a><br />
+<span class=small id="SourceDomain">sandiegouniontribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 15H 53M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.cis.org.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://cis.org/Bensman/What-Make-CNNs-Exclusive-About-ISIS-Smuggler-Who-Moved-Uzbeks-Over-Border">What to Make of CNN's Exclusive About an ISIS Smuggler Who Moved Uzbeks Over the Border</a><br />
+<span class=small id="SourceDomain">cis.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 14H 18M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.newsnationnow.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsnationnow.com/us-news/immigration/smuggler-terrorist-people-cross-border/">Smuggler linked to terrorist group helped people cross border</a><br />
+<span class=small id="SourceDomain">newsnationnow.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 14H 33M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.theepochtimes.com.rst.25" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/white-house-confirms-isis-linked-smuggler-helped-migrants-enter-us-from-mexico-5482810">White House Confirms ISIS-Linked Smuggler Helped Migrants Enter US From Mexico</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 16H 28M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.thegatewaypundit.com.rst.27" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/08/human-trafficker-ties-isis-helped-smuggle-migrants-across/?utm_source=rss&utm_medium=rss&utm_campaign=human-trafficker-ties-isis-helped-smuggle-migrants-across">Human Trafficker With Ties to ISIS Helped Smuggle Migrants Across the Mexican Border - Prompting FBI Investigation</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 12H 40M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-smuggler" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.dailywire.com.rst.5" class="control-smuggler"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/watch-karine-jean-pierre-grilled-over-report-of-isis-smuggler-sneaking-people-into-u-s">WATCH: Karine Jean-Pierre Grilled Over Report Of ISIS Smuggler Sneaking People Into U.S.</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 14H 46M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">smuggler</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.washingtonexaminer.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/fbi-immigrants-crossed-border-isis-affiliated-smuggler">FBI searching for immigrants who crossed US-Mexico border with ISIS-affiliated smuggler</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 11H 08M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.infowars.com.rst.8" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/fbi-scrambles-to-investigate-migrants-who-entered-u-s-with-help-of-smuggler-tied-to-isis-wh-cant-say-where-they-are">FBI Scrambles To Investigate Migrants Who Entered U.S. With Help of Smuggler Tied to ISIS - WH Can't Say Where They Are</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 09H 28M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="002"></a><p><h3>National Archives Admits Having Thousands Of Biden EMails Under His Business Pseudonyms </h3><p><p><b>NOTE</b> This story SHOULD NOT BE ON this page, but future versions of the search engine will be able to search amoung any headlines it collected.</p><p><b>thefederalist.com</b> In a <a target=_blank href="https://www.slfliberty.org/wp-content/uploads/sites/12/2023/08/20230828-Complaint-Exhibit-4-Doc.-1-4.pdf">letter</a> addressed to the Southeastern Legal Foundation, a conservative legal group, the Archives confirmed that a search of the agency's "collection for Vice Presidential records" produced "approximately 5,138 email messages, 25 electronic files and 200 pages of potentially responsive records" containing the email addresses of Robert Peters, Robin Ware, and JRB Ware - the three pseudonyms used by Biden while serving as vice president.</p></p></p><hr />
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.breitbart.com.rst.45" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/08/28/national-archives-possesses-5400-emails-records-linked-joe-biden-email-aliases/">National Archives Has About 5,400 Emails, Records Linked to Joe Biden's Email Aliases</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-28 20H 09M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.freebeacon.com.rst.13" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://freebeacon.com/latest-news/national-archives-reveals-thousands-of-biden-emails-sent-under-fake-names-may-be-on-file/">National Archives Reveals Thousands of Biden Emails Sent Under Fake Names May Be on File</a><br />
+<span class=small id="SourceDomain">freebeacon.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 10H 35M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.thefederalist.com.rst.2" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://thefederalist.com/2023/08/29/national-archives-identifies-over-5000-emails-containing-joe-bidens-business-pseudonyms/?utm_source=rss&utm_medium=rss&utm_campaign=national-archives-identifies-over-5000-emails-containing-joe-bidens-business-pseudonyms">National Archives Identifies More Than 5,000 Emails Containing Biden's Business Pseudonyms</a><br />
+<span class=small id="SourceDomain">thefederalist.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 13H 54M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.thegatewaypundit.com.rst.40" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/08/national-archives-discovers-5000-emails-that-contain-joe/?utm_source=rss&utm_medium=rss&utm_campaign=national-archives-discovers-5000-emails-that-contain-joe">National Archives Discovers Over 5,000 Emails that Contain Joe Biden's Secret Email Addresses</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 09H 15M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.thepostmillennial.com.rst.18" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="http://thepostmillennial.com/national-archives-drags-heels-on-release-of-5400-records-related-to-bidens-pseudonyms-after-june-2022-foia-request">National Archives 'drags heels' on release of 5,400 records related to Biden's pseudonyms after June 2022 FOIA request</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 08H 53M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.headlines.americanlookout.com.rst.2" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://headlines.americanlookout.com/national-archives-admits-they-have-thousands-of-biden-records-under-his-pseudonyms/">National Archives Admits They Have Thousands Of Biden Records Under His Pseudonyms</a><br />
+<span class=small id="SourceDomain">headlines.americanlookout.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 05H 37M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.yahoo.com.rst.13" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://news.yahoo.com/national-archives-says-5-000-012440755.html">National Archives says it has 5,000 emails potentially linked to alleged Biden pseudonyms: Lawsuit</a><br />
+<span class=small id="SourceDomain">yahoo.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 19H 24M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="003"></a><p><h3>A 29-year-old Migrant Woman in CBP Custody was Pronounced Dead at a Hospital in Harlingen, TX, After Suffering a "medical emergency"</h3><p><p><b>washingtontimes.com</b> A migrant woman died in South Texas after spending less than a day in federal custody, U.S. Customs and Border Protection announced Tuesday. .. Border agents encountered the 29-year-old woman and her family in the Rio Grande Valley on Sunday afternoon, according to a statement from the agency. While she was in custody, she experienced a "medical emergency" and was treated by an on-site medical team and then taken to a hospital in Harlingen where she was pronounced dead, the agency said.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.kvia.com.rst.29" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/ap-national/2023/08/29/migrant-woman-dies-after-a-medical-emergency-in-border-patrol-custody-in-south-texas-agency-says/">Migrant woman dies after a 'medical emergency' in Border Patrol custody in South Texas, agency says</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 16H 16M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.myrgv.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://myrgv.com/local-news/2023/08/29/woman-in-border-patrol-custody-in-harlingen-dies/">Woman in Border Patrol custody in Harlingen dies</a><br />
+<span class=small id="SourceDomain">myrgv.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 13H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.valleycentral.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.valleycentral.com/news/migrant-woman-in-border-patrol-custody-dies-in-rio-grande-valley-hospital/">Migrant woman in Border Patrol custody dies in Rio Grande Valley hospital</a><br />
+<span class=small id="SourceDomain">valleycentral.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 12H 52M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.washingtontimes.com.rst.6" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtontimes.com/news/2023/aug/29/migrant-woman-dies-after-medical-emergency-in-bord/?utm_source=RSS_Feed&utm_medium=RSS">Migrant woman dies after 'medical emergency' in Border Patrol custody</a><br />
+<span class=small id="SourceDomain">washingtontimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 16H 16M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="004"></a><p><h3>NY Governor Hochul and NYC Mayor Adams Continue to Exchange Words Amid Migrant Crisis</h3><p><p><b>washingtonexaminer.com</b> Adams's statement is the latest ugly show of infighting among Democrats who manage cities and states that have been inundated with illegal immigrants who have shown up on their front steps after being released at the southern border. The cities and states are sanctuary zones, which means they will not work with federal immigration law enforcement to turn over illegal immigrants who are arrested or convicted of most crimes.</p></p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.breitbart.com.rst.21" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/immigration/2023/08/29/nyc-mayor-eric-adams-gov-kathy-hochul-wrong-not-making-other-areas-state-shoulder-migrant-crisis/">NYC Mayor Eric Adams: Gov. Kathy Hochul 'Wrong' for Not Making Other Areas of State Shoulder Migrant Crisis</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 15H 59M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.washingtonexaminer.com.rst.0" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/eric-adams-rebukes-kathy-new-york-immigrant-crisis">Eric Adams rebukes Hochul on New York immigrant crisis, calling approach 'wrong'</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 12H 46M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.abc7ny.com.rst.16" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7ny.com/nyc-migrant-crisis-mayor-eric-adams-governor-kathy-hochul/13716113/">Rift between Mayor Adams, Governor Hochul deepens amid NYC migrant crisis</a><br />
+<span class=small id="SourceDomain">abc7ny.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 16H 49M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="005"></a><p><h3>Texas National Guard Disbanded Intelligence Unit After Violation of Long-Standing Rules</h3><p><p><b>newsmax.com</b> Four members of the Texas National Guard are being disciplined, and their unit is being disbanded, after whistleblowers alleged they were using the WhatsApp communications platform to infiltrate and monitor illegal migrant and smuggler groups in violation of the organization's rules against spying operations, according to a joint report by the Texas Tribune and Military Times.</p></p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.elpasomatters.org.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://elpasomatters.org/2023/08/29/texas-national-guard-disbanded-intelligence-wing-after-members-used-whatsapp-to-spy-on-migrants/">Texas National Guard disbanded intelligence wing after members used WhatsApp to spy on migrants</a><br />
+<span class=small id="SourceDomain">elpasomatters.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 11H 11M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.texastribune.org.rst.5" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://feeds.texastribune.org/link/16799/16320517/texas-national-guard-migrants-whatsapp-intelligence">Texas National Guard disbanded intelligence wing after members used WhatsApp to spy on migrants</a><br />
+<span class=small id="SourceDomain">texastribune.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 04H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.newsmax.com.rst.12" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/texas-abbott-immigration/2023/08/29/id/1132470">Texas National Guard Disbands Intel Unit</a><br />
+<span class=small id="SourceDomain">newsmax.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 09H 45M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="006"></a><p><h3>California Senators Feinstein and Padilla Request $310M for Ongoing Border-Sewage Fix</h3><p><p><b>NOTE</b> Raw sewage flowing from Mexico into the U.S. via the Tijuana River has occured for decades. That the local news organizations do not reflect that in their reporting shows the poor quality in the local news outlets.</p><p><b>timesofsandiego.com</b> More than 100 billion gallons of toxic effluent have entered the United States through the Tijuana River since 2018, routinely depositing dangerous bacteria into regional waterways and closing beaches up and down the coast, according to Feinstein and Padilla.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.nbcsandiego.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcsandiego.com/news/local/california-senators-feinstein-and-padilla-request-310m-for-border-sewage-fix/3295476/">California Senators Feinstein and Padilla request $310M for border-sewage fix</a><br />
+<span class=small id="SourceDomain">nbcsandiego.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 16H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.timesofsandiego.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://timesofsandiego.com/politics/2023/08/29/feinstein-padilla-ask-senate-for-310-million-to-address-border-pollution/">Feinstein, Padilla Ask Senate for $310 Million to Address Border Pollution</a><br />
+<span class=small id="SourceDomain">timesofsandiego.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 17H 23M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="007"></a><p><h3>Houston Murder Suspect Arrested at Brownsville Border Bridge returning from Mexico</h3><p><p><b>valleycentral.com</b> Anthony Campos Galvan was arrested at the B&M Bridge after U.S. Customs and Border Protection officers discovered he had an active warrant for murder out of Houston, Brownsville police said.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.abc13.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc13.com/houston-crime-fathers-day-shooting-suspect-arrested-at-the-border-anthony-campos-galvan-jr-charged/13717097/">Suspect wanted in east Houston Father's Day murder arrested at Brownsville border entry point</a><br />
+<span class=small id="SourceDomain">abc13.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 21H 29M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.valleycentral.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.valleycentral.com/news/local-news/houston-murder-suspect-arrested-at-border-bridge-in-brownsville-police-say/">Houston murder suspect arrested at border bridge in Brownsville, police say</a><br />
+<span class=small id="SourceDomain">valleycentral.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 15H 09M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="008"></a><p><h3>Beyond U.S. Border Migrant Stories Saudi Arabia and Mexico</h3><p>See headlines below for more details.</p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.rt.com.rst.10" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.rt.com/news/582055-us-saudi-arabia-migrants/?utm_source=rss&utm_medium=rss&utm_campaign=RSS">US knew of Saudis' persecution of African migrants but kept silent - NYT</a><br />
+<span class=small id="SourceDomain">rt.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 14H 12M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-08-29.riviera-maya-news.com.rst.3" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://riviera-maya-news.com/cancun-operation-locates-57-illegal-indian-nationals/2023.html">Cancun operation locates 57 illegal Indian nationals</a><br />
+<span class=small id="SourceDomain">riviera-maya-news.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-08-29 05H 14M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+</ol>
+</div>
+</form>
+
+<hr id=section-break />
+<div id=bottom-nav-bar>
+<ul>
+<li><a href="list-keywords.html">Keywords List</a> - Words we search for in the Title.</li>
+<li><a href="list-fetch.html">Fetch List</a> - A list of news outlets we check - in alphabetic order.</li>
+<li><a href="list-display.html">Display List</a> - A list of news outlets we check - in display order. The order we use on the front page.</li>
+<li><a target=_blank href="https://www.flickr.com/photos/192197777\@N07/">Flickr</a> - our photo gallery</li>
+</ul>
+  
+<hr />
+
+<ul>
+<li><a target="_blank" href="dailydump.twitter.html">CBP Accounts<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+<ul>
+<li><a target="_blank" href="dailydump.reporters.html">On-the-ground REPORTERS<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+
+</div>
+
+<div id=trailer-body><!-- {{BODY_TRAILER}} --></div>
+
+</body>
+
+<script>
+
+let TAGDATE = "2023-08-29";
+
+{{SCRIPT_FILE}}
+
+</script>
+
+</html>
