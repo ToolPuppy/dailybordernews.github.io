@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html><head><title>Overload unload for 08 Sep 2023</title>
+<link rel='icon' type='image/png' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5wEcDAAQ9JepDQAAAsBJREFUOMu1k11IU3EYxp9zjttxnp2Zzdyc5VzL2oiyWLpmTee2rDm1LIqQ6IuIoF0EdWFJkBdBRFREJIV9QkJEBVlSF1kRhZZNt6nZh0SR21K3nW1tUo3+XRmh3QT1Xv7e9/1dPQ/wv6dhn4tx2K1zAWDD2tVT9tRksL6uFtdv3YatfPmiooVFWzoePlo4I1tujUSFwVQqZVmg14VpkUh6+eq1yByNGmmTBcPDQarUuOQFx3EGVZ4KOTnZePzkGXJmyHUjY+FAJCL8MC01MvO0mqbXQ+8P0ROPdrMJAJBKfY1J0tMNDocDPW43fL4+HGxswAq7DUqFgspVKhi9Xo/MTNleAGAmBM5qpzQeCYfXrKuTZknTcONWGzy+fuj0WjAiFslEEh6PF6tWVqK8vABu9xtxJs9/YADAXGq0jo6MvKqvrxeLWRbNZy8hKgiQyWTEsERHlRiKQNMsWLEIcvl05Crk6OrqQygUVqbt3eOqevf2011LxXLYKq3Y43IhLESRzrIx7vs3WcuFm1l+//hMEUN8/kAAWdOkGAsVIiIIEIvF59Pevn7T9CmWgQtP+9DZ048X3b3gef5MRBB2f0kmIRHRlEKRhbgQi0szMnh7pQMdHQ8xFvAjOy+/mwZFPx8e6gYrIfg4/gO8jMc8rfrAfJ0OAFBWVkYuXm5NhkZDiYbG/eB5Hl6vB3KlKuXtG+ilb7ff260vVA8VJATEBnqwfdvmxs6Xnmj/4CAA4P6DR9i0ccPFYrNFGRwVEI/HEQx+BsdxRwEArVfO/8oAIYQBgFMnj//O5CajiSyuriOapWXEXFFLZBxHlhmLS/8Y3fY7bVOY1WIOqfLyyWxDMSmx1RGbpYK4du6QEEJATz6uqq6ZIqhxOrW6OeqoimUgSvihKZi16/S5lnGKov6uWM2nTqiPHTmcDwA7t2/9N239CWyLATcN6+tgAAAAAElFTkSuQmCC'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style> a:link {color:black} a:hover {color:grey}
+
+li {padding: 0}
+li.link-page {padding:0.4em}
+a.link-page {font-size:1.0em;text-decoration:none;}
+li.front-page {list-style-type:none;}
+
+label {
+  padding:0.2em;
+  background:#A5D6A7;
+  border:solid 2px black;
+  display:inline-block;
+  min-height:1.2em;
+  min-width:100px;
+  border-radius:5px;
+  text-align:center;
+  text-decoration:none;margin:0 0.1em;
+}
+.labelclass {margin:10px;color:green;}
+.navclass { margin:10px; color:white; background:#F08080; padding:0.4em 2em; font-weight: bold; }
+.visually-hidden { /* visibility: hidden; */ display: none; /* */ }
+
+/* Keyword buttons */
+.keywords-wrapper {padding:0.4em;border:solid 1px black;width:50%;text-align:center;margin:auto;}
+.Keyword-button {padding:0.2em;border:solid 2px black;display:inline-block;min-height:1.2em;
+min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
+
+/* each below is used in the 'li.ArticleDiv' */
+.link-text {font-size:1.2em;text-decoration:none;} .small {font-size:0.8em}
+.ArticleDiv {padding: 5px 2px; border: 1px #D3D3D3 solid;
+  animation-name:startup;
+  animation-duration:2.5s;
+}
+.FoundWord {color:black;}
+/* There is one and only one HTML element for each of the IDs below */
+#trademk {padding:5px}
+#banner {font-size:2em;} #banner-sub {font-size:0.8em;}
+#banner-date  { float:right;text-align:right;font-size:0.8em;padding:10px; border: 2px solid #ffb0b0; border-radius: 5px; }
+#banner-stats { float:left; text-align:left ;font-size:0.8em;padding:10px; border: 2px solid lightblue; border-radius: 5px; clear:right; }
+#TOP-NAVIGATION { text-align:center;clear:both;padding:5px 25px;margin:auto; }
+#keyword-div {color:green;}
+#daily-body {color:gray;clear:both;padding:5px 25px;}
+#section-break {margin:auto; width:60%; clear:both;}
+#trailer-body {color:green;clear:both;}
+</style>
+</head><body>
+<img id=trademk align=left src="data:image/png;base64,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">
+<span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
+
+
+<p style=clear:both;></p>
+<center><b>NEWS LINKS OPEN IN A NEW TAB OR PAGE.</b></center>
+
+<form id="theform">
+
+<div id=daily-body>
+<ol>
+
+
+<li class=link-page><a class=link-page href="#001">POTUS Biden Consider Plan to Abandon Illegals in Texas; Governor Abott Rejects Plan</a></li>
+<li class=link-page><a class=link-page href="#002">2ND DAY: NYC Mayor Adams: "I don't see an ending." This migrant Crisis "will destroy New York City."</a></li>
+<li class=link-page><a class=link-page href="#003">The Clacking Hens at "The View" Say: Those Migrants, "Not in My Backyard"</a></li>
+<li class=link-page><a class=link-page href="#004">2nd DAY: 5th U.S. Appeals Court Grants Immediate Stay - Allowing Texas Floating Border Buoy Barrier to Stay In Place</a></li>
+<li class=link-page><a class=link-page href="#005">Texas officers gain access to Rio Grande's Fronton Island for border security efforts (#TheCenterSquare)</a></li>
+<li class=link-page><a class=link-page href="#006">Chicago's O'Hare Airport With Illegals ALiens Camped Out Looks Like A Dystopian Movie Scene</a></li>
+<li class=link-page><a class=link-page href="#007">52% Support "buoys and barbed wire" to Keep Illegals Out of Texas - in a Low Quality Tainted Poll </a></li>
+
+</ol>
+
+<div style=clear:both;> </div>
+
+<ol>
+
+
+<hr /><a name="001"></a><p><h3>POTUS Biden Consider Plan to Abandon Illegals in Texas; Governor Abott Rejects Plan</h3><p><p><b>breitbart.com</b> Biden administration officials who spoke anonymously to the Los Angeles Times said the plan is being considered so that if newly arrived border crossers fail their initial asylum screenings, Immigration and Customs Enforcement (ICE) agents can more easily locate and deport the illegal aliens within Texas since they would be close to the United States-Mexico border. ::: An added benefit for blue state governors and blue city mayors, such as New York City's Eric Adams, is that the Biden administration would use the Remain in Texas program to shield sanctuary states and cities from waves of illegal immigration that have spurred chaos in recent months.</p></p></p><hr />
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.breitbart.com.rst.16" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/immigration/2023/09/08/report-joe-biden-considers-requiring-illegal-aliens-to-remain-in-texas/">Report: Joe Biden Considers Requiring Illegal Aliens to Remain in Texas</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 09H 42M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.breitbart.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/09/08/nolte-joe-biden-finally-enforces-border-keeps-illegals-texas-shield-blue-states/">Nolte: Joe Biden Finally Enforces a Border - Keeps Illegals in Texas to Shield Blue States</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 09H 14M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.freebeacon.com.rst.8" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://freebeacon.com/latest-news/biden-admin-monitoring-migrants/">Biden Admin Considers Ankle Monitors To Keep Illegal Immigrants From Leaving Texas: Report</a><br />
+<span class=small id="SourceDomain">freebeacon.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 10H 30M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.thegatewaypundit.com.rst.22" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/governor-greg-abbott-fires-warning-as-biden-regime/?utm_source=rss&utm_medium=rss&utm_campaign=governor-greg-abbott-fires-warning-as-biden-regime">Governor Greg Abbott Fires Warning As Biden Regime Considers Blatantly Unconstitutional Plan Forcing Illegal Aliens to Remain in Texas</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 14H 20M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.thegatewaypundit.com.rst.31" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/report-biden-regime-is-forcing-illegal-immigrants-stay/?utm_source=rss&utm_medium=rss&utm_campaign=report-biden-regime-is-forcing-illegal-immigrants-stay">REPORT: Biden Regime is Forcing Illegal Immigrants to Stay in Texas as Blue States Grapple with Migrant Crisis</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 11H 20M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.americanmilitarynews.com.rst.2" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://americanmilitarynews.com/2023/09/biden-admin-may-force-illegal-immigrants-to-stay-in-texas-report-says/">Biden admin may force illegal immigrants to stay in Texas, report says</a><br />
+<span class=small id="SourceDomain">americanmilitarynews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 12H 43M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.themainewire.com.rst.3" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.themainewire.com/2023/09/biden-may-force-migrant-families-to-remain-in-texas/">Biden May Force Migrant Families to Remain in Texas</a><br />
+<span class=small id="SourceDomain">themainewire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 11H 35M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.latimes.com.rst.9" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.latimes.com/politics/story/2023-09-08/abbott-biden-latimes-migrants-stay-in-texas">Abbott criticizes Biden over Times report that some migrants may be forced to stay in Texas</a><br />
+<span class=small id="SourceDomain">latimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 11H 06M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="002"></a><p><h3>2ND DAY: NYC Mayor Adams: "I don't see an ending." This migrant Crisis "will destroy New York City."</h3><p><p><b>NOTE</b> Some news outlets are just catching up to <a target=_blank href="https://dailybordernews.github.io/overload-unload.2023-09-07.html#001">yesterday's news</a>.</p><p><b>thenewamerican.com</b> "Let me tell you something, New Yorkers. Never in my life have I had a problem that I did not see an ending to. I don't see an ending to this. I don?t see an ending to this. This issue will destroy New York City. Destroy New York City. We're getting 10,000 migrants a month."</p></p></p><hr />
+
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.thefederalist.com.rst.4" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://thefederalist.com/2023/09/08/nyc-mayor-eric-adams-is-right-mass-illegal-immigration-is-destructive/?utm_source=rss&utm_medium=rss&utm_campaign=nyc-mayor-eric-adams-is-right-mass-illegal-immigration-is-destructive">NYC Mayor Eric Adams Is Right: Mass Illegal Immigration Is Destructive</a><br />
+<span class=small id="SourceDomain">thefederalist.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 06H 01M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.thenewamerican.com.rst.1" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenewamerican.com/us/immigration/nyc-mayor-warns-illegal-immigrants-will-destroy-new-york-city/">NYC Mayor Warns Illegal Immigrants "Will Destroy New York City"</a><br />
+<span class=small id="SourceDomain">thenewamerican.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 14H 19M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.ny1.com.rst.9" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="http://www.ny1.com/nyc/all-boroughs/off-topic-on-politics/2023/09/08/as-the-migrant-issue-heats-up-the-mayor-loses-his-cool">As the migrant issue heats up, the mayor loses his cool</a><br />
+<span class=small id="SourceDomain">ny1.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 14H 40M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.alphanews.org.rst.4" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://alphanews.org/eric-adams-says-migrant-crisis-will-destroy-new-york-city/">Eric Adams says migrant crisis will 'destroy New York City'</a><br />
+<span class=small id="SourceDomain">alphanews.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 05H 55M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="003"></a><p><h3>The Clacking Hens at "The View" Say: Those Migrants, "Not in My Backyard"</h3><p><p><b>dailywire.com</b> The co-hosts of "The View" said the illegal aliens need to be "resettled elsewhere," both in the world and across the United States before Joy Behar blamed illegal immigration on "global warming and climate change." ::: During the Friday episode of the ABC daytime talk show, the hosts were discussing recent comments from Democratic New York City Mayor Eric Adams warning that the illegal immigration crisis would "destroy New York City" after he previously celebrated that NYC was a sanctuary city.</p><p><b>thepostmillennial.com</b> It turns out that the rich women of The View aren't so welcoming towards illegal immigrants. In fact, the Democrat hosts' are calling for illegal immigrants to be "resettled" out of New York City, which is where the show is produced and its hosts reside. :::  Their comments came as the panel discussed New York Mayor Eric Adams' recent town hall event in which he discussed the unprecedented influx of illegal immigrants being shipped to the state from the US/Mexico border, stating that New York City will be "destroyed" if the crisis is not properly addressed.</p></p></p><hr />
+
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.thegatewaypundit.com.rst.10" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/conservatives-roast-view-co-hosts-making-absurd-statements/?utm_source=rss&utm_medium=rss&utm_campaign=conservatives-roast-view-co-hosts-making-absurd-statements">Conservatives Roast "The View" Co-Hosts For Making Absurd Statements After Learning the Consequences of Illegal Immigration (VIDEO)</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 18H 20M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.thepostmillennial.com.rst.5" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/rich-women-of-the-view-want-illegal-immigrants-in-new-york-resettled-elsewhere">Rich women of The View want illegal immigrants in New York 'resettled elsewhere'</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 14H 11M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.dailywire.com.rst.11" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/the-view-hosts-say-illegal-aliens-need-to-be-resettled-elsewhere-after-mayor-adams-says-migrant-crisis-will-destroy-nyc">'The View' Hosts Say Illegal Aliens Need To Be 'Resettled Elsewhere' After Mayor Adams Says Migrant Crisis Will 'Destroy' NYC</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 09H 24M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="004"></a><p><h3>2nd DAY: 5th U.S. Appeals Court Grants Immediate Stay - Allowing Texas Floating Border Buoy Barrier to Stay In Place</h3><p><p><b>NOTE</b> Some outlets are catching up to <a target=_blank href="https://dailybordernews.github.io/overload-unload.2023-09-07.html#002">yesterday's news</a></p><p><b>freebeacon.com/#Reuters</b> A U.S. Appeals Court on Thursday granted a temporary stay allowing Texas to keep in place floating buoys installed in the middle of the Rio Grande to block migrants from illegally crossing the U.S.-Mexico border as court proceedings move forward, a court filing showed.</p><p><b>dailywire.com</b> Texas will be allowed to keep its floating border barrier deterring illegal crossings across the Rio Grande thanks to a Thursday ruling from the Fifth Circuit Court of Appeals.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.cis.org.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://cis.org/Arthur/Judge-Orders-Texas-Remove-Border-Buoys">Judge Orders Texas to Remove Border Buoys</a><br />
+<span class=small id="SourceDomain">cis.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 02H 22M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.freebeacon.com.rst.10" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://freebeacon.com/latest-news/texas-can-keep-border-buoys-in-place-for-now-judge-rules/">Texas Can Keep Border Buoys in Place for Now, Judge Rules</a><br />
+<span class=small id="SourceDomain">freebeacon.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 09H 30M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.dailywire.com.rst.20" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/court-allows-texas-water-border-barrier-targeted-by-biden-admin-to-stay-in-place">Court Allows Texas Water Border Barrier, Targeted By Biden Admin, To Stay In Place</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 05H 34M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="005"></a><p><h3>Texas officers gain access to Rio Grande's Fronton Island for border security efforts (#TheCenterSquare)</h3><p><p><b>thecentersquare.com</b> Texas Land Commissioner Dawn Buckingham has authorized the Texas Department of Public Safety and Texas Rangers working through Gov. Greg Abbott?s border security mission, Operation Lone Star, access to Fronton Island in the Rio Grande River. ::: The island is roughly 170 acres and located southeast of Fronton, Texas, in Starr County.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.justthenews.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/texas-officers-gain-access-rio-grandes-fronton-island-border-security?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Texas officers gain access to Rio Grande's Fronton Island for border security efforts</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.thecentersquare.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thecentersquare.com/texas/article_2a2139fc-4e40-11ee-8a6c-7746bb8424c3.html?a">Texas officers gain access to Rio Grande's Fronton Island for border security efforts</a><br />
+<span class=small id="SourceDomain">thecentersquare.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 06H 06M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="006"></a><p><h3>Chicago's O'Hare Airport With Illegals ALiens Camped Out Looks Like A Dystopian Movie Scene</h3><p><p><b>theblaze.com</b> According to multiple reports, the migrants are residing on the ground floor of the building, hidden from the public behind large black curtains. ::: A Chicago police officer confirmed to <a target=_blank href="https://www.newsnationnow.com/us-news/immigration/migrants-overcrowd-chicago-makeshift-shelter-ohare-airport/">News Nation</a> that there are approximately 433 migrants currently sheltering at the airport. At the beginning of August, only 31 migrants were residing at the makeshift shelter.</p></p></p><hr />
+
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.breitbart.com.rst.18" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/09/08/nolte-illegals-turn-chicagos-ohare-airport-scene-mad-max/">Nolte: Illegals Turn Chicago's O'Hare Airport into 'Scene from Mad Max'</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 10H 35M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.theblaze.com.rst.27" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theblaze.com/news/chicagos-ohare-airport-turned-into-migrant-shelter-growing-crisis-hidden-from-public-behind-black-curtains">Chicago's O'Hare airport turned into migrant shelter - growing crisis hidden from public behind black curtains</a><br />
+<span class=small id="SourceDomain">theblaze.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 11H 13M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="007"></a><p><h3>52% Support "buoys and barbed wire" to Keep Illegals Out of Texas - in a Low Quality Tainted Poll </h3><p><p><b>texastribune.org</b> Of 1,200 UT poll participants, 52% support Abbott's use of buoys and barbed wire to deter migration, while 40% oppose it. Analytics firm YouGov conducted the poll between August 18-19, interviewing 1,329 registered voters in the state before whittling the sample to 1,200 to be politically representative. The margin of error was plus or minus 2.83 percentage points.</p><p><b>NOTE</b> YouGov conducted the poll and much of their methodology is "proprietary." Given the date of the poll, much misinformation had been published - mostly thru quotes by open borders advocates.</p><p><b>Top Line</b><i>The latest University of Texas / Texas Politics Project Poll was conducted August 18-29 among 1,200 self-identified registered voters in Texas.</i><br /><a target=_blank href="https://texaspolitics.utexas.edu/blog/latest-uttexas-politics-project-poll-finds-texas-republicans%E2%80%99-support-donald-trump-unwavering">Press Release</a><br /><a target=_blank href="https://texaspolitics.utexas.edu/sites/texaspolitics.utexas.edu/files/202308_poll_crosstabs.pdf">Cross Tabs</a><br /><p><b>Q22D.</b> How much have you heard in the news about each of the following: Texas's placement of buoys and barbed wire at the Rio Grande River to deter migration: 45% Alot - 35% Some - 10% Not very much - 10% Nothing at all.</p><p><b>Q34C.</b>  Do you support or oppose the state of Texas implementing the following policies in response to migration at the U.S.-Mexico border? Placing buoys and barbed wire at the Rio Grande River to deter migration: 38% Strongly support - 14% Somewhat support - 9% Somewhat oppose - 31% Strongly support - 7% Don't know/No opinion</p></p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.kxan.com.rst.16" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.kxan.com/news/texas-politics/poll-majority-of-texas-voters-support-border-buoy-barrier/">Poll: Majority of Texas voters support border buoy barrier</a><br />
+<span class=small id="SourceDomain">kxan.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 14H 15M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-08.texastribune.org.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://feeds.texastribune.org/link/16799/16339625/border-buoys-texans-ut-poll">Slim majority of Texans support Gov. Greg Abbott's border buoys, poll finds</a><br />
+<span class=small id="SourceDomain">texastribune.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-08 05H 30M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+</ol>
+</div>
+</form>
+
+<hr id=section-break />
+<div id=bottom-nav-bar>
+<ul>
+<li><a href="list-keywords.html">Keywords List</a> - Words we search for in the Title.</li>
+<li><a href="list-fetch.html">Fetch List</a> - A list of news outlets we check - in alphabetic order.</li>
+<li><a href="list-display.html">Display List</a> - A list of news outlets we check - in display order. The order we use on the front page.</li>
+<li><a target=_blank href="https://www.flickr.com/photos/192197777\@N07/">Flickr</a> - our photo gallery</li>
+</ul>
+  
+<hr />
+
+<ul>
+<li><a target="_blank" href="dailydump.twitter.html">CBP Accounts<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+<ul>
+<li><a target="_blank" href="dailydump.reporters.html">On-the-ground REPORTERS<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+
+</div>
+
+<div id=trailer-body><!-- {{BODY_TRAILER}} --></div>
+
+</body>
+
+<script>
+
+let TAGDATE = "2023-09-08";
+
+{{SCRIPT_FILE}}
+
+</script>
+
+</html>
