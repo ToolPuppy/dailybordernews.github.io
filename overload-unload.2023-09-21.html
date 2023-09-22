@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html><head><title>Overload unload for 21 Sep 2023</title>
+<link rel='icon' type='image/png' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5wEcDAAQ9JepDQAAAsBJREFUOMu1k11IU3EYxp9zjttxnp2Zzdyc5VzL2oiyWLpmTee2rDm1LIqQ6IuIoF0EdWFJkBdBRFREJIV9QkJEBVlSF1kRhZZNt6nZh0SR21K3nW1tUo3+XRmh3QT1Xv7e9/1dPQ/wv6dhn4tx2K1zAWDD2tVT9tRksL6uFtdv3YatfPmiooVFWzoePlo4I1tujUSFwVQqZVmg14VpkUh6+eq1yByNGmmTBcPDQarUuOQFx3EGVZ4KOTnZePzkGXJmyHUjY+FAJCL8MC01MvO0mqbXQ+8P0ROPdrMJAJBKfY1J0tMNDocDPW43fL4+HGxswAq7DUqFgspVKhi9Xo/MTNleAGAmBM5qpzQeCYfXrKuTZknTcONWGzy+fuj0WjAiFslEEh6PF6tWVqK8vABu9xtxJs9/YADAXGq0jo6MvKqvrxeLWRbNZy8hKgiQyWTEsERHlRiKQNMsWLEIcvl05Crk6OrqQygUVqbt3eOqevf2011LxXLYKq3Y43IhLESRzrIx7vs3WcuFm1l+//hMEUN8/kAAWdOkGAsVIiIIEIvF59Pevn7T9CmWgQtP+9DZ048X3b3gef5MRBB2f0kmIRHRlEKRhbgQi0szMnh7pQMdHQ8xFvAjOy+/mwZFPx8e6gYrIfg4/gO8jMc8rfrAfJ0OAFBWVkYuXm5NhkZDiYbG/eB5Hl6vB3KlKuXtG+ilb7ff260vVA8VJATEBnqwfdvmxs6Xnmj/4CAA4P6DR9i0ccPFYrNFGRwVEI/HEQx+BsdxRwEArVfO/8oAIYQBgFMnj//O5CajiSyuriOapWXEXFFLZBxHlhmLS/8Y3fY7bVOY1WIOqfLyyWxDMSmx1RGbpYK4du6QEEJATz6uqq6ZIqhxOrW6OeqoimUgSvihKZi16/S5lnGKov6uWM2nTqiPHTmcDwA7t2/9N239CWyLATcN6+tgAAAAAElFTkSuQmCC'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style> a:link {color:black} a:hover {color:grey}
+
+li {padding: 0}
+li.link-page {padding:0.4em}
+a.link-page {font-size:1.0em;text-decoration:none;}
+li.front-page {list-style-type:none;}
+
+label {
+  padding:0.2em;
+  background:#A5D6A7;
+  border:solid 2px black;
+  display:inline-block;
+  min-height:1.2em;
+  min-width:100px;
+  border-radius:5px;
+  text-align:center;
+  text-decoration:none;margin:0 0.1em;
+}
+.labelclass {margin:10px;color:green;}
+.navclass { margin:10px; color:white; background:#F08080; padding:0.4em 2em; font-weight: bold; }
+.visually-hidden { /* visibility: hidden; */ display: none; /* */ }
+
+/* Keyword buttons */
+.keywords-wrapper {padding:0.4em;border:solid 1px black;width:50%;text-align:center;margin:auto;}
+.Keyword-button {padding:0.2em;border:solid 2px black;display:inline-block;min-height:1.2em;
+min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
+
+/* each below is used in the 'li.ArticleDiv' */
+.link-text {font-size:1.2em;text-decoration:none;} .small {font-size:0.8em}
+.ArticleDiv {padding: 5px 2px; border: 1px #D3D3D3 solid;
+  animation-name:startup;
+  animation-duration:2.5s;
+}
+.FoundWord {color:black;}
+/* There is one and only one HTML element for each of the IDs below */
+#trademk {padding:5px}
+#banner {font-size:2em;} #banner-sub {font-size:0.8em;}
+#banner-date  { float:right;text-align:right;font-size:0.8em;padding:10px; border: 2px solid #ffb0b0; border-radius: 5px; }
+#banner-stats { float:left; text-align:left ;font-size:0.8em;padding:10px; border: 2px solid lightblue; border-radius: 5px; clear:right; }
+#TOP-NAVIGATION { text-align:center;clear:both;padding:5px 25px;margin:auto; }
+#keyword-div {color:green;}
+#daily-body {color:gray;clear:both;padding:5px 25px;}
+#section-break {margin:auto; width:60%; clear:both;}
+#trailer-body {color:green;clear:both;}
+</style>
+</head><body>
+<img id=trademk align=left src="data:image/png;base64,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">
+<span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
+
+
+<p style=clear:both;></p>
+<center><b>NEWS LINKS OPEN IN A NEW TAB OR PAGE.</b></center>
+
+<form id="theform">
+
+<div id=daily-body>
+<ol>
+
+
+<li class=link-page><a class=link-page href="#001">Texas Governor Declares 'Invasion' After Biden Orders Razor Wire Cut, Migrants Flood Border Town and Two Children Drown Crossing Rio Grande</a></li>
+<li class=link-page><a class=link-page href="#002">3-Year-Old Child Drowns at Border, White House Press Secretary KJP Loses It, Shutsdown Fox Reporters, Declares "We're moving on" </a></li>
+<li class=link-page><a class=link-page href="#003">Biden Administration Gets Blasted after Allowing 'Hundreds Of Thousands' of Venezuelan to Stay (and Get Work Permits) Using a Bogus Reason for TPS (Temporary Protected Status)</a></li>
+<li class=link-page><a class=link-page href="#004">Chicago on the Hook for $29 Million for Military-grade Tent Basecamps for about 1,000 Illegals</a></li>
+<li class=link-page><a class=link-page href="#005">The Number of Illegal Allowed By Biden Administration Has Overwhelmed Governors and Mayors, And Thousands More on the Way</a></li>
+<li class=link-page><a class=link-page href="#006">New York Governor Announces Plans to Suspend 'right to shelter' Law and Declares "If You're Going to Leave Your Country, Go Somewhere Else!" </a></li>
+<li class=link-page><a class=link-page href="#007">Texas Border Town of Eagle Pass in Chaos, Mayor Issues Emergency Declaration, as Thousands of Illegals Flood In</a></li>
+<li class=link-page><a class=link-page href="#008">How to donate items, volunteer time for migrants in El Paso</a></li>
+<li class=link-page><a class=link-page href="#009">Baja (California) Officer Stopped at Border with Cocaine - Suggests Drugs Were Planted in Car</a></li>
+<li class=link-page><a class=link-page href="#010">After a lull, asylum-seekers adapt to U.S. immigration changes and again overwhelm border agents (#AssociatedPress)</a></li>
+<li class=link-page><a class=link-page href="#011">Biden's DHS Brazenly Ignores Courts - and Laws - and Secretly Flys over 200,000 Illegals to Censored Locations, FOIA Documents Show</a></li>
+
+</ol>
+
+<div style=clear:both;> </div>
+
+<ol>
+
+
+<hr /><a name="001"></a><p><h3>Texas Governor Declares 'Invasion' After Biden Orders Razor Wire Cut, Migrants Flood Border Town and Two Children Drown Crossing Rio Grande</h3><p><p><b>heavy.com</b> Videos and photos from Eagle Pass, Texas, show the unfolding migrant crisis, including scenes of authorities cutting razor wire and border crossings. ::: Texas Governor Greg Abbott tweeted, "Texas installed razor wire in Eagle Pass to stop illegal crossings. Today the Biden Admin CUT that wire, opening the floodgates to illegal immigrants. I immediately deployed more Texas National Guard to repel illegal crossings {{MYDESCRIPTION}} install more razor wire."</p><p><b>dailywire.com</b> Texas Governor Greg Abbott shared a video on social media this week showing President Joe Biden's Border Patrol cutting razor wire that the state of Texas had placed alongside on the Rio Grande to stop illegal aliens from flooding into the country.</p><p><b>thepostmillennial.com</b> Instead of helping protect Texas from the influx of people, the Biden administration has prevented the state from securing the border, even going so far as to remove safeguards put in place to deter potential crossings.</p><p><b>NOTE</b> Governor Abbott tweet the letter. Here is a <a target=_blank href="https://twitter.com/GregAbbott_TX/status/1704640256429985863">link to letter</a></p><p>See headlines below for more.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.kvia.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/border/2023/09/21/texas-military-department-sends-more-soldiers-to-the-border/">Texas Military Department sends more soldiers to the border</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 18H 17M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.breitbart.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2023/09/21/watch-migrants-breach-border-push-small-children-under-texas-razor-wire/">WATCH: Migrants Breach Border, Push Small Children Under Texas Razor Wire</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 12H 58M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.notthebee.com.rst.5" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://notthebee.com/article/a-federal-judge-ordered-the-razor-wire-gov-greg-abbott-put-in-the-rio-grande-to-be-removed-so-abbot-decided-to-put-up-even-more/">The Biden admin cut the razor wire Gov. Greg Abbott put along the Rio Grande, so Abbott immediately sent the Texas National Guard to put up even more </a><br />
+<span class=small id="SourceDomain">notthebee.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 11H 29M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thegatewaypundit.com.rst.10" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/governor-greg-abbott-officially-declares-invasion-southern-border/?utm_source=rss&utm_medium=rss&utm_campaign=governor-greg-abbott-officially-declares-invasion-southern-border">Governor Greg Abbott Officially Declares INVASION at Southern Border by the Mexican Drug Cartels</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 17H 45M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thepostmillennial.com.rst.19" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/greg-abbott-reinstalls-razor-wire-after-feds-removed-it-slams-biden-for-border-invasion">Greg Abbott reinstalls razor wire after feds removed it, slams Biden for border 'invasion'</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 08H 39M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border-wall" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.americanmilitarynews.com.rst.10" class="control-border-wall"><div class=ArticleDiv><a class=link-text target=_blank href="https://americanmilitarynews.com/2023/09/tx-gov-abbot-rebukes-biden-we-are-building-a-border-wall-razor-wire-marine-barriers/">TX Gov. Abbot rebukes Biden: 'We are building a border wall, razor wire & marine barriers'</a><br />
+<span class=small id="SourceDomain">americanmilitarynews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 08H 44M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border wall</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.dailywire.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/biden-officials-cut-razor-wire-on-southern-border-opening-the-floodgates-to-illegal-immigrants">Biden Officials Cut Razor Wire On Southern Border: 'Opening The Floodgates To Illegal Immigrants'</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 14H 18M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.oann.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.oann.com/newsroom/gov-abbott-declares-that-border-crossings-are-an-invasion/?utm_source=rss&utm_medium=rss&utm_campaign=gov-abbott-declares-that-border-crossings-are-an-invasion">Gov. Abbott Declares That Border Crossings Are An 'Invasion'</a><br />
+<span class=small id="SourceDomain">oann.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 18H 26M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.washingtonexaminer.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/greg-abbott-doubles-down-border-barrier-razor-wire">Abbott doubles down on Texas border barrier: 'We doubled the amount of razor wire'</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 21H 56M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.washingtonexaminer.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/abbott-sends-texas-national-guard-assist-border">Greg Abbott sends in Texas National Guard to assist with 'invasion' at border</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 07H 33M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.heavy.com.rst.0" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://heavy.com/news/eagle-pass-video-photos-migrant/">Eagle Pass Videos & Photos: Migrant Crisis, Razor Wire Cut</a><br />
+<span class=small id="SourceDomain">heavy.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 11H 45M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.newsmax.com.rst.16" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/abbott-texas-immigration/2023/09/21/id/1135386">Texas Governor Sends Troops for Border 'Invasion'</a><br />
+<span class=small id="SourceDomain">newsmax.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 10H 41M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="002"></a><p><h3>3-Year-Old Child Drowns at Border, White House Press Secretary KJP Loses It, Shutsdown Fox Reporters, Declares "We're moving on" </h3><p><p><b>freebeacon.com</b> Officials recovered from the river the body of a three-year-old boy on Wednesday and that of a middle-aged man on Thursday, both of whom appear to have drowned attempting to cross the border, Fox News's Bill Melugin reported. The two drowned near Eagle Pass, Texas, which has long been a hotbed for border crossings.</p><p><b>thegatewaypundit.com | Unbelievable</b> On Thursday, White House Press Secretary Karine Jean-Pierre cut off Fox News' Peter Doocy and shut him down. ::: "What do you call it here at the White House when 10,000 people illegally cross the border in a single day?: Peter Doocy asked KJP.</p><p><b>thegatewaypundit.com | Biden Border Crisis</b> Illegal aliens are dying as they cross the Rio Grande. The body of a middle-aged man who drowned was pulled from the Rio Grande on Thursday morning. To make things even worse, a 3-year-old boy drowned Wednesday, and a 10-year-old last week in the same area. This is a common occurrence thanks to the Biden Regime's border policies.</p><p><b>dailywire.com</b> Fox Business' Edward Lawrence cornered White House Press Secretary Karine Jean-Pierre during Thursday's briefing, challenging her directly on the record numbers of illegal immigrants who continue to flood the southern border.</p><p><b>infowars.com</b> Jean-Pierre was flustered after Doocy wouldn't let her answer his question with another question.::: "We're moving on," said Jean-Pierre dismissively. ::: Doocy's question was sourced from alarming U.S. Customs and Border Protection (CBP) data saying the migrant surge has returned to "all-time record high levels." </p><p>See headlines below for more.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.breitbart.com.rst.45" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2023/09/21/3-yr-old-child-adult-migrants-drown-crossing-texas-border-river-in-24-hours/">3-Yr-Old Child, One Adult Migrant Drown Crossing Texas Border Within 24 Hours</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 09H 04M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.freebeacon.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://freebeacon.com/latest-news/bodies-of-two-migrants-including-3-year-old-boy-found-in-rio-grande-amid-border-surge/">Bodies of Two Migrants, Including 3-Year-Old Boy, Found in Rio Grande Amid Border Surge</a><br />
+<span class=small id="SourceDomain">freebeacon.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 15H 25M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thegatewaypundit.com.rst.22" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/unbelievable-karine-jean-pierre-cuts-peter-doocy-shuts/?utm_source=rss&utm_medium=rss&utm_campaign=unbelievable-karine-jean-pierre-cuts-peter-doocy-shuts">Unbelievable! Karine Jean-Pierre Cuts Off Peter Doocy, Shuts Him Down, Refuses to Answer Question on Biden Border Crisis (VIDEO)</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 13H 40M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thegatewaypundit.com.rst.28" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/border-crisis-another-dead-body-pulled-rio-grande/?utm_source=rss&utm_medium=rss&utm_campaign=border-crisis-another-dead-body-pulled-rio-grande">Biden Border Crisis: Another Dead Body Pulled Out of Rio Grande Days After 2 Migrant Children Drowned in Same Area (VIDEO)</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 11H 40M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thepostmillennial.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/white-house-press-sec-refuses-to-address-bidens-border-crisis-after-two-children-drown-in-rio-grande">White House press sec REFUSES to address Biden's border crisis after two children drown in Rio Grande</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 18H 54M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thepostmillennial.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/bidens-border-crisis-3-year-old-boy-drowns-as-family-attempts-to-cross-rio-grande-into-us">BIDEN'S BORDER CRISIS: 3-year-old boy drowns as family attempts to cross Rio Grande into US</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 15H 55M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.dailywire.com.rst.11" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/fox-biz-reporter-how-many-people-coming-into-this-country-illegally-is-enough-for-president-biden">Fox Biz Reporter: 'How Many People Coming Into This Country Illegally Is Enough For President Biden?'</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 11H 09M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.infowars.com.rst.6" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/white-house-shuts-down-reporter-asking-about-open-border-were-moving-on">White House Shuts Down Reporter Asking About Open Border: "We're Moving On"</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 10H 31M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="003"></a><p><h3>Biden Administration Gets Blasted after Allowing 'Hundreds Of Thousands' of Venezuelan to Stay (and Get Work Permits) Using a Bogus Reason for TPS (Temporary Protected Status)</h3><p>See headlines below for descriptions.</p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.kvia.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/2023/09/21/border-leaders-weigh-in-on-u-s-government-allowing-some-venezuelans-to-legally-work/">Border leaders weigh in on U.S. allowing some Venezuelans to legally work</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 20H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.breitbart.com.rst.47" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/economy/2023/09/21/biden-grants-quasi-amnesty-to-470000-venezuelan-migrants/">Biden Grants Quasi-Amnesty to 470,000 More Venezuelan Migrants</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 04H 50M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.dailywire.com.rst.30" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/biden-admin-to-allow-hundreds-of-thousands-of-illegal-immigrants-to-stay-and-work-in-u-s">Biden Admin To Allow 'Hundreds Of Thousands' Of Illegal Immigrants To Stay And Work In U.S.</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 06H 04M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.dailysignal.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailysignal.com/2023/09/21/borderline-this-week-inside-bidens-bogus-illegal-immigrant-visa-program/?utm_source=rss&utm_medium=rss&utm_campaign=borderline-this-week-inside-bidens-bogus-illegal-immigrant-visa-program">New Feature: The BorderLine / This Week: Inside Biden's Bogus Illegal Immigrant 'Visa' Program</a><br />
+<span class=small id="SourceDomain">dailysignal.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 01H 01M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.washingtonexaminer.com.rst.4" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/biden-backlash-legalizes-work-for-illegal-immigrants">Biden blasted for legalizing work for illegal immigrants: 'It undermines all deterrence'</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 12H 41M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.ny1.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="http://www.ny1.com/nyc/all-boroughs/politics/2023/09/22/n-y--dems-praise-biden-s-tps-update--push-for-more-help-on-migrants">N.Y. Dems praise Biden's TPS update, push for more help on migrants</a><br />
+<span class=small id="SourceDomain">ny1.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 19H 15M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.themainewire.com.rst.6" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.themainewire.com/2023/09/biden-admin-extends-temporary-protected-status-to-472000-venezuelan-nationals-living-in-the-us/">Biden Admin Extends Temporary Protected Status to 472,000 Venezuelan Nationals Living in the US</a><br />
+<span class=small id="SourceDomain">themainewire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 13H 15M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="004"></a><p><h3>Chicago on the Hook for $29 Million for Military-grade Tent Basecamps for about 1,000 Illegals</h3><p><p><b>dailywire.com</b> Chicago officials inked the one-year deal with GardaWorld Federal Services on September 12. The firm will be responsible for building, staffing, and operating the huge tents, which must be able to house between 250 and 1,400 migrants. ::: Chicago is facing a migrant crisis and is struggling to find long-term solutions. The country?s third-largest city has seen an influx of about 13,500 migrants recently and has already spent at least $250 million on the issue.</p><p><b>abc7chicago.com</b> The city of Chicago has signed a more than $29 million contract with a private security firm to build and operate base camps for migrants. ::: Zones in the camps would hold between 200 and 1,400 people. ::: The deal with Garda World calls for at least six locations across the city for asylum-seekers. ::: Under the contract, other services and supplies, like bedding and linens, food, and sanitary facilities would also be provided.</p></p></p><hr />
+
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.justthenews.com.rst.6" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/military-grade-tent-basecamps-migrants-cost-29-million?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Military-grade tent basecamps for immigrants to cost Chicago $29 million</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thegatewaypundit.com.rst.0" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/insanity-chicago-mayor-brandon-johnson-signs-29-million/?utm_source=rss&utm_medium=rss&utm_campaign=insanity-chicago-mayor-brandon-johnson-signs-29-million">INSANITY: Chicago Mayor Brandon Johnson Signs $29 Million Contract to Build Illegal Immigrant Camps in the City</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 21H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.dailywire.com.rst.7" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/chicago-signs-nearly-30-million-contract-to-build-giant-winterized-tent-camps-for-migrants">Chicago Signs Nearly $30 Million Contract To Build Giant Winterized Tent Camps For Migrants</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 11H 44M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.washingtonexaminer.com.rst.1" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/chicago-spends-millions-to-relocate-migrants-permanent-camps">Chicago spends $30 million to hire firm and relocate immigrants to permanent camps</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 20H 25M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.abc7chicago.com.rst.12" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7chicago.com/migrant-crisis-chicago-mayor-brandon-johnson-migrants-tents-camps-camp-tent-garda-world-news-immigration/13808337/">Chicago signs $29M contract for migrant base camps</a><br />
+<span class=small id="SourceDomain">abc7chicago.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 16H 33M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="005"></a><p><h3>The Number of Illegal Allowed By Biden Administration Has Overwhelmed Governors and Mayors, And Thousands More on the Way</h3><p><p><b>tucson.com/#AssociatedPress</b> A small town on the Texas border declares a state of emergency as tens of thousands of migrants cross the border. The Biden administration grants protection to nearly half a million Venezuelans in the country, giving them the ability to work. This comes after some Democratic mayors and governors warn that growing numbers of migrants in their care are busting their budgets. ::: The various scenarios playing out across the country paint a picture of a strained immigration system making an impact far from the U.S.-Mexico border. The Biden administration late Wednesday announced measures intended to alleviate the problems.</p><p><b>newsmax.com/#ThomsonReuters</b> Thousands of migrants have crossed into the United States in recent days, from California to Texas, with many more still arriving by bus and cargo trains to Mexican border towns on the heels of record migration flows further south. ::: The dramatic increase along the border - notably in San Diego, California and the Texan cities of El Paso and Eagle Pass - marks a turning point after numbers had plummeted in recent months, and could create fresh political challenges for U.S. President Joe Biden heading into election season. ::: Biden in May rolled out a new policy to deter illegal crossings, including deporting migrants and banning re-entry for five years, as his administration grappled with migration at record highs.</p></p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.kyma.com.rst.20" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://kyma.com/news/immigration/2023/09/21/as-mayors-governors-scramble-to-care-for-more-migrants-a-look-at-whats-behind-the-numbers/">As mayors, governors scramble to care for more migrants, a look at what's behind the numbers</a><br />
+<span class=small id="SourceDomain">kyma.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 11H 21M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.tucson.com.rst.4" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://tucson.com/ap/washington/as-mayors-governors-scramble-to-care-for-more-migrants-a-look-at-whats-behind-the/article_6e7e7c20-1d0e-5365-8d02-5aebe4c33e87.html">As mayors, governors scramble to care for more migrants, a look at what's behind the numbers</a><br />
+<span class=small id="SourceDomain">tucson.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 15H 56M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.freebeacon.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://freebeacon.com/latest-news/record-numbers-of-migrants-head-to-us-border/">Record Numbers of Migrants Head to US Border</a><br />
+<span class=small id="SourceDomain">freebeacon.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 15H 35M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.newsmax.com.rst.12" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/migration-biden/2023/09/21/id/1135412">Record Numbers of Migrants Head to US Border, in Fresh Test for Biden</a><br />
+<span class=small id="SourceDomain">newsmax.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 13H 44M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="006"></a><p><h3>New York Governor Announces Plans to Suspend 'right to shelter' Law and Declares "If You're Going to Leave Your Country, Go Somewhere Else!" </h3><p><p><b>justthenews.com</b> New York Democratic Gov. Kathy Hochul has endorsed suspending the Big Apple's "right to shelter" mandate amid an influx of illegal immigrants that has strained New York City's infrastructure and flummoxed the local government. ::: New York City Mayor Eric Adams has sought to suspend the law and warned that the influx of new arrivals threatens to "destroy New York City." In 1981, a court ordered that the city provide temporary housing to anyone upon request, according to the Associated Press. In May of this year, the city enacted a "Homeless Bill of Rights" that reiterated the mandate.</p><p><b>theepochtimes.com</b> New York Gov. Kathy Hochul has expressed frustration at the illegal immigration crisis gripping the Big Apple, telling would-be asylum seekers to "go somewhere else" while throwing her weight behind a push to suspend the city's right-to-shelter law amid the relentless influx. ::: Ms. Hochul made the remarks in a Wednesday interview on CNN, in which she said that New York City has run out of space to take in more illegal immigrants and that the city is at a breaking point due to the crisis.</p></p></p><hr />
+
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.justthenews.com.rst.11" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/politics-policy/ny-gov-hochul-backs-nyc-bid-end-right-shelter-mandate-amid-alien-influx?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">NY Gov. Hochul backs NYC bid to suspend 'right to shelter' mandate amid immigrant influx</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.freebeacon.com.rst.12" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://freebeacon.com/latest-news/watch-hochul-migrant-crisis-new-york/">WATCH: NY Gov Tells Migrants, 'If You're Going To Leave Your Country, Go Somewhere Else'</a><br />
+<span class=small id="SourceDomain">freebeacon.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 12H 05M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.theepochtimes.com.rst.22" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/fed-up-new-york-governor-tells-illegal-immigrants-to-go-somewhere-else-5496317">Fed-Up New York Governor Tells Illegal Immigrants to 'Go Somewhere Else'</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 15H 58M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.thegatewaypundit.com.rst.26" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/09/new-yorks-democrat-gov-hochul-blasts-illegal-aliens/?utm_source=rss&utm_medium=rss&utm_campaign=new-yorks-democrat-gov-hochul-blasts-illegal-aliens">New York's Democrat Gov. Hochul Blasts Illegal Aliens: "If You're Going to Leave Your Country, Go Somewhere Else!" (VIDEO)</a><br />
+<span class=small id="SourceDomain">thegatewaypundit.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 12H 20M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="007"></a><p><h3>Texas Border Town of Eagle Pass in Chaos, Mayor Issues Emergency Declaration, as Thousands of Illegals Flood In</h3><p><p><b>justthenews.com</b> In response to over 4,000 foreign nationals illegally crossing the Rio Grande River between ports of entry and under the international bridge entering Eagle Pass, Texas, instead of entering legally through the port above them, the city issued an emergency declaration. ::: On Thursday, Mayor Rolando Salinas Jr., issued and signed an emergency declaration in response to "the severe undocumented immigrant surge into the City of Eagle Pass, Texas." The local state of disaster is good for seven days and can be extended by the city council.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.breitbart.com.rst.16" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2023/09/21/2k-migrants-apprehended-in-texas-border-town-adds-to-20k-currently-in-bp-custody/">2K Migrants Apprehended in Texas Border Town Adds to 20K Currently in BP Custody</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 14H 12M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.justthenews.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/eagle-pass-issues-emergency-declaration-thousands-flood-border-town?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Eagle Pass, TX issues emergency declaration as thousands flood border town</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.heavy.com.rst.0" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://heavy.com/news/eagle-pass-video-photos-migrant/">Eagle Pass Videos & Photos: Migrant Crisis, Razor Wire Cut</a><br />
+<span class=small id="SourceDomain">heavy.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 11H 45M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="008"></a><p><h3>How to donate items, volunteer time for migrants in El Paso</h3><p>See headlines below for descriptions.</p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.elpasomatters.org.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://elpasomatters.org/2023/09/21/how-to-help-migrants-el-paso-texas-organizations/">How to donate items, volunteer time for migrants in El Paso</a><br />
+<span class=small id="SourceDomain">elpasomatters.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 10H 40M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.kvia.com.rst.28" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/2023/09/21/how-to-donate-items-volunteer-time-for-migrants-in-el-paso/">How to donate items, volunteer time for migrants in El Paso</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 16H 48M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="009"></a><p><h3>Baja (California) Officer Stopped at Border with Cocaine - Suggests Drugs Were Planted in Car</h3><p><p><b>timesofsandiego.com</b> A Baja California state police officer has been charged by San Diego federal prosecutors with allegedly trying to bring drugs across the border. ::: Victor Alfonso Moreno, who Mexican officials said has been an officer for seven years, was arrested Monday at the San Ysidro Port of Entry. ::: According to a criminal complaint filed in federal court, Moreno's car was inspected by U.S. Customs and Border Protection officers, who discovered 35 packages weighing nearly 100 pounds hidden in the car's driver?s seat, passenger seat and rear seats.</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.sandiegouniontribune.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.sandiegouniontribune.com/news/border-baja-california/story/2023-09-21/baja-california-state-police-officer-cocaine-charge-moreno">Baja California state police officer arrested at border with cocaine allegedly hidden in car</a><br />
+<span class=small id="SourceDomain">sandiegouniontribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 15H 34M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.timesofsandiego.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://timesofsandiego.com/crime/2023/09/21/baja-officer-stopped-at-border-with-cocaine-suggests-drugs-were-planted-in-car/">Baja Officer Stopped at Border with Cocaine Suggests Drugs Were Planted in Car</a><br />
+<span class=small id="SourceDomain">timesofsandiego.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 17H 57M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="010"></a><p><h3>After a lull, asylum-seekers adapt to U.S. immigration changes and again overwhelm border agents (#AssociatedPress)</h3><p><p><b>washingtontimes.com/#AssociatedPress</b> A group of migrants from China surrendered to a Border Patrol agent in remote Southern California (town of JACUMBA HOT SPRINGS, Calif.) as gusts of wind drowned the hum of high-voltage power lines, joining others from Ecuador, Brazil, Colombia and elsewhere in a desert campsite with shelters made from tree branches. :: Their arrival Wednesday was another sign that agents have become overwhelmed in recent days by asylum-seekers on parts of the U.S. border with Mexico. In tiny Eagle Pass, Texas, nearly 6,000 migrants crossed from Mexico into the U.S. in two days, prompting authorities to close one of the town?s two official border crossings so those agents could instead help with the influx. Border crossings have closed recently for similar reasons in San Diego and El Paso, Texas.</p></p></p><hr />
+
+<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.tucson.com.rst.0" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://tucson.com/ap/national/after-a-lull-asylum-seekers-adapt-to-us-immigration-changes-and-again-overwhelm-border-agents/article_eff02b10-01c6-54f3-be8e-b73cf0d9ab25.html">After a lull, asylum-seekers adapt to US immigration changes and again overwhelm border agents</a><br />
+<span class=small id="SourceDomain">tucson.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 18H 47M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">asylum</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.washingtontimes.com.rst.16" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtontimes.com/news/2023/sep/21/after-lull-asylum-seekers-adapt-to-us-immigration-/?utm_source=RSS_Feed&utm_medium=RSS">After a lull, asylum-seekers adapt to U.S. immigration changes and again overwhelm border agents</a><br />
+<span class=small id="SourceDomain">washingtontimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 12H 30M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">asylum</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="011"></a><p><h3>Biden's DHS Brazenly Ignores Courts - and Laws - and Secretly Flys over 200,000 Illegals to Censored Locations, FOIA Documents Show</h3><p>See headlines below for descriptions.</p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.cis.org.rst.0" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://cis.org/Bensman/New-Records-Biden-DHS-Has-Approved-Hundreds-Thousands-Migrants-Secretive-Foreign-Flights">New Records: Biden DHS Has Approved Hundreds of Thousands of Migrants for Secretive Foreign Flights Directly into U.S. Airports</a><br />
+<span class=small id="SourceDomain">cis.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 17H 32M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-09-21.dailysignal.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailysignal.com/2023/09/21/200000-illegal-aliens-taken-flights-directly-into-us-over-year-immigration-watchdog-reports/?utm_source=rss&utm_medium=rss&utm_campaign=200000-illegal-aliens-taken-flights-directly-into-us-over-year-immigration-watchdog-reports">Federal Government Program Allows More Than 200,000 Illegal Aliens to Fly Right Over the Border</a><br />
+<span class=small id="SourceDomain">dailysignal.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-09-21 17H 48M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+</ol>
+</div>
+</form>
+
+<hr id=section-break />
+<div id=bottom-nav-bar>
+<ul>
+<li><a href="list-keywords.html">Keywords List</a> - Words we search for in the Title.</li>
+<li><a href="list-fetch.html">Fetch List</a> - A list of news outlets we check - in alphabetic order.</li>
+<li><a href="list-display.html">Display List</a> - A list of news outlets we check - in display order. The order we use on the front page.</li>
+<li><a target=_blank href="https://www.flickr.com/photos/192197777\@N07/">Flickr</a> - our photo gallery</li>
+</ul>
+  
+<hr />
+
+<ul>
+<li><a target="_blank" href="dailydump.twitter.html">CBP Accounts<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+<ul>
+<li><a target="_blank" href="dailydump.reporters.html">On-the-ground REPORTERS<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+
+</div>
+
+<div id=trailer-body><!-- {{BODY_TRAILER}} --></div>
+
+</body>
+
+<script>
+
+let TAGDATE = "2023-09-21";
+
+{{SCRIPT_FILE}}
+
+</script>
+
+</html>
