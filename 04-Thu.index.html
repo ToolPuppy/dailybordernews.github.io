@@ -55,32 +55,38 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
   75%  { opacity: 0%; }
   100% { opacity: 0; height: 0; border: 0; display: none;  }
 }
-#mark-alien:checked + li.control-alien { background:#a9a9a9; }
 #mark-asylum:checked + li.control-asylum { background:#a9a9a9; }
 #mark-border:checked + li.control-border { background:#a9a9a9; }
+#mark-border-wall:checked + li.control-border-wall { background:#a9a9a9; }
 #mark-cartel:checked + li.control-cartel { background:#a9a9a9; }
+#mark-evacuee:checked + li.control-evacuee { background:#a9a9a9; }
 #mark-gang:checked + li.control-gang { background:#a9a9a9; }
 #mark-human-smuggling:checked + li.control-human-smuggling { background:#a9a9a9; }
 #mark-illegal:checked + li.control-illegal { background:#a9a9a9; }
+#mark-illegal-alien:checked + li.control-illegal-alien { background:#a9a9a9; }
 #mark-illegal-immigrant:checked + li.control-illegal-immigrant { background:#a9a9a9; }
+#mark-illegal-migrant:checked + li.control-illegal-migrant { background:#a9a9a9; }
 #mark-immigrant:checked + li.control-immigrant { background:#a9a9a9; }
 #mark-migrant:checked + li.control-migrant { background:#a9a9a9; }
+#mark-narco:checked + li.control-narco { background:#a9a9a9; }
 #mark-national:checked + li.control-national { background:#a9a9a9; }
-#mark-non-citizen:checked + li.control-non-citizen { background:#a9a9a9; }
 #mark-refugee:checked + li.control-refugee { background:#a9a9a9; }
 
-#alien:checked + label {border:solid 2px red;}
 #asylum:checked + label {border:solid 2px red;}
 #border:checked + label {border:solid 2px red;}
+#border-wall:checked + label {border:solid 2px red;}
 #cartel:checked + label {border:solid 2px red;}
+#evacuee:checked + label {border:solid 2px red;}
 #gang:checked + label {border:solid 2px red;}
 #human-smuggling:checked + label {border:solid 2px red;}
 #illegal:checked + label {border:solid 2px red;}
+#illegal-alien:checked + label {border:solid 2px red;}
 #illegal-immigrant:checked + label {border:solid 2px red;}
+#illegal-migrant:checked + label {border:solid 2px red;}
 #immigrant:checked + label {border:solid 2px red;}
 #migrant:checked + label {border:solid 2px red;}
+#narco:checked + label {border:solid 2px red;}
 #national:checked + label {border:solid 2px red;}
-#non-citizen:checked + label {border:solid 2px red;}
 #refugee:checked + label {border:solid 2px red;}
 
 
@@ -89,11 +95,11 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 </head><body>
 <img id=trademk align=left src="data:image/png;base64,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">
 <span id=banner-date>Border News for<br />
-19 Oct 2023
+26 Oct 2023
 </span>
 <span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
 <span id=banner-stats style=clear:both;>
-<b>SEARCH ENGINE</b> <span id=number_good>36</span> positive hits from <a href=list-fetch.html>110 sources</a>
+<b>SEARCH ENGINE</b> <span id=number_good>34</span> positive hits from <a href=list-fetch.html>110 sources</a>
 </span>
 
 <span id=banner-nav >
@@ -113,291 +119,275 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <div style=clear:both;> </div>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.myrgv.com.rst.11" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://myrgv.com/publications/the-brownsville-herald/2023/10/19/brownsville-man-who-crashed-into-border-patrol-unit-sentenced/">Brownsville man who crashed into Border Patrol unit sentenced</a><br />
-<span class=small id="SourceDomain">myrgv.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 12H 30M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-human-smuggling" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.abc13.com.rst.7" class="control-human-smuggling"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc13.com/texas-politics-sb4-undocumented-immigrants/13942147/">Immigration advocates concerned about 'vague language' in bill enhancing human smuggling penalties</a><br />
-<span class=small id="SourceDomain">abc13.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 20H 15M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">human smuggling</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.tucson.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://tucson.com/ap/national/most-in-the-us-see-mexico-as-a-partner-despite-border-problems-an-ap-norc/article_807a0d1a-f8b8-5230-88ae-85d4309fefb0.html">Most in the US see Mexico as a partner despite border problems, an AP-NORC/Pearson poll shows</a><br />
-<span class=small id="SourceDomain">tucson.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 04H 31M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.sandiegouniontribune.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.sandiegouniontribune.com/news/education/story/2023-10-19/border-students-pay-in-state-tuition-community-colleges-san-diego">Border students in Mexico to pay in-state tuition for community college across San Diego, Imperial counties</a><br />
-<span class=small id="SourceDomain">sandiegouniontribune.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 14H 56M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.cis.org.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://cis.org/Arthur/Border-Deaths-Highlight-Inhumanity-Bidens-Progressive-Migrant-Release-Policies">Border Deaths Highlight Inhumanity of Biden's 'Progressive' Migrant Release Policies</a><br />
-<span class=small id="SourceDomain">cis.org</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 10H 50M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.breitbart.com.rst.33" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/10/19/breaking-biden-author-why-joe-biden-wants-an-open-border-despite-terror-threat/">'Breaking Biden' Author: Why Joe Biden Wants an Open Border Despite Terror Threat</a><br />
-<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 07H 00M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.breitbart.com.rst.34" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/clips/2023/10/19/pritzker-biden-needs-to-tell-migrants-coming-to-illinois-can-be-dangerous/">Pritzker: Biden Needs to Tell Migrants Coming to Illinois 'Can Be Dangerous'</a><br />
-<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 05H 01M MDT</span>&nbsp;&#183;&nbsp;
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.ktsm.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsm.com/local/el-paso-news/bill-allowing-police-officers-to-arrest-migrants-passed-in-texas-house/">Bill allowing police officers to arrest migrants passed in Texas House</a><br />
+<span class=small id="SourceDomain">ktsm.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 18H 09M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.breitbart.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/africa/2023/10/19/egypt-opens-gaza-border-crossing-humanitarian-aid-still-rejects-refugees/">Egypt Opens Gaza Border Crossing to Humanitarian Aid, but Still Rejects Refugees</a><br />
-<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 14H 57M MDT</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.ktsm.com.rst.12" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsm.com/news/national/ap-texas-sues-biden-administration-seeking-to-stop-federal-agents-from-cutting-razor-wire-on-border/">Texas sues Biden administration seeking to stop federal agents from cutting razor wire on border</a><br />
+<span class=small id="SourceDomain">ktsm.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-24 16H 29M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.breitbart.com.rst.48" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/europe/2023/10/19/brussels-islamist-shooter-illegally-entered-europe-by-migrant-boat-avoided-multiple-deportation-attempts/">Brussels Islamist Shooter Illegally Entered Europe by Migrant Boat, Avoided Multiple Deportation Attempts</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.kyma.com.rst.24" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kyma.com/news/crime/drug-busts/2023/10/26/border-patrol-agents-seizes-fentanyl-worth-1-1m/">Border Patrol agents seizes Fentanyl worth $1.1M</a><br />
+<span class=small id="SourceDomain">kyma.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 11H 19M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.arizonasuntimes.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://arizonasuntimes.com/world/nearly-4-million-illegal-border-crossers-in-fiscal-2023/tcsquare/2023/10/27/">Nearly 4 Million Illegal Border Crossers in Fiscal 2023</a><br />
+<span class=small id="SourceDomain">arizonasuntimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 23H 05M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border-wall" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.sandiegouniontribune.com.rst.1" class="control-border-wall"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.sandiegouniontribune.com/news/border-baja-california/story/2023-10-26/protesters-chained-border-wall-construction-tijuana">Protesters chain themselves to border wall in Tijuana in opposition of new construction</a><br />
+<span class=small id="SourceDomain">sandiegouniontribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 13H 09M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border wall</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.sandiegouniontribune.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.sandiegouniontribune.com/news/border-baja-california/story/2023-10-26/supervisor-jim-desmond-other-community-leaders-call-for-border-shut-down-to-new-immigrats">Supervisor Desmond, Republican candidates call for border shutdown to new immigrants</a><br />
+<span class=small id="SourceDomain">sandiegouniontribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 18H 51M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.timesofsandiego.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://timesofsandiego.com/politics/2023/10/26/san-diego-gop-lawmakers-candidates-call-for-tightening-border-over-hamas-threat/">San Diego GOP Lawmakers, Candidates Call for Tightening Border Over Hamas Threat</a><br />
+<span class=small id="SourceDomain">timesofsandiego.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 22H 05M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.breitbart.com.rst.40" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/10/26/exclusive-house-republicans-issue-evicted-act-to-instantly-deport-palestinian-illegal-aliens-from-u-s/">Exclusive--House Republicans Issue 'Evicted Act' to Instantly Deport Palestinian Illegal Aliens from U.S.</a><br />
 <span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 10H 31M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 14H 14M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.breitbart.com.rst.41" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2023/10/26/gulf-cartel-kidnappers-get-sentenced-to-1650-years-in-prison/">Two Gulf Cartel Kidnappers in Mexican Border State Sentenced to 1,650 Years in Prison</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 10H 13M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.breitbart.com.rst.42" class="control-illegal-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2023/10/26/texas-legislature-passes-2-bills-criminalizing-illegal-migrant-entry-into-state/">Texas Legislature Passes 2 Bills Criminalizing Illegal Migrant Entry into State</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 07H 43M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.breitbart.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/10/26/lawsuit-bidens-dhs-withholding-details-on-terror-suspects-caught-crossing-southern-border/">Lawsuit: Biden's DHS Withholding Details on Terror Suspects Caught Crossing Southern Border</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 17H 25M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.justthenews.com.rst.18" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/government/security/former-fbi-director-says-surge-military-age-men-coming-across-border-security?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Former FBI intel chief says surge of military-age men coming across the border is a security concern</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border-wall" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.justthenews.com.rst.6" class="control-border-wall"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/texas-house-approves-new-funding-border-wall-makes-illegal-entry-state?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Texas House approves new funding for border wall, makes illegal entry a state crime</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border wall</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.justthenews.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/fentanyl-border-issues-answers-wanted-federal-agencies?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">NC senators want fentanyl, border issues answers from federal agencies</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.notthebee.com.rst.11" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://notthebee.com/article/the-number-of-illegal-aliens-who-have-entered-the-united-states-under-biden-is-greater-than-the-population-of-38-states/">Report: The number of illegal aliens who have entered the United States under Biden is greater than the population of THIRTY EIGHT DIFFERENT STATES</a><br />
+<span class=small id="SourceDomain">notthebee.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 10H 28M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.theepochtimes.com.rst.48" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/florida-highway-patrol-captures-20-illegal-immigrants-trying-to-enter-keys-by-boat-5517692">Florida Highway Patrol Captures 20 Illegal Immigrants Trying to Enter Keys by Boat</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 14H 46M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border-wall" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thecentersquare.com.rst.3" class="control-border-wall"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thecentersquare.com/texas/article_a5a10b6a-742f-11ee-9715-c7bb894b7c90.html?a">Texas House approves new funding for border wall, makes illegal entry a state crime</a><br />
+<span class=small id="SourceDomain">thecentersquare.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 12H 44M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border wall</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thecentersquare.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thecentersquare.com/north_carolina/article_21eaf98e-7416-11ee-9211-ef7648d53125.html?a">Fentanyl, border issues answers wanted from federal agencies</a><br />
+<span class=small id="SourceDomain">thecentersquare.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 10H 33M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thecentersquare.com.rst.6" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thecentersquare.com/national/article_d23be832-73fa-11ee-802f-736610e94161.html?a">Nearly 4 million illegal border crossers in fiscal 2023</a><br />
+<span class=small id="SourceDomain">thecentersquare.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 06H 25M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thefederalist.com.rst.0" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://thefederalist.com/2023/10/26/5-examples-of-the-illegal-government-censorship-scotus-just-allowed-to-resume/?utm_source=rss&utm_medium=rss&utm_campaign=5-examples-of-the-illegal-government-censorship-scotus-just-allowed-to-resume">5 Examples Of The Illegal Government Censorship SCOTUS Just Allowed To Resume</a><br />
+<span class=small id="SourceDomain">thefederalist.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 13H 48M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">illegal</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.justthenews.com.rst.15" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/government/security/former-ambassador-blackwell-says-republicans-should-bundle-border-aid-israel?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Former Ambassador Blackwell says Republicans should bundle border aid with Israel and Ukraine aid</a><br />
-<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thefederalist.com.rst.7" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://thefederalist.com/2023/10/26/frederick-is-the-latest-maryland-city-trying-to-let-foreign-nationals-influence-its-elections/?utm_source=rss&utm_medium=rss&utm_campaign=frederick-is-the-latest-maryland-city-trying-to-let-foreign-nationals-influence-its-elections">Frederick Is The Latest Maryland City Trying To Let Foreign Nationals Influence Its Elections</a><br />
+<span class=small id="SourceDomain">thefederalist.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 08H 45M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
+<span class=small id="FoundWord">national</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.justthenews.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/government/security/fribidens-political-math-adding-israel-and-border-funding-get-ukraine-aid?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Biden's political math: Adding Israel and border funding to get Ukraine aid</a><br />
-<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thegatewaypundit.com.rst.3" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/10/residents-brighton-park-neighborhood-chicago-protest-construction-migrant/?utm_source=rss&utm_medium=rss&utm_campaign=residents-brighton-park-neighborhood-chicago-protest-construction-migrant">Residents of Brighton Park Neighborhood of Chicago Protest Construction of Migrant Camp: ‘We Said No!’ (VIDEO)</a><br />
+<span class=small id="SourceDomain">2023-10-26.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 20H 50M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
+<span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-non-citizen" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.justthenews.com.rst.8" class="control-non-citizen"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/illinois-suspend-enrollment-non-citizen-health-care-capacity-nears?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Illinois to suspend enrollment of non-citizen health care as capacity nears</a><br />
-<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 00H 00M MDT</span>&nbsp;&#183;&nbsp;
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thegatewaypundit.com.rst.39" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/10/hooverville-reincarnated-nyc-mayor-eric-adams-considering-giving/?utm_source=rss&utm_medium=rss&utm_campaign=hooverville-reincarnated-nyc-mayor-eric-adams-considering-giving">Hooverville Reincarnated: NYC Mayor Eric Adams Considers Handing Out Free Tents for Illegal Immigrants to Camp in City Parks</a><br />
+<span class=small id="SourceDomain">2023-10-26.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 09H 30M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">non-citizen</span>
+<span class=small id="FoundWord">illegal immigrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.revolver.news.rst.7" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://revolver.news/2023/10/us-government-hired-pro-hamas-plo-spokeswoman-to-handle-asylum-claims/">US government hired pro-Hamas PLO spokeswoman to handle asylum claims�</a><br />
-<span class=small id="SourceDomain">revolver.news</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 09H 48M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.notthebee.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://notthebee.com/article/texas-starts-building-wall-on-new-mexico-border/">Texas starts building wall on the New Mexico border (Yes, you read that correctly)</a><br />
-<span class=small id="SourceDomain">notthebee.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 12H 42M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.theepochtimes.com.rst.11" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/epochtv/live-view-of-tel-aviv-skyline-as-the-cross-border-counter-terrorist-war-continues-5513698">LIVE 9 AM ET: Live View of Tel Aviv Skyline as the Cross Border Counter-Terrorist War Continues</a><br />
-<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 18H 23M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.thegatewaypundit.com.rst.42" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/10/germany-starts-border-controls-its-frontiers-poland-czech/?utm_source=rss&utm_medium=rss&utm_campaign=germany-starts-border-controls-its-frontiers-poland-czech">Germany Starts Border Controls in Its Frontiers With Poland, the Czech Republic and Switzerland – Open Borders Policy Abandoned Due to Mass Migration Crisis</a><br />
-<span class=small id="SourceDomain">2023-10-19.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 08H 15M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.thenationalpulse.com.rst.1" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenationalpulse.com/2023/10/19/u-s-govt-asylum-officer-is-former-palestinian-spox-who-promoted-hamas/?utm_source=rss&utm_medium=rss&utm_campaign=u-s-govt-asylum-officer-is-former-palestinian-spox-who-promoted-hamas">U.S. Govt Asylum Officer is Former Palestinian Spox Who Promoted Hamas.</a><br />
+<input id="mark-illegal-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thenationalpulse.com.rst.5" class="control-illegal-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenationalpulse.com/2023/10/26/illegal-migrants-since-biden-now-the-13th-largest-state-in-america/?utm_source=rss&utm_medium=rss&utm_campaign=illegal-migrants-since-biden-now-the-13th-largest-state-in-america">Illegal Migrants SINCE Biden Now The 13th Largest 'State' in America.</a><br />
 <span class=small id="SourceDomain">thenationalpulse.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 16H 37M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 13H 30M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
+<span class=small id="FoundWord">illegal migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.thepostmillennial.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/biden-to-ask-congress-for-60-billion-for-ukraine-10-billion-for-israel-30-billion-for-taiwan-and-southern-border">Biden to ask Congress for $60 billion for Ukraine, $10 billion for Israel, $30 billion for Taiwan and southern border</a><br />
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.thepostmillennial.com.rst.15" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/nyc-considers-turning-public-parks-into-tent-cities-to-house-illegal-immigrants">NYC considers turning public parks into tent cities to house illegal immigrants</a><br />
 <span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 15H 44M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 08H 41M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.dailywire.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/2023-marks-worst-year-ever-at-the-border-with-3-2-million-nationwide-encounters-congressional-report-finds">2023 Marks Worst Year Ever At The Border With 3.2 Million Nationwide Encounters, Congressional Report Finds</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 11H 30M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.dailywire.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/massachusetts-governor-says-state-can-no-longer-guarantee-shelter-for-migrant-families">Massachusetts Governor Says State Can No Longer Guarantee Shelter For Migrant Families</a><br />
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.dailywire.com.rst.16" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/nyc-offering-migrants-one-way-plane-ticket-to-leave">NYC Offering Migrants One-Way Plane Ticket To Leave</a><br />
 <span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 15H 03M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 11H 18M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.dailywire.com.rst.15" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/el-paso-sends-thousands-of-immigrants-to-sanctuary-cities-in-new-round-of-bussing">El Paso Sends Thousands Of Immigrants To Sanctuary Cities In New Round Of Bussing</a><br />
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.dailywire.com.rst.37" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/over-half-of-new-yorkers-believe-illegal-immigrant-crisis-will-destroy-nyc-poll-finds">Over Half Of New Yorkers Believe Illegal Immigrant Crisis Will 'Destroy' NYC, Poll Finds</a><br />
 <span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 10H 49M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 03H 50M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">immigrant</span>
+<span class=small id="FoundWord">illegal immigrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.dailywire.com.rst.23" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/dhs-puts-pro-hamas-immigrant-screener-on-leave-as-she-reaffirms-that-she-celebrates-terrorism">DHS Puts Pro-Hamas Immigrant Screener On Leave As She Reaffirms That She 'Celebrates' Terrorism</a><br />
-<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 09H 09M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">immigrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.theblaze.com.rst.26" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theblaze.com/news/only-2100-new-york-migrants-applied-for-work-authorization-none-have-been-approved-yet-to-fill-reported-18000-job-openings">Only 2,100 New York migrants applied for work authorization - none have been approved yet to fill reported 18,000 job openings</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.theblaze.com.rst.18" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theblaze.com/news/kennedy-basic-questions-border-crisis">GOP senator exposes government incompetence with 'really basic' questions about border crisis: 'Do any of you know?'</a><br />
 <span class=small id="SourceDomain">theblaze.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 11H 35M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.theblaze.com.rst.5" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theblaze.com/news/chicago-ald-swarm-protest-migrants">Chicago mayor condemns protesters after they swarm alderwoman over migrant tent plan, one aide sent to the hospital</a><br />
-<span class=small id="SourceDomain">theblaze.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 18H 00M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.nypost.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://nypost.com/2023/10/19/bidens-urgent-budget-request-includes-14b-for-border-security/">Biden's 'urgent budget request' includes $14B for border security</a><br />
-<span class=small id="SourceDomain">nypost.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 21H 51M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 14H 00M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.dailysignal.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailysignal.com/2023/10/19/borderline-revoke-visas-students-who-support-terrorists/">The BorderLine: Revoke the Visas of Students Who Support Terrorists</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.dailysignal.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailysignal.com/2023/10/26/record-number-of-chinese-russian-foreign-nationals-encountered-on-border-should-not-shock-anyone-lawmaker-says/">Record Number of Chinese, Russian Foreign Nationals Encountered on Border 'Should Not Shock Anyone,' Arizona Lawmaker Says</a><br />
 <span class=small id="SourceDomain">dailysignal.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 11H 55M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 09H 45M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.dailysignal.com.rst.4" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailysignal.com/2023/10/19/dhs-hired-pro-hamas-former-plo-spokeswoman-handle-asylum-claims-heritage-demands-answers/">DHS Hired a Pro-Hamas Former PLO Spokeswoman to Handle Asylum Claims. Heritage Demands Answers.</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.dailysignal.com.rst.6" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailysignal.com/2023/10/26/borderline-could-unicorns-be-solution-nycs-illegal-immigrant-problem/">The BorderLine: Cities, States Can't Continue to Shoulder Costs of Biden's Deliberate Border Crisis</a><br />
 <span class=small id="SourceDomain">dailysignal.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 15H 47M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.washingtontimes.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtontimes.com/news/2023/oct/19/new-hampshire-canada-border-is-small-but-patrols-a/?utm_source=RSS_Feed&utm_medium=RSS">The New Hampshire-Canada border is small, but patrols are about to increase in a big way</a><br />
-<span class=small id="SourceDomain">washingtontimes.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 12H 49M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 15H 27M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.washingtonexaminer.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/new-mexico-democrats-furious-texas-abbott-border-barrier">New Mexico Democrats furious after Abbott wires off Texas border</a><br />
-<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 15H 58M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.abc7ny.com.rst.18" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7ny.com/migrant-crisis-new-york-flophouse-flop-house/13941143/">Approximately 25 people found to be living in single-family home amid migrant crisis in New York</a><br />
-<span class=small id="SourceDomain">abc7ny.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 16H 29M MDT</span>&nbsp;&#183;&nbsp;
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.gothamist.com.rst.19" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://gothamist.com/news/nyc-pushes-to-get-migrants-work-permits-but-shelter-evictions-could-complicate-the-process">NYC pushes to get migrants work permits, but shelter evictions could complicate the process</a><br />
+<span class=small id="SourceDomain">gothamist.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 11H 41M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.abc27.com.rst.39" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.abc27.com/sports/local-sports/lancasters-unity-cup-bringing-immigrants-together-through-soccer/">Lancaster's Unity Cup bringing immigrants together through soccer</a><br />
-<span class=small id="SourceDomain">abc27.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 07H 17M MDT</span>&nbsp;&#183;&nbsp;
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.ny1.com.rst.2" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="http://www.ny1.com/nyc/all-boroughs/politics/2023/10/26/homeless--immigrant-advocates-denounce-city-s-idea-to-give-migrant-tents">Advocates denounce city's idea to give migrants tents to sleep in</a><br />
+<span class=small id="SourceDomain">ny1.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 19H 00M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">immigrant</span>
+<span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.abc7chicago.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7chicago.com/migrants-chicago-texas-how-to-help-in-migrant-crisis/13941689/">Chicago delegation hopes knowledge gained at Texas border will help migrant planning</a><br />
-<span class=small id="SourceDomain">abc7chicago.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 22H 05M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.wmtw.com.rst.3" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wmtw.com/article/maine-refugee-asylum-seeker-population-growing-rapidly/45583459">Maine's refugee, asylum-seeker population is growing rapidly, expected to double</a><br />
-<span class=small id="SourceDomain">wmtw.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 20H 55M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.latimes.com.rst.21" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.latimes.com/world-nation/story/2023-10-19/immigrant-workers-report-high-leves-of-discrimination-on-the-job">Low wages, lousy shifts, little room for advancement: Immigrant workers describe on-the-job discrimination</a><br />
-<span class=small id="SourceDomain">latimes.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 04H 00M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">immigrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.ndtv.com.rst.15" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ndtv.com/world-news/brussels-attacker-was-rejected-for-asylum-by-4-european-countries-4498219">Brussels Attacker Was Rejected For Asylum By 4 European Countries</a><br />
-<span class=small id="SourceDomain">ndtv.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 12H 34M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.infowars.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/texas-building-barrier-on-new-mexico-border">Texas Building Barrier on New Mexico Border</a><br />
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-26.infowars.com.rst.11" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/african-illegal-rapes-three-victims-in-france-including-pregnant-woman-underage-girl">African Illegal Rapes Three Victims in France, Including Pregnant Woman, Underage Girl</a><br />
 <span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 09H 28M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-10-26 08H 02M MDT</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-10-19.newsmax.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/border-patrol-immigrants-september/2023/10/19/id/1138940">Border Encounters in September Hit 218K, Most Since 2000</a><br />
-<span class=small id="SourceDomain">newsmax.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-10-19 12H 02M MDT</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
+<span class=small id="FoundWord">illegal</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
@@ -434,7 +424,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 
 <script>
 
-let TAGDATE = "2023-10-19";
+let TAGDATE = "2023-10-26";
 
 </script>
 
