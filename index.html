@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>04-Thu</title>
+<html><head><title>05-Fri</title>
 <link rel='icon' type='image/png' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5wEcDAAQ9JepDQAAAsBJREFUOMu1k11IU3EYxp9zjttxnp2Zzdyc5VzL2oiyWLpmTee2rDm1LIqQ6IuIoF0EdWFJkBdBRFREJIV9QkJEBVlSF1kRhZZNt6nZh0SR21K3nW1tUo3+XRmh3QT1Xv7e9/1dPQ/wv6dhn4tx2K1zAWDD2tVT9tRksL6uFtdv3YatfPmiooVFWzoePlo4I1tujUSFwVQqZVmg14VpkUh6+eq1yByNGmmTBcPDQarUuOQFx3EGVZ4KOTnZePzkGXJmyHUjY+FAJCL8MC01MvO0mqbXQ+8P0ROPdrMJAJBKfY1J0tMNDocDPW43fL4+HGxswAq7DUqFgspVKhi9Xo/MTNleAGAmBM5qpzQeCYfXrKuTZknTcONWGzy+fuj0WjAiFslEEh6PF6tWVqK8vABu9xtxJs9/YADAXGq0jo6MvKqvrxeLWRbNZy8hKgiQyWTEsERHlRiKQNMsWLEIcvl05Crk6OrqQygUVqbt3eOqevf2011LxXLYKq3Y43IhLESRzrIx7vs3WcuFm1l+//hMEUN8/kAAWdOkGAsVIiIIEIvF59Pevn7T9CmWgQtP+9DZ048X3b3gef5MRBB2f0kmIRHRlEKRhbgQi0szMnh7pQMdHQ8xFvAjOy+/mwZFPx8e6gYrIfg4/gO8jMc8rfrAfJ0OAFBWVkYuXm5NhkZDiYbG/eB5Hl6vB3KlKuXtG+ilb7ff260vVA8VJATEBnqwfdvmxs6Xnmj/4CAA4P6DR9i0ccPFYrNFGRwVEI/HEQx+BsdxRwEArVfO/8oAIYQBgFMnj//O5CajiSyuriOapWXEXFFLZBxHlhmLS/8Y3fY7bVOY1WIOqfLyyWxDMSmx1RGbpYK4du6QEEJATz6uqq6ZIqhxOrW6OeqoimUgSvihKZi16/S5lnGKov6uWM2nTqiPHTmcDwA7t2/9N239CWyLATcN6+tgAAAAAElFTkSuQmCC'>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style> a:link {color:black} a:hover {color:grey}
@@ -60,12 +60,14 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 #mark-border:checked + li.control-border { background:#a9a9a9; }
 #mark-border-wall:checked + li.control-border-wall { background:#a9a9a9; }
 #mark-cartel:checked + li.control-cartel { background:#a9a9a9; }
+#mark-evacuee:checked + li.control-evacuee { background:#a9a9a9; }
 #mark-extradite:checked + li.control-extradite { background:#a9a9a9; }
 #mark-gang:checked + li.control-gang { background:#a9a9a9; }
 #mark-human-smuggler:checked + li.control-human-smuggler { background:#a9a9a9; }
 #mark-human-smuggling:checked + li.control-human-smuggling { background:#a9a9a9; }
 #mark-illegal:checked + li.control-illegal { background:#a9a9a9; }
 #mark-illegal-alien:checked + li.control-illegal-alien { background:#a9a9a9; }
+#mark-illegal-immigrant:checked + li.control-illegal-immigrant { background:#a9a9a9; }
 #mark-illegal-migrant:checked + li.control-illegal-migrant { background:#a9a9a9; }
 #mark-immigrant:checked + li.control-immigrant { background:#a9a9a9; }
 #mark-migrant:checked + li.control-migrant { background:#a9a9a9; }
@@ -78,12 +80,14 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 #border:checked + label {border:solid 2px red;}
 #border-wall:checked + label {border:solid 2px red;}
 #cartel:checked + label {border:solid 2px red;}
+#evacuee:checked + label {border:solid 2px red;}
 #extradite:checked + label {border:solid 2px red;}
 #gang:checked + label {border:solid 2px red;}
 #human-smuggler:checked + label {border:solid 2px red;}
 #human-smuggling:checked + label {border:solid 2px red;}
 #illegal:checked + label {border:solid 2px red;}
 #illegal-alien:checked + label {border:solid 2px red;}
+#illegal-immigrant:checked + label {border:solid 2px red;}
 #illegal-migrant:checked + label {border:solid 2px red;}
 #immigrant:checked + label {border:solid 2px red;}
 #migrant:checked + label {border:solid 2px red;}
@@ -97,11 +101,11 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 </head><body>
 <img id=trademk align=left src="data:image/png;base64,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">
 <span id=banner-date>Border News for<br />
-23 Nov 2023
+24 Nov 2023
 </span>
 <span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
 <span id=banner-stats style=clear:both;>
-<b>SEARCH ENGINE</b> <span id=number_good>36</span> positive hits from <a href=list-fetch.html>127 sources</a>
+<b>SEARCH ENGINE</b> <span id=number_good>44</span> positive hits from <a href=list-fetch.html>127 sources</a>
 </span>
 
 <span id=banner-nav >
@@ -121,291 +125,355 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <div style=clear:both;> </div>
 
 
-<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.kvia.com.rst.24" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/2023/11/23/brazilian-police-bust-international-drug-mule-ring-in-sao-paulo/">Brazilian police bust international drug mule ring in Sao Paulo</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.kvia.com.rst.39" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/2023/11/24/victims-in-niagara-falls-border-bridge-crash-identified-as-western-new-york-couple/">Victims in Niagara Falls border bridge crash identified as Western New York couple</a><br />
 <span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 14H 10M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">national</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.kxan.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.kxan.com/news/national-news/fbi-closes-federal-investigation-into-car-explosion-at-u-s-canada-border-crossing/">FBI closes federal investigation into car explosion at U.S.-Canada border crossing</a><br />
-<span class=small id="SourceDomain">kxan.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 11H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 29M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.nbcsandiego.com.rst.4" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcsandiego.com/news/local/asylum-seekers-without-sponsors-end-up-living-on-san-diegos-streets/3362964/">Asylum seekers without sponsors end up living on San Diego's streets</a><br />
-<span class=small id="SourceDomain">nbcsandiego.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 17H 56M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.kvia.com.rst.40" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/ap-national/2023/11/24/mexicos-arrest-of-cartel-security-boss-who-attacked-army-families-complex-was-likely-personal/">Mexico's arrest of cartel security boss who attacked army families' complex was likely personal</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 27M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
+<span class=small id="FoundWord">cartel</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.sandiegouniontribune.com.rst.0" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.sandiegouniontribune.com/news/immigration/story/2023-11-23/migrants-san-diego-airport">With nowhere else to go, more than 100 migrants sleep each night at the San Diego airport before flights</a><br />
-<span class=small id="SourceDomain">sandiegouniontribune.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 06H 00M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.local10.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.local10.com/news/national/2023/11/24/victims-in-niagara-falls-border-bridge-crash-identified-as-western-new-york-couple/">Victims in Niagara Falls border bridge crash identified as Western New York couple</a><br />
+<span class=small id="SourceDomain">local10.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 29M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.timesofsandiego.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://timesofsandiego.com/crime/2023/11/24/border-patrol-agents-seize-282000-worth-of-meth-during-traffic-stop-on-interstate-8/">Border Patrol Agents Seize $282,000 Worth of Meth During Traffic Stop on Interstate 8</a><br />
+<span class=small id="SourceDomain">timesofsandiego.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 12H 59M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.justthenews.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/government/federal-agencies/after-defending-budget-cuts-mayorkas-seeks-emergency-funding-border?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">After defending budget cuts, Mayorkas seeks emergency funding for border control</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 00H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.justthenews.com.rst.7" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/crime/justice-department-demands-swift-extradition-assassin-sinaloa-cartel-arrested-mexico?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Justice Department demands 'swift extradition' of assassin for Sinaloa Cartel arrested in Mexico</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 00H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">cartel</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.anthonyblogan.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://anthonyblogan.com/ireland-riots-spiral-out-of-control-after-alleged-migrant-stabs-children/">Ireland Riots Spiral Out Of Control After Alleged Migrant Stabs Children</a><br />
+<span class=small id="SourceDomain">anthonyblogan.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 14H 59M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.ktla.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://ktla.com/news/nationworld/fbi-closes-federal-investigation-into-car-explosion-at-u-s-canada-border-crossing/">FBI closes federal investigation into car explosion at U.S.-Canada border crossing</a><br />
-<span class=small id="SourceDomain">ktla.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 10H 59M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.notthebee.com.rst.10" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://notthebee.com/article/ireland-riots-open-borders/">After a migrant reportedly stabbed Irish kids, Dublin rioted against open borders last night. Here's what you need to know about the riots and the Brazilian hero who stopped the attacker.</a><br />
+<span class=small id="SourceDomain">notthebee.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 07H 03M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.breitbart.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/immigration/2023/11/23/bidens-2024-border-pitch-trump-will-make-migration-worse/">Biden's 2024 Border Pitch: Trump Will Make Migration Worse</a><br />
-<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 15H 09M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.notthebee.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://notthebee.com/article/eric-adams-was-very-vocal-about-the-border-crisis-now-hes-been-slapped-with-campaign-finance-investigations-and-rape-allegations-within-a-matter-of-weeks-/">Eric Adams was very vocal about the border crisis. Now he's been slapped with a campaign finance investigation and rape allegation within a matter of weeks. </a><br />
+<span class=small id="SourceDomain">notthebee.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 08H 39M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.breitbart.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/11/23/open-borders-lobby-americans-should-open-homes-illegal-aliens-thanksgiving/">Open Borders Lobby: Americans Should 'Open Up Their Homes' to Illegal Aliens This Thanksgiving</a><br />
-<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 10H 58M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.theepochtimes.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/victims-in-niagara-falls-border-bridge-crash-identified-as-western-new-york-couple-5535399">Victims in Niagara Falls Border Bridge Crash Identified as Western New York Couple</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 21H 41M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.breitbart.com.rst.5" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/europe/2023/11/23/riots-erupt-dublin-immigrant-accused-mass-stabbing-attack-children/">Watch: Riots Erupt Across Dublin After Immigrant Is Accused of Mass Stabbing Attack of Children</a><br />
-<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 21H 30M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.theepochtimes.com.rst.43" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/us-seeking-swift-extradition-of-los-chapitos-cartels-security-boss-arrested-in-mexico-5535124">US Seeking 'Swift Extradition' of Los Chapitos Cartel's Security Boss Arrested in Mexico</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 03H 55M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">cartel</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.thegatewaypundit.com.rst.1" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/winter-is-coming-blue-cities-starting-panic-about/?utm_source=rss&utm_medium=rss&utm_campaign=winter-is-coming-blue-cities-starting-panic-about">WINTER IS COMING: Blue Cities Starting to Panic About Housing Illegal Immigrants as the Weather Turns Cold</a><br />
+<span class=small id="SourceDomain">2023-11-24.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 20H 50M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.thegatewaypundit.com.rst.20" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/tactical-marine-unit-eagle-pass-shows-chaos-as/?utm_source=rss&utm_medium=rss&utm_campaign=tactical-marine-unit-eagle-pass-shows-chaos-as">Tactical Marine Unit in Eagle Pass Shows Chaos as Border Agents Pull Illegal Alien Women and Children on Verge of Drowning Out of River (VIDEO)</a><br />
+<span class=small id="SourceDomain">2023-11-24.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 13H 40M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.thegatewaypundit.com.rst.5" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/illegal-aliens-black-new-yorkers-dependent-government-handouts/?utm_source=rss&utm_medium=rss&utm_campaign=illegal-aliens-black-new-yorkers-dependent-government-handouts">Illegal Aliens and Black New Yorkers Dependent on Government Handouts Spar Over Thanksgiving Dinner</a><br />
+<span class=small id="SourceDomain">2023-11-24.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 19H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.thenationalpulse.com.rst.5" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenationalpulse.com/2023/11/24/ireland-we-are-at-war-conor-mcgregor-calls-on-irish-to-destroy-hotels-before-migrants-can-be-moved-in/?utm_source=rss&utm_medium=rss&utm_campaign=ireland-we-are-at-war-conor-mcgregor-calls-on-irish-to-destroy-hotels-before-migrants-can-be-moved-in">'Ireland, We Are at War' - Conor McGregor Calls on Irish to Destroy Hotels Before Migrants Can Be Moved In.</a><br />
+<span class=small id="SourceDomain">thenationalpulse.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 12H 03M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.thenationalpulse.com.rst.7" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenationalpulse.com/2023/11/24/watch-ireland-riots-after-migrant-stabs-children-near-school/?utm_source=rss&utm_medium=rss&utm_campaign=watch-ireland-riots-after-migrant-stabs-children-near-school">WATCH: Ireland Riots After Migrant Stabs Children Near School.</a><br />
+<span class=small id="SourceDomain">thenationalpulse.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 07H 40M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.thepostmillennial.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/ny-man-and-woman-identified-as-couple-in-car-that-crashed-into-border-office-causing-rainbow-bridge-explosion">NY man and woman identified as couple in car that crashed into border office, causing Rainbow Bridge explosion</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 13H 56M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.thepostmillennial.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/us-northern-border-sector-sees-550-increase-in-illegal-crossings-in-2023">US northern border sector sees 550% increase in illegal crossings in 2023</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 18M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.dailywire.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/bidens-dhs-orders-border-agents-to-use-preferred-pronouns-for-illegal-immigrants">Biden's DHS Orders Border Agents To Use Preferred Pronouns For Illegal Immigrants</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 00H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.theblaze.com.rst.13" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theblaze.com/news/conor-mcgregor-ireland-immigration-change">'There will be no backing down': UFC star Conor McGregor vows to change Ireland after stabbings by Algerian migrant suspect</a><br />
+<span class=small id="SourceDomain">theblaze.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 08H 30M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.humanevents.com.rst.5" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="http://humanevents.com/2023/11/24/mma-legend-conor-mcgregor-speaks-out-after-children-stabbed-in-horrific-attack-by-suspected-algerian-national">MMA legend Conor McGregor speaks out after children stabbed in horrific attack by suspected Algerian national</a><br />
+<span class=small id="SourceDomain">humanevents.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 39M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.humanevents.com.rst.6" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="http://humanevents.com/2023/11/24/police-blame-far-right-for-dublin-riots-after-children-allegedly-stabbed-by-algerian-national">Police blame 'far-right' for Dublin riots after children allegedly stabbed by Algerian national</a><br />
+<span class=small id="SourceDomain">humanevents.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 02M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.humanevents.com.rst.7" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="http://humanevents.com/2023/11/24/irish-police-arrest-34-after-protests-in-dublin-over-stabbing-of-women-children-by-suspected-algerian-national">Irish police arrest 34 after protests in Dublin over stabbing of women, children by suspected Algerian national</a><br />
+<span class=small id="SourceDomain">humanevents.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 08H 51M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">national</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.washingtontimes.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtontimes.com/news/2023/nov/24/victims-niagara-falls-border-bridge-crash-identifi/?utm_source=RSS_Feed&utm_medium=RSS">Victims in Niagara Falls border bridge crash identified as Western New York couple</a><br />
+<span class=small id="SourceDomain">washingtontimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 11H 18M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.washingtontimes.com.rst.15" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtontimes.com/news/2023/nov/24/massachusetts-is-creating-overnight-shelter-spots-/?utm_source=RSS_Feed&utm_medium=RSS">Massachusetts is creating overnight shelter spots to help newly arriving migrant families</a><br />
+<span class=small id="SourceDomain">washingtontimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 11H 04M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.abc7ny.com.rst.18" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7ny.com/niagara-falls-bridge-explosion-victims-identities-rainbow/14100074/">Victims in Niagara Falls border bridge crash identified as Western New York couple</a><br />
+<span class=small id="SourceDomain">abc7ny.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 11H 23M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.ny1.com.rst.4" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="http://www.ny1.com/nyc/all-boroughs/news/2023/11/24/nyc-health---hospitals-hosts-migrant-families-for-thanksgiving-">New York City Health + Hospitals hosts migrant families for Thanksgiving</a><br />
+<span class=small id="SourceDomain">ny1.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 10H 56M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.nbcnewyork.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcnewyork.com/news/local/victims-in-niagara-falls-us-canada-border-bridge-crash-identified-as-western-new-york-couple/4891567/">Victims in Niagara Falls US-Canada border bridge crash identified as Western NY couple</a><br />
+<span class=small id="SourceDomain">nbcnewyork.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 13H 10M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.newsday.com.rst.175" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/Niagara-Falls-bridge-explosion-x09827">Victims in Niagara Falls border bridge crash identified as Western New York couple</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 30M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.newsday.com.rst.176" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/mexico-nini-sinaloa-cartel-arrest-u50297">Mexico's arrest of cartel security boss who attacked army families' complex was likely personal</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 27M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">cartel</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.newsday.com.rst.219" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/Ireland-rioting-Dublin-stabbing-farright-y97463">Ireland's prime minister condemns anti-immigrant protesters who rampaged through central Dublin</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 02H 25M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">immigrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.breitbart.com.rst.9" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2023/11/23/mexico-arrests-chapitos-top-enforcer-in-surprise-raid/">Mexico Arrests Chapito Cartel's Top Enforcer in Surprise Raid</a><br />
-<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 10H 53M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">cartel</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.justthenews.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/government/security/fripolicing-pronouns-border-agents-union-lambasts-latest-biden-political?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Policing Pronouns: Border agents' union lambasts latest Biden political correctness order</a><br />
-<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 00H 00M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thegatewaypundit.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/laughable-biden-democrats-preparing-2024-message-that-trump/?utm_source=rss&utm_medium=rss&utm_campaign=laughable-biden-democrats-preparing-2024-message-that-trump">LAUGHABLE: Biden and Democrats Preparing 2024 Message That Trump Will Make the Border Crisis Worse</a><br />
-<span class=small id="SourceDomain">2023-11-23.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 20H 30M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thegatewaypundit.com.rst.10" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/ireland-we-are-war-mma-champion-connor-mcgregor/?utm_source=rss&utm_medium=rss&utm_campaign=ireland-we-are-war-mma-champion-connor-mcgregor">“Ireland, We Are at War!” – MMA Champion Connor McGregor Lashes Out at Authorities After Mass Stabbing by Algerian Migrant in Dublin</a><br />
-<span class=small id="SourceDomain">2023-11-23.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 16H 00M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-illegal-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thegatewaypundit.com.rst.14" class="control-illegal-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/update-2-irish-rioters-set-holiday-inn-express/?utm_source=rss&utm_medium=rss&utm_campaign=update-2-irish-rioters-set-holiday-inn-express">UPDATE 2: Irish Rioters Set Holiday Inn Express on Fire in Dublin Where Hundreds of Illegal Migrants Are Reportedly Being Held – After Alleged Algerian Migrant Stabs Numerous Children near School</a><br />
-<span class=small id="SourceDomain">2023-11-23.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 14H 50M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">illegal migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thegatewaypundit.com.rst.17" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/update-riots-break-dublin-after-alleged-migrant-stabs/?utm_source=rss&utm_medium=rss&utm_campaign=update-riots-break-dublin-after-alleged-migrant-stabs">UPDATE: RIOTS Break Out in Dublin After Alleged Migrant Stabs Multiple Children Near School</a><br />
-<span class=small id="SourceDomain">2023-11-23.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 14H 00M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-gang" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thegatewaypundit.com.rst.20" class="control-gang"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/knife-wielding-gang-murders-french-teen-we-came/?utm_source=rss&utm_medium=rss&utm_campaign=knife-wielding-gang-murders-french-teen-we-came">Knife Wielding Gang Murders French Teen-‘We Came to Kill White People!’  Shouted Ethnic Slurs in Arabic During Attack</a><br />
-<span class=small id="SourceDomain">2023-11-23.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 13H 00M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">gang</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thegatewaypundit.com.rst.36" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/hungarys-orban-proposes-legislation-protecting-national-sovereignty-will/?utm_source=rss&utm_medium=rss&utm_campaign=hungarys-orban-proposes-legislation-protecting-national-sovereignty-will">Hungary’s Orbán Proposes Legislation Protecting National Sovereignty, Will Send Survey to Voters Inquiring on EU’s Policies on Migration, Ukraine Aid</a><br />
-<span class=small id="SourceDomain">2023-11-23.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 07H 45M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">national</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thegatewaypundit.com.rst.38" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/11/shocking-revelation-no-air-marshals-flights-currently-focus/?utm_source=rss&utm_medium=rss&utm_campaign=shocking-revelation-no-air-marshals-flights-currently-focus">Shocking Revelation: No Air Marshals on Flights Currently — Focus Shifts to “Passing Waters” at the Border for Illegal Immigrants and Tracking Innocent Individuals from January 6 Events (VIDEO)</a><br />
-<span class=small id="SourceDomain">2023-11-23.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 07H 15M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thepostmillennial.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/watch-poilievre-schools-reporter-who-lied-about-his-comments-on-ny-border-explosion">WATCH: Poilievre SCHOOLS reporter who lied about his comments on NY border explosion</a><br />
-<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 12H 35M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thepostmillennial.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/ball-of-fire-witnesses-describe-moment-bentley-going-over-100-mph-crashed-at-us-canada-border-in-new-york">'Ball of fire': Witnesses describe moment Bentley going over 100 mph crashed at US/Canada border in New York</a><br />
-<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 09H 19M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.americanmilitarynews.com.rst.11" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://americanmilitarynews.com/2023/11/explosion-at-us-canada-border-report/">Explosion at US-Canada border: Report</a><br />
-<span class=small id="SourceDomain">americanmilitarynews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 06H 29M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.americanmilitarynews.com.rst.9" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://americanmilitarynews.com/2023/11/washington-denied-hong-kong-activist-joshua-wongs-asylum-bid/">Washington 'denied' Hong Kong activist Joshua Wong's asylum bid</a><br />
-<span class=small id="SourceDomain">americanmilitarynews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 07H 59M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.humanevents.com.rst.1" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="http://humanevents.com/2023/11/23/breaking-protests-erupt-in-ireland-as-suspect-in-stabbing-of-5-in-dublin-reported-to-be-algerian-national">BREAKING: Protests erupt in Ireland as suspect in Dublin stabbing of 5 reported to be Algerian national</a><br />
-<span class=small id="SourceDomain">humanevents.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 12H 07M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">national</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thehill.com.rst.3" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://thehill.com/homenews/administration/4325243-ag-garland-grateful-for-cartel-leader-capture/">Garland 'grateful' for Mexican counterparts that captured suspected cartel security chief</a><br />
-<span class=small id="SourceDomain">thehill.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 19H 29M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">cartel</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.thehill.com.rst.9" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://thehill.com/latino/4324984-biden-thanks-mexican-president-after-arrest-of-suspected-cartel-security-chief/">Biden thanks Mexican president after arrest of suspected cartel security chief</a><br />
-<span class=small id="SourceDomain">thehill.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 13H 23M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">cartel</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.oann.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.oann.com/newsroom/fbi-no-sign-of-terrorism-in-deadly-crash-at-u-s-canada-border/">FBI: No Sign Of Terrorism In Deadly Crash At U.S.-Canada Border</a><br />
-<span class=small id="SourceDomain">oann.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 14H 48M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.rt.com.rst.33" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.rt.com/news/587860-norway-close-border-russia/?utm_source=rss&utm_medium=rss&utm_campaign=RSS">Another Russian neighbor threatens border closure</a><br />
-<span class=small id="SourceDomain">2023-11-23.rt.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 06H 01M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.rt.com.rst.38" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.rt.com/news/587855-bentley-us-canada-border/?utm_source=rss&utm_medium=rss&utm_campaign=RSS">US border checkpoint destroyed by Bentley supercar – Daily Mail</a><br />
-<span class=small id="SourceDomain">2023-11-23.rt.com.rss</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 04H 46M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.riviera-maya-news.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://riviera-maya-news.com/americans-detained-at-border-for-entering-mexico-with-shotgun-shells/2023.html">Americans detained at border for entering Mexico with shotgun shells</a><br />
-<span class=small id="SourceDomain">riviera-maya-news.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 04H 55M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.abc7ny.com.rst.11" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7ny.com/asylum-seekers-thanksgiving-watson-hotel-meal/14096418/">Many asylum seekers celebrate first Thanksgiving in NYC</a><br />
-<span class=small id="SourceDomain">abc7ny.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 14H 43M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">asylum</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.wnypapers.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wnypapers.com/news/article/current/2023/11/23/157934/us-canada-border-crossing-update">US-Canada border-crossing update</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.wnypapers.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wnypapers.com/news/article/current/2023/11/23/157934/us-canada-border-crossing-update">US-Canada border-crossing update</a><br />
 <span class=small id="SourceDomain">wnypapers.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 07H 01M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 08H 26M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.wnypapers.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wnypapers.com/news/article/current/2023/11/22/157914/hochul-updates-new-yorkers-on-bridge-closures-on-us-canadian-border">Hochul updates New Yorkers on bridge closures on US-Canadian border</a><br />
-<span class=small id="SourceDomain">wnypapers.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 06H 39M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.abc27.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.abc27.com/news/top-stories/police-identify-victims-of-fatal-rainbow-bridge-crash-at-us-canada-border/">Police identify victims of fatal Rainbow Bridge crash at US-Canada border</a><br />
+<span class=small id="SourceDomain">abc27.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 07H 56M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.bostonherald.com.rst.22" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.bostonherald.com/2023/11/23/fbi-no-evidence-of-terrorism-in-border-crash/">FBI: No evidence of terrorism in border crash</a><br />
-<span class=small id="SourceDomain">bostonherald.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 15H 45M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.wfla.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wfla.com/news/national/victims-in-niagara-falls-border-bridge-crash-identified-as-western-new-york-couple/">Victims in Niagara Falls border bridge crash identified as Western New York couple</a><br />
+<span class=small id="SourceDomain">wfla.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 17H 52M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.yahoo.com.rst.10" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://news.yahoo.com/fbi-investigating-vehicle-explosion-killed-200335681.html">Sources: Deadly crash at US-Canadian border bridge involved husband and wife in a Bentley, investigators believe</a><br />
-<span class=small id="SourceDomain">yahoo.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 16H 44M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.wfla.com.rst.39" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wfla.com/news/national/police-identify-victims-of-fatal-rainbow-bridge-crash-at-us-canada-border/">Police identify victims of fatal Rainbow Bridge crash at US-Canada border</a><br />
+<span class=small id="SourceDomain">wfla.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 07H 55M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.latimes.com.rst.8" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.latimes.com/local/la-me-bentley3-2009jul03-story.html">Bentley driver's slaying in L.A. might have cartel link</a><br />
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.npr.org.rst.1" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.npr.org/2023/11/24/1215168210/irelands-prime-minister-condemns-anti-immigrant-rioters-in-dublin">Ireland's prime minister condemns anti-immigrant rioters in Dublin</a><br />
+<span class=small id="SourceDomain">npr.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 19H 25M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.latimes.com.rst.0" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.latimes.com/california/story/2023-11-24/el-mago-eddie-escobedo-killing">'El Mago,' trafficker linked to son of Sinaloa cartel kingpin, gunned down in L.A.</a><br />
 <span class=small id="SourceDomain">latimes.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2009-07-03 01H 00M MDT</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 19H 33M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">cartel</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.cbc.ca.rst.19" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.cbc.ca/news/canada/saskatchewan/super-pig-saskatchewan-problem-1.7037360?cmp=rss">'Super pig' Prairie problem now approaching the U.S. border</a><br />
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.latimes.com.rst.84" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.latimes.com/world-nation/story/2023-11-24/dublin-riot-34-arrested-stabbings-school">Ireland's leader condemns anti-immigrant protesters who rampaged through Dublin</a><br />
+<span class=small id="SourceDomain">latimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 03H 55M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.cbc.ca.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.cbc.ca/news/canada/hamilton/niagara-villani-kurt-monica-rainbow-bridge-1.7038869?cmp=rss">Police name New York couple killed in fiery Rainbow Bridge car crash that shut borders with Canada</a><br />
 <span class=small id="SourceDomain">cbc.ca</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 09H 25M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 09H 10M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-23.newsmax.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/us-canada-border/2023/11/23/id/1143463">Illegal Entries at US-Canada Border Surge 550 Percent</a><br />
+<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.cbc.ca.rst.16" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.cbc.ca/news/world/finland-russia-border-crossings-asylum-seekers-1.7039190?cmp=rss">Finland keeps just 1 border crossing open with Russia amid surge of asylum seekers</a><br />
+<span class=small id="SourceDomain">cbc.ca</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 11H 46M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">asylum</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.infowars.com.rst.10" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/irish-people-are-being-attacked-anti-immigrant-riots-erupt-after-dublin-stabbing-spree">'Irish People Are Being Attacked' - Anti-Immigrant Riots Erupt After Dublin Stabbing Spree</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 01H 11M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.infowars.com.rst.4" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/msm-labels-protesters-who-dont-want-5-year-olds-stabbed-by-migrants-far-right">MSM Labels Protesters Who Don't Want 5-Year-Olds Stabbed By Migrants 'Far-Right'</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 05H 40M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.newsmax.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/china-border-immigration/2023/11/24/id/1143577">NY Times: Surge of Chinese Migrants Crossing US Border</a><br />
 <span class=small id="SourceDomain">newsmax.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2023-11-23 16H 47M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 17H 53M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-11-24.newsmax.com.rst.6" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/immigration-shelter-cities/2023/11/24/id/1143547">Migrant Shelters in Northern Cities Full as Winter Nears</a><br />
+<span class=small id="SourceDomain">newsmax.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-11-24 12H 01M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
@@ -442,7 +510,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 
 <script>
 
-let TAGDATE = "2023-11-23";
+let TAGDATE = "2023-11-24";
 
 </script>
 
