@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html><head><title>Overload unload for 13 Dec 2023</title>
+<link rel='icon' type='image/png' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5wEcDAAQ9JepDQAAAsBJREFUOMu1k11IU3EYxp9zjttxnp2Zzdyc5VzL2oiyWLpmTee2rDm1LIqQ6IuIoF0EdWFJkBdBRFREJIV9QkJEBVlSF1kRhZZNt6nZh0SR21K3nW1tUo3+XRmh3QT1Xv7e9/1dPQ/wv6dhn4tx2K1zAWDD2tVT9tRksL6uFtdv3YatfPmiooVFWzoePlo4I1tujUSFwVQqZVmg14VpkUh6+eq1yByNGmmTBcPDQarUuOQFx3EGVZ4KOTnZePzkGXJmyHUjY+FAJCL8MC01MvO0mqbXQ+8P0ROPdrMJAJBKfY1J0tMNDocDPW43fL4+HGxswAq7DUqFgspVKhi9Xo/MTNleAGAmBM5qpzQeCYfXrKuTZknTcONWGzy+fuj0WjAiFslEEh6PF6tWVqK8vABu9xtxJs9/YADAXGq0jo6MvKqvrxeLWRbNZy8hKgiQyWTEsERHlRiKQNMsWLEIcvl05Crk6OrqQygUVqbt3eOqevf2011LxXLYKq3Y43IhLESRzrIx7vs3WcuFm1l+//hMEUN8/kAAWdOkGAsVIiIIEIvF59Pevn7T9CmWgQtP+9DZ048X3b3gef5MRBB2f0kmIRHRlEKRhbgQi0szMnh7pQMdHQ8xFvAjOy+/mwZFPx8e6gYrIfg4/gO8jMc8rfrAfJ0OAFBWVkYuXm5NhkZDiYbG/eB5Hl6vB3KlKuXtG+ilb7ff260vVA8VJATEBnqwfdvmxs6Xnmj/4CAA4P6DR9i0ccPFYrNFGRwVEI/HEQx+BsdxRwEArVfO/8oAIYQBgFMnj//O5CajiSyuriOapWXEXFFLZBxHlhmLS/8Y3fY7bVOY1WIOqfLyyWxDMSmx1RGbpYK4du6QEEJATz6uqq6ZIqhxOrW6OeqoimUgSvihKZi16/S5lnGKov6uWM2nTqiPHTmcDwA7t2/9N239CWyLATcN6+tgAAAAAElFTkSuQmCC'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style> a:link {color:black} a:hover {color:grey}
+
+li {padding: 0}
+li.link-page {padding:0.4em}
+a.link-page {font-size:1.0em;text-decoration:none;}
+li.front-page {list-style-type:none;}
+
+label {
+  padding:0.2em;
+  background:#A5D6A7;
+  border:solid 2px black;
+  display:inline-block;
+  min-height:1.2em;
+  min-width:100px;
+  border-radius:5px;
+  text-align:center;
+  text-decoration:none;margin:0 0.1em;
+}
+.labelclass {margin:10px;color:green;}
+.navclass { margin:10px; color:white; background:#F08080; padding:0.4em 2em; font-weight: bold; }
+.visually-hidden { /* visibility: hidden; */ display: none; /* */ }
+
+/* Keyword buttons */
+.keywords-wrapper {padding:0.4em;border:solid 1px black;width:50%;text-align:center;margin:auto;}
+.Keyword-button {padding:0.2em;border:solid 2px black;display:inline-block;min-height:1.2em;
+min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
+
+/* each below is used in the 'li.ArticleDiv' */
+.link-text {font-size:1.2em;text-decoration:none;} .small {font-size:0.8em}
+.ArticleDiv {padding: 5px 2px; border: 1px #D3D3D3 solid;
+  animation-name:startup;
+  animation-duration:2.5s;
+}
+.FoundWord {color:black;}
+.toc-location-tag {border:red 2px solid;text-align:left;font-size:0.8em;padding:0.2em;margin:0 0.2em;}
+.title-location-tag {border:red 2px solid;float:right;font-size:0.7em;padding:0.2em;}
+
+/* There is one and only one HTML element for each of the IDs below */
+#trademk {padding:5px}
+#banner {font-size:2em;} #banner-sub {font-size:0.8em;}
+#banner-date  { float:right;text-align:right;font-size:0.8em;padding:10px; border: 2px solid #ffb0b0; border-radius: 5px; }
+#banner-stats { float:left; text-align:left ;font-size:0.8em;padding:10px; border: 2px solid lightblue; border-radius: 5px; clear:right; }
+#TOP-NAVIGATION { text-align:center;clear:both;padding:5px 25px;margin:auto; }
+#keyword-div {color:green;}
+#daily-body {color:gray;clear:both;padding:5px 25px;}
+#section-break {margin:auto; width:60%; clear:both;}
+#trailer-body {color:green;clear:both;}
+</style>
+</head><body>
+<img id=trademk align=left src="data:image/png;base64,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">
+<span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
+
+
+<p style=clear:both;></p>
+<center><b>NEWS LINKS OPEN IN A NEW TAB OR PAGE.</b></center>
+
+<form id="theform">
+
+<div id=daily-body>
+<ol>
+
+
+<li class=link-page><a class=link-page href="#001">The Pivot is in Place for Ukraine Funding and U.S. Border Security, but Congressional Hispanic Caucus Objects</a><span class=toc-location-tag>U.S. Senate</span></li>
+<li class=link-page><a class=link-page href="#002">Chicago Looks to be Abandoning Brighton Park Migrant Camp after Toxic Residue in Soil Found and Spending $1 Million</a><span class=toc-location-tag>Chicago</span></li>
+<li class=link-page><a class=link-page href="#003">Illinois Elites Accuse NAACP Leader of 'Racism' for Comments About Migrants</a><span class=toc-location-tag>Illinois</span></li>
+<li class=link-page><a class=link-page href="#004">CBP officers Intercept Mixed Illicit Drug Load at Antelope Wells Border Crossing</a><span class=toc-location-tag>New Mexico</span></li>
+<li class=link-page><a class=link-page href="#005">Chicago's Newly Arrived Migrants Sent to Oak Park (Village) Must be Out by January 31</a><span class=toc-location-tag>Chicago</span></li>
+<li class=link-page><a class=link-page href="#006">Republicans Introduce Legislation to Stop Biden Administration from Using Dept. of Veterans Affairs to Give Healthcare to Illegal Aliens</a><span class=toc-location-tag>{{LOCATION}}</span></li>
+<li class=link-page><a class=link-page href="#007">Overseas Migrant Stories from France and U.K. (on Bibby Stockholm)</a><span class=toc-location-tag>Overseas</span></li>
+
+</ol>
+
+<div style=clear:both;> </div>
+
+<ol>
+
+
+<hr /><a name="001"></a><p><h3>The Pivot is in Place for Ukraine Funding and U.S. Border Security, but Congressional Hispanic Caucus Objects<span class=title-location-tag>U.S. Senate</span></h3><p><p><b>theepochtimes.com</b> Senator Tom Cotton (R-Ark.) is seeking to levy a one-time, six-percent tax on endowments of ten prestigious universities to fund Israel and Ukraine's war efforts and boost security at America's southern border. ::: The tax, proposed Tuesday as part of the Woke Endowment Security Tax Act, would generate a revenue of about $15.47 billion, according to the senator's office.</p><p><b>chicagotribune.com/#AssociatedPress</b> Top Biden administration officials were laboring Wednesday to try to reach a last-minute deal for wartime aid for Ukraine by agreeing to Senate Republican demands to bolster U.S.-Mexico border policies, with urgency setting in as Congress prepared to depart Washington with the impasse unresolved. ::: The White House was racing to lock in a deal in principle with key Senate negotiators, which would allow them to work on the text of legislation through the holiday break, according to two people familiar with the plans who demanded anonymity to discuss them.</p><p><b>huffpost.com</b> Members of the Congressional Hispanic Caucus said Wednesday that ideas floated as part of a potential deal between the White House and Republicans on immigration and asylum were non-starters for them. ::: The 42-member caucus would be a key group to get on board for House approval of any major immigration changes that Democrats would agree to in exchange for Republicans agreeing to allow another round of funding to help Ukraine defend itself against Russia.</p><p><b>NOTE</b> <a target=_blank href="https://dailybordernews.github.io/overload-unload.2023-12-11.html#003">Here is a link</a> to yesterday's news on this subject.</p></p></p><hr />
+
+<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.tucson.com.rst.0" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://tucson.com/ap/washington/biden-considers-new-border-and-asylum-restrictions-as-he-tries-to-reach-senate-deal-for/article_ca530e73-8918-5028-a063-9c370634682d.html">Biden considers new border and asylum restrictions as he tries to reach Senate deal for Ukraine aid</a><br />
+<span class=small id="SourceDomain">tucson.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 18H 35M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">asylum</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.calmatters.org.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://calmatters.org/newsletter/california-border-ukraine-aid/">Why California's border is at issue in Ukraine aid standoff</a><br />
+<span class=small id="SourceDomain">calmatters.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 07H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.theepochtimes.com.rst.27" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/senate-bill-would-tax-wealthy-universities-to-aid-israel-ukraine-us-border-security-5546511">Senate Bill Would Tax Wealthy Universities to Aid Israel, Ukraine, US Border Security</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 15H 56M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.chicagotribune.com.rst.18" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/immigration/ct-aud-nw-biden-border-restrictions-20231214-5ij7gu2qujcjbpxj7sony6yl5a-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">President Biden considers new border and asylum restrictions as he tries to reach Senate deal for Ukraine aid</a><br />
+<span class=small id="SourceDomain">chicagotribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 17H 50M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">asylum</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.wsvn.com.rst.0" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://wsvn.com/news/politics/biden-considers-new-border-and-asylum-restrictions-as-he-tries-to-reach-senate-deal-for-ukraine-aid/">Biden considers new border and asylum restrictions as he tries to reach Senate deal for Ukraine aid</a><br />
+<span class=small id="SourceDomain">wsvn.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 11H 20M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">asylum</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-asylum" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.huffpost.com.rst.3" class="control-asylum"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.huffpost.com/entry/hispanic-democrats-oppose-possible-asylum-changes_n_657a3b46e4b00e36d2d6218b">Hispanic Democrats Come Out Fighting At Prospect Of Asylum-Ukraine Deal</a><br />
+<span class=small id="SourceDomain">huffpost.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 17H 23M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">asylum</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="002"></a><p><h3>Chicago Looks to be Abandoning Brighton Park Migrant Camp after Toxic Residue in Soil Found and Spending $1 Million<span class=title-location-tag>Chicago</span></h3><p><p>Mayor Brandon Johnson on Wednesday stood behind his administration's bumpy attempts to house migrants in large tent encampments before the winter, a week after Gov. J.B. Pritzker blew up plans for the first such camp amid blistering environmental concerns. ::: Addressing reporters after a City Council meeting, the mayor said his approach to vetting the land that would have housed Chicago's first government-run migrant camp was appropriate, while admitting there's room for improvement in the future.</p><p><b>NOTE</b> <a target=_blank href="https://dailybordernews.github.io/overload-unload.2023-12-06.html#002">Here is a link</a> to our last cluster of stories on this.</p></p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.abc7chicago.com.rst.7" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7chicago.com/migrants-in-chicago-city-council-meeting-immigration-mayor-brandon-johnson/14178444/">Chicago spent nearly $1M on failed Brighton Park migrant base camp, records show</a><br />
+<span class=small id="SourceDomain">abc7chicago.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 19H 38M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.chicagotribune.com.rst.14" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/politics/ct-brandon-johnson-migrants-base-camps-20231214-qd4wtgrw7raftkk2tjmfc343ma-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">Mayor Brandon Johnson defends handling of environmental report at now-scrapped migrant camp</a><br />
+<span class=small id="SourceDomain">chicagotribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 17H 40M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.wgntv.com.rst.3" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://wgntv.com/news/chicago-news/mayor-brandon-johnson-faces-rising-pressure-to-address-migrant-crisis-following-failed-brighton-park-site/">Mayor Brandon Johnson faces rising pressure to address migrant crisis following failed Brighton Park site</a><br />
+<span class=small id="SourceDomain">wgntv.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 20H 21M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="003"></a><p><h3>Illinois Elites Accuse NAACP Leader of 'Racism' for Comments About Migrants<span class=title-location-tag>Illinois</span></h3><p><p><b>amres.com/breitbart.com</b> Members of the Illinois NAACP and other liberal elites called for branch president Teresa Haley to resign after she allegedly made remarks disparaging migrants as 'rapists' and 'savages.' ::: National Association for the Advancement of Colored People member Patrick Watson of the Chicago-area DuPage County branch said he recorded a Zoom meeting during which Haley is heard making anti-migrant comments, according to WGN-TV.</p></p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.breitbart.com.rst.43" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/immigration/2023/12/13/illinois-elites-accuse-naacp-leader-of-racism-for-comments-about-migrants/">Illinois Elites Accuse NAACP Leader of 'Racism' for Comments About Migrants</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 13H 21M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.amren.com.rst.4" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.amren.com/news/2023/12/illinois-elites-accuse-naacp-leader-of-racism-for-comments-about-migrants/">Illinois Elites Accuse NAACP Leader of 'Racism' for Comments About Migrants</a><br />
+<span class=small id="SourceDomain">amren.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 16H 07M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="004"></a><p><h3>CBP officers Intercept Mixed Illicit Drug Load at Antelope Wells Border Crossing<span class=title-location-tag>New Mexico</span></h3><p><p><b>kvia.com</b> Customs and Border Protection officers at the Antelope Wells border crossing intercepted heroin, cocaine and methamphetamine in a single failed smuggling attempt.::: &mdash; :::The packages contained 84.65 pounds of methamphetamine, 2.55 pounds of cocaine and 2.77 pounds of heroin. No #ESV given.</p><p><b>NOTE</b> <a target=_blank href="https://infogalactic.com/info/Antelope_Wells,_New_Mexico">Here is a link</a> to the InfoGalactic webpage on Antelope Wells, New Mexico</p></p></p><hr />
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.ktsm.com.rst.20" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsm.com/news/cbp-officers-seize-mixed-drug-load-at-antelope-wells-border-crossing/">CBP officers seize mixed drug load at Antelope Wells border crossing</a><br />
+<span class=small id="SourceDomain">ktsm.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 12H 59M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.kvia.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/2023/12/13/cbp-officers-intercept-mixed-narcotic-load-at-antelope-wells-border-crossing/">CBP officers intercept mixed narcotic load at Antelope Wells border crossing</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 17H 39M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="005"></a><p><h3>Chicago's Newly Arrived Migrants Sent to Oak Park (Village) Must be Out by January 31<span class=title-location-tag>Chicago</span></h3><p><p><b>chicagotribune.com|Oak Park</b> All migrants housed in two locations in Oak Park will be required to move out by Jan. 31, village officials disclosed Wednesday. ::: The approximately 160 people at The Carleton of Oak Park hotel and the West Cook YMCA are to be notified of the eviction date this week. They will be asked to work with a case manager or village staff to find new shelter and possibly move them to another city or state if they have stable housing there, according to a memo from the village Emergency Operations Center.</p></p></p><hr />
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.chicagotribune.com.rst.10" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/immigration/ct-illinois-migrants-suburbs-20231214-kv5kbo7zajgsjmk6vwse2iqaui-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">Migrants arriving by busload in Rosemont and Cicero are sent away, but welcomed in Oak Park, as suburbs respond differently to crisis</a><br />
+<span class=small id="SourceDomain">chicagotribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 19H 35M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.chicagotribune.com.rst.11" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/news/breaking/ct-illinois-migrants-oak-park-turn-away-20231214-6c5vdcwsnnaytdpyuhzgjrzxw4-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">Oak Park, which has been providing shelter for migrants, will require them to move out of hotel, YMCA by Jan. 31</a><br />
+<span class=small id="SourceDomain">chicagotribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 18H 09M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="006"></a><p><h3>Republicans Introduce Legislation to Stop Biden Administration from Using Dept. of Veterans Affairs to Give Healthcare to Illegal Aliens<span class=title-location-tag>{{LOCATION}}</span></h3><p><p><b>washingtonexaminer.com</b> Top congressional Republicans introduced a measure to exclude illegal immigrants from Veteran Affairs healthcare benefits. ::: Attention was called to the issue in part due to a Senate Veterans Affairs Committee hearing last month, where Sen. Tommy Tuberville (R-AL) questioned a Biden administration official over the possibility of the VA providing services to illegal immigrants. On Wednesday, Tuberville and Rep. Mike Bost (R-IL), chairman of the House Veterans Affairs Committee, introduced a bill to ban illegal immigrants from receiving such benefits, as reported by Fox News.</p></p></p><hr />
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.breitbart.com.rst.44" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2023/12/13/republicans-seek-to-ban-biden-from-using-dept-of-veterans-affairs-to-give-healthcare-to-illegal-aliens/">Republicans Seek to Ban Biden from Using Dept. of Veterans Affairs to Give Healthcare to Illegal Aliens</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 16H 26M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.washingtonexaminer.com.rst.0" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/immigration/congressional-republicans-exclude-illegal-immigrants-va">Congressional Republicans advance measure to exclude illegal immigrants from VA benefits</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 16H 54M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+<hr /><a name="007"></a><p><h3>Overseas Migrant Stories from France and U.K. (on Bibby Stockholm)<span class=title-location-tag>Overseas</span></h3><p>See headlines for descriptions.</p></p><hr />
+
+<input id="mark-illegal-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.thegatewaypundit.com.rst.25" class="control-illegal-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2023/12/illegal-migrant-dies-aboard-bibby-stockholm-yet-another/?utm_source=rss&utm_medium=rss&utm_campaign=illegal-migrant-dies-aboard-bibby-stockholm-yet-another">Illegal Migrant Dies Aboard the Bibby Stockholm, in Yet Another Episode on the Controversial Barge Deemed a ‘Death Trap’</a><br />
+<span class=small id="SourceDomain">2023-12-13.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 13H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2023-12-13.amren.com.rst.8" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.amren.com/news/2023/12/france-pro-migrant-activist-raped-by-homeless-migrant-is-shocked-to-see-her-rapist-on-the-street/">France: Pro-Migrant Activist Raped by Homeless Migrant Is 'Shocked' to See Her Rapist on the Street</a><br />
+<span class=small id="SourceDomain">amren.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2023-12-13 16H 01M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+</ol>
+</div>
+</form>
+
+<hr id=section-break />
+<div id=bottom-nav-bar>
+<ul>
+<li><a href="list-keywords.html">Keywords List</a> - Words we search for in the Title.</li>
+<li><a href="list-fetch.html">Fetch List</a> - A list of news outlets we check - in alphabetic order.</li>
+<li><a href="list-display.html">Display List</a> - A list of news outlets we check - in display order. The order we use on the front page.</li>
+<li><a target=_blank href="https://www.flickr.com/photos/192197777\@N07/">Flickr</a> - our photo gallery</li>
+</ul>
+  
+<hr />
+
+<ul>
+<li><a target="_blank" href="dailydump.twitter.html">CBP Accounts<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+<ul>
+<li><a target="_blank" href="dailydump.reporters.html">On-the-ground REPORTERS<!-- Words updated on 2023-05-26 --></a></li>
+</ul>
+
+
+</div>
+
+<div id=trailer-body><!-- {{BODY_TRAILER}} --></div>
+
+</body>
+
+<script>
+
+let TAGDATE = "2023-12-13";
+
+{{SCRIPT_FILE}}
+
+</script>
+
+</html>
