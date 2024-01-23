@@ -56,15 +56,14 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
   100% { opacity: 0; height: 0; border: 0; display: none;  }
 }
 #mark-Illegal-Immigration:checked + li.control-Illegal-Immigration { background:#a9a9a9; }
-#mark-Illegal-border-crossings:checked + li.control-Illegal-border-crossings { background:#a9a9a9; }
 #mark-alien:checked + li.control-alien { background:#a9a9a9; }
 #mark-asylum:checked + li.control-asylum { background:#a9a9a9; }
+#mark-asylum-seeker:checked + li.control-asylum-seeker { background:#a9a9a9; }
 #mark-asylum-seeker:checked + li.control-asylum-seeker { background:#a9a9a9; }
 #mark-border:checked + li.control-border { background:#a9a9a9; }
 #mark-cartel:checked + li.control-cartel { background:#a9a9a9; }
 #mark-extradite:checked + li.control-extradite { background:#a9a9a9; }
 #mark-gang:checked + li.control-gang { background:#a9a9a9; }
-#mark-human-smuggling:checked + li.control-human-smuggling { background:#a9a9a9; }
 #mark-illegal:checked + li.control-illegal { background:#a9a9a9; }
 #mark-illegal-alien:checked + li.control-illegal-alien { background:#a9a9a9; }
 #mark-illegal-immigrant:checked + li.control-illegal-immigrant { background:#a9a9a9; }
@@ -73,19 +72,18 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 #mark-migrant:checked + li.control-migrant { background:#a9a9a9; }
 #mark-narco:checked + li.control-narco { background:#a9a9a9; }
 #mark-national:checked + li.control-national { background:#a9a9a9; }
+#mark-non-citizen:checked + li.control-non-citizen { background:#a9a9a9; }
 #mark-refugee:checked + li.control-refugee { background:#a9a9a9; }
-#mark-undocumented:checked + li.control-undocumented { background:#a9a9a9; }
 
 #Illegal-Immigration:checked + label {border:solid 2px red;}
-#Illegal-border-crossings:checked + label {border:solid 2px red;}
 #alien:checked + label {border:solid 2px red;}
 #asylum:checked + label {border:solid 2px red;}
+#asylum-seeker:checked + label {border:solid 2px red;}
 #asylum-seeker:checked + label {border:solid 2px red;}
 #border:checked + label {border:solid 2px red;}
 #cartel:checked + label {border:solid 2px red;}
 #extradite:checked + label {border:solid 2px red;}
 #gang:checked + label {border:solid 2px red;}
-#human-smuggling:checked + label {border:solid 2px red;}
 #illegal:checked + label {border:solid 2px red;}
 #illegal-alien:checked + label {border:solid 2px red;}
 #illegal-immigrant:checked + label {border:solid 2px red;}
@@ -94,8 +92,8 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 #migrant:checked + label {border:solid 2px red;}
 #narco:checked + label {border:solid 2px red;}
 #national:checked + label {border:solid 2px red;}
+#non-citizen:checked + label {border:solid 2px red;}
 #refugee:checked + label {border:solid 2px red;}
-#undocumented:checked + label {border:solid 2px red;}
 
 
 
@@ -103,11 +101,11 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 </head><body>
 <img id=trademk align=left src="data:image/png;base64,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">
 <span id=banner-date>Border News for<br />
-15 Jan 2024
+22 Jan 2024
 </span>
 <span id=banner>The Border Observer</span><span id=banner-sub> &nbsp;watches the borders of the U.S.A.</span>
 <span id=banner-stats style=clear:both;>
-<b>SEARCH ENGINE</b> <span id=number_good>23</span> positive hits from <a href=list-fetch.html>152 sources</a>
+<b>SEARCH ENGINE</b> <span id=number_good>106</span> positive hits from <a href=list-fetch.html>152 sources</a>
 </span>
 
 <span id=banner-nav >
@@ -116,6 +114,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 
 <p style=clear:both;></p>
 <center><b>NEWS LINKS OPEN IN A NEW TAB OR PAGE.</b></center>
+
 
 <form id="theform">
 
@@ -126,187 +125,851 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 <div style=clear:both;> </div>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.cis.org.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://cis.org/Arthur/Texas-BorderBarrier-Spat-Takes-New-Turn-State-Seizes-Seals-Riverfront-Park">Texas Border-Barrier Spat Takes a New Turn As the State Seizes, Seals Off, Riverfront Park</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.elpasomatters.org.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://elpasomatters.org/2024/01/22/rio-grande-immigrants-gov-abbott-concertina-wire/">U.S. Supreme Court says Texas can't block federal agents from the border</a><br />
+<span class=small id="SourceDomain">elpasomatters.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 07M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ktsm.com.rst.37" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsm.com/news/texas-politics/bipartisan-texas-delegates-meet-with-mexican-president-after-valley-border-tour/">Bipartisan Texas delegates meet with Mexican president after Valley border tour</a><br />
+<span class=small id="SourceDomain">ktsm.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 23M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ktsm.com.rst.41" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsm.com/news/senate-eagerly-awaits-breakthrough-border-deal/">Senate eagerly awaits breakthrough border deal</a><br />
+<span class=small id="SourceDomain">ktsm.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 36M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ktsm.com.rst.42" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsm.com/news/us-politics/schumer-says-border-agreement-certainly-not-a-done-deal-yet/">Schumer says border agreement 'certainly not a done deal yet'</a><br />
+<span class=small id="SourceDomain">ktsm.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 35M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ktsm.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsm.com/news/politics/ap-politics/ap-supreme-court-allows-federal-agents-to-cut-razor-wire-texas-installed-on-us-mexico-border/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">ktsm.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 56M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-narco" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.kvia.com.rst.11" class="control-narco"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/ap-national/2024/01/22/colombia-captures-its-first-narco-submarine-of-the-year-carrying-almost-800-kilos-of-cocaine/">Colombia captures its first narco-submarine of the year carrying almost 800 kilos of cocaine</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 18H 54M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">narco</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.kvia.com.rst.33" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/ap-national/2024/01/22/senators-are-racing-to-finish-work-on-a-border-deal-as-aid-to-ukraine-hangs-in-the-balance/">Senators are racing to win support for a border deal as aid to Ukraine hangs in the balance</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 22M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.kvia.com.rst.34" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/ap-national/2024/01/22/mexico-demands-investigation-into-us-military-grade-weapons-being-used-by-drug-cartels/">Mexico demands investigation into US military-grade weapons being used by drug cartels</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 06M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">cartel</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.kvia.com.rst.49" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/your-voice-your-vote/politics/2024/01/22/supreme-court-allows-biden-administration-to-remove-razor-wire-on-us-mexico-border-in-5-4-vote-2/">Supreme Court allows Biden administration to remove razor wire on US-Mexico border in 5-4 vote</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 41M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.kvia.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://kvia.com/news/2024/01/22/local-and-state-leaders-react-to-supreme-courts-ruling-that-border-patrol-can-cut-texas-razor-wire/">Local and state leaders react to Supreme Court's ruling that Border Patrol can cut Texas razor wire</a><br />
+<span class=small id="SourceDomain">kvia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 52M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.kxan.com.rst.19" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.kxan.com/news/texas-politics/bipartisan-texas-delegates-meet-with-mexican-president-after-valley-border-tour/">Bipartisan Texas delegates meet with Mexican president after Valley border tour</a><br />
+<span class=small id="SourceDomain">kxan.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 22M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.kxan.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.kxan.com/news/texas/ap-supreme-court-allows-federal-agents-to-cut-razor-wire-texas-installed-on-us-mexico-border/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">kxan.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 56M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.myrgv.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://myrgv.com/featured/2024/01/22/supreme-court-rules-for-biden-administration-in-texas-border-dispute/">Supreme Court rules for Biden administration in Texas border dispute</a><br />
+<span class=small id="SourceDomain">myrgv.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 05M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.valleycentral.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.valleycentral.com/news/politics/ap-politics/ap-supreme-court-allows-federal-agents-to-cut-razor-wire-texas-installed-on-us-mexico-border/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">valleycentral.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 56M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ktsa.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsa.com/supreme-court-says-u-s-can-remove-razor-wire-installed-by-texas-along-border/">Supreme Court says U.S. can remove razor wire installed by Texas along border</a><br />
+<span class=small id="SourceDomain">ktsa.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 39M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ktsa.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.ktsa.com/in-eagle-pass-a-tense-border-standoff-between-texas-and-the-federal-government-is-reaching-a-crescendo/">In Eagle Pass, a tense border standoff between Texas and the federal government is reaching a crescendo</a><br />
+<span class=small id="SourceDomain">ktsa.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 10H 53M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.arizonasuntimes.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://arizonasuntimes.com/news/scotus-sides-with-open-borders-biden-admin-clears-the-way-feds-to-remove-razor-wire-barrier-in-eagle-pass-texas/tcsquare/2024/01/22/">SCOTUS Sides with Open Borders Biden Admin, Clears the Way for Feds to Remove Razor Wire Barrier in Eagle Pass, Texas</a><br />
+<span class=small id="SourceDomain">arizonasuntimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 09H 05M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.nbcsandiego.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcsandiego.com/news/national-international/supreme-court-allows-feds-to-cut-razor-wire-installed-on-texas-mexico-border/3411871/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">nbcsandiego.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 12H 24M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.sandiegouniontribune.com.rst.30" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.sandiegouniontribune.com/news/nation-world/story/2024-01-22/supreme-court-allows-federal-agents-to-cut-razor-wire-texas-installed-on-us-mexico-border">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">sandiegouniontribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 04M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.cis.org.rst.1" class="control-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://cis.org/Feere/Oped-How-Biden-Gave-Ridding-Us-Criminal-Aliens-Putting-Us-Danger">Op-ed: How Biden Gave Up on Ridding Us of Criminal Aliens - Putting Us in Danger</a><br />
 <span class=small id="SourceDomain">cis.org</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 03H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 10H 07M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.texastribune.org.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://feeds.texastribune.org/link/16799/16543456/texas-border-supreme-court-immigration">U.S. Supreme Court says Texas can't block federal agents from the border</a><br />
+<span class=small id="SourceDomain">texastribune.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 59M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.breitbart.com.rst.13" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2024/01/15/biden-admins-claims-texas-interfered-with-border-agents-migrant-rescue-not-true-says-governor/">Biden Admin's Claims Texas Interfered with Border Agents' Migrant Rescue Not True, Says Governor</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.texastribune.org.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://feeds.texastribune.org/link/16799/16542712/texas-border-patrol-immigration-enforcement-eagle-pass-park">In Eagle Pass, a tense border standoff between Texas and the federal government is reaching a crescendo</a><br />
+<span class=small id="SourceDomain">texastribune.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 04H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.breitbart.com.rst.11" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/entertainment/2024/01/22/pawn-stars-rick-harrison-reveals-son-died-of-fentanyl-overdose-blames-border-crisis/">'Pawn Stars' Rick Harrison Reveals Son Died of Fentanyl Overdose, Blames Border Crisis</a><br />
 <span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 15H 26M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 01M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.thepublica.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thepublica.com/ransom-mexican-president-demands-20-billion-in-aid-10-million-work-visas-in-order-to-assist-at-southern-border/?utm_source=rss&utm_medium=rss&utm_campaign=ransom-mexican-president-demands-20-billion-in-aid-10-million-work-visas-in-order-to-assist-at-southern-border">RANSOM: Mexican President Demands $20 Billion In Aid, 10 Million Work Visas In Order To Assist At Southern Border</a><br />
-<span class=small id="SourceDomain">thepublica.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 15H 01M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-Illegal-Immigration" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.breitbart.com.rst.16" class="control-Illegal-Immigration"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2024/01/22/illegal-immigration-forcing-denver-hospitalt-turn-away-patients-going-break-system/">Illegal Immigration Forcing Denver Hospital to Turn Away Patients: 'Going to Break' the System</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 36M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">Illegal Immigration</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.breitbart.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2024/01/22/democrats-try-expand-parole-migration-border-talks/">Biden's Deputies Try to Expand Parole Migration in Border Talks</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 34M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.theepochtimes.com.rst.12" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/homeless-problem-surges-in-portland-maine-as-state-brings-in-illegal-immigrants-5558059">Homeless Problem Surges in Portland, Maine, as State Brings in Illegal Immigrants</a><br />
-<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 18H 22M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.breitbart.com.rst.18" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/border/2024/01/22/its-not-over-says-texas-governor-following-scotus-border-razor-wire-order/">It's Not Over, Says Texas Governor Following SCOTUS Border Razor-Wire Order</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 18H 08M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">illegal immigrant</span>
+<span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.thenationalpulse.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenationalpulse.com/2024/01/15/yahoo-inflation-cooling-thanks-to-cheap-migrant-labor-depressing-your-wages/?utm_source=rss&utm_medium=rss&utm_campaign=yahoo-inflation-cooling-thanks-to-cheap-migrant-labor-depressing-your-wages">YAHOO: Inflation 'Cooling' Thanks to Cheap Migrant Labor Depressing Your Wages.</a><br />
-<span class=small id="SourceDomain">thenationalpulse.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 16H 39M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.breitbart.com.rst.19" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/immigration/2024/01/22/illinois-gov-j-b-pritzker-very-concerned-about-chicago-mayors-pause-on-new-migrant-shelters/">Illinois Gov. J.B. Pritzker 'Very Concerned' About Chicago Mayor's 'Pause' on New Migrant Shelters</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 17H 23M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.thenationalpulse.com.rst.3" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenationalpulse.com/2024/01/15/82-of-republicans-agree-with-trump-that-illegals-are-poisoning-the-blood-of-america/?utm_source=rss&utm_medium=rss&utm_campaign=82-of-republicans-agree-with-trump-that-illegals-are-poisoning-the-blood-of-america">82% of Republicans Agree With Trump That Illegals Are 'Poisoning the Blood' of America.</a><br />
-<span class=small id="SourceDomain">thenationalpulse.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 15H 09M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">illegal</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.thepostmillennial.com.rst.19" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/eric-adams-to-put-illegal-immigrant-shelter-under-curfew-due-to-rising-crime-complaints-of-begging">Eric Adams to put illegal immigrant shelter under curfew due to rising crime, complaints of begging</a><br />
-<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 09H 50M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">illegal immigrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.thepostmillennial.com.rst.8" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/san-antonio-police-officers-hired-by-catholic-charities-other-ngos-to-guard-illegal-immigrant-facility-report">San Antonio police officers hired by Catholic Charities, other NGOs to guard illegal immigrant facility: report</a><br />
-<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 14H 53M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">illegal immigrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.dailywire.com.rst.13" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/biden-admin-demands-texas-to-relinquish-border-park-targeted-by-illegal-immigrants">Biden Admin Demands Texas Relinquish Border Park Targeted By Illegal Immigrants</a><br />
-<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 09H 55M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">illegal immigrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.theblaze.com.rst.18" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theblaze.com/news/texas-responds-blame-migrant-drownings">Texas officials set the record straight after White House claims Border Patrol was 'physically barred' from saving migrants</a><br />
-<span class=small id="SourceDomain">theblaze.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 14H 20M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.thenewamerican.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenewamerican.com/video/tv/texas-takes-over-border-sector-while-congress-schemes-to-secure-amnesty/">Texas Takes Over Border Sector While Congress Schemes To Secure Amnesty</a><br />
-<span class=small id="SourceDomain">thenewamerican.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 19H 07M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">border</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.amren.com.rst.2" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.amren.com/news/2024/01/illegal-alien-accused-of-causing-sgt-michael-kunovichs-death-says-he-is-a-victim-of-racism/">Illegal Alien Accused of Causing Sgt. Michael Kunovich's Death Says He Is a Victim of Racism</a><br />
-<span class=small id="SourceDomain">amren.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 19H 37M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.breitbart.com.rst.20" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/politics/2024/01/22/jordan-mcclintock-demand-full-numerical-breakdown-every-illegal-alien-freed-bidens-dhs/">Jordan, McClintock Demand Full 'Numerical Breakdown' of Every Illegal Alien Freed into U.S. by Biden's DHS</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 17H 01M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">illegal alien</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.amren.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.amren.com/news/2024/01/will-poland-go-full-open-borders-hundreds-of-ngos-and-celebrities-appeal-to-donald-tusk-to-stop-pushbacks/">Will Poland Go Full Open Borders? Hundreds of NGOs and Celebrities Appeal to Donald Tusk to Stop 'Pushbacks'</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.breitbart.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.breitbart.com/immigration/2024/01/22/supreme-court-rules-5-4-to-allow-biden-admin-to-cut-texas-border-barrier/">Supreme Court Rules 5-4 to Allow Biden Admin to Cut Texas Border Barrier</a><br />
+<span class=small id="SourceDomain">breitbart.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 18H 05M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.justthenews.com.rst.17" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/government/courts-law/scotus-permits-biden-admin-remove-razor-wire-southern-border?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">SCOTUS permits Biden admin to remove razor wire from southern border</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 00H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.justthenews.com.rst.5" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/texas-bus-company-files-lawsuit-against-chicago-over-migrant-drop?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Texas Bus company files lawsuit against Chicago over migrant drop off ordinance</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 00H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.justthenews.com.rst.7" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://justthenews.com/nation/states/center-square/malliotakis-staten-island-leaders-rip-adams-migrant-relocation-plan?utm_source=justthenews.com&utm_medium=feed&utm_campaign=external-news-aggregators">Malliotakis, Staten Island leaders rip Adams' migrant relocation plan</a><br />
+<span class=small id="SourceDomain">justthenews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 00H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsnationnow.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsnationnow.com/the-hill/republican-majority-border-deal/">How Republicans' slim majority affects the border deal</a><br />
+<span class=small id="SourceDomain">newsnationnow.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 37M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsnationnow.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsnationnow.com/us-news/immigration/border-coverage/scotus-federal-agents-remove-border-wire/">SCOTUS rules federal agents can remove Texas border wire</a><br />
+<span class=small id="SourceDomain">newsnationnow.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 34M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-gang" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.notthebee.com.rst.12" class="control-gang"><div class=ArticleDiv><a class=link-text target=_blank href="https://notthebee.com/article/mom-of-girl-killed-by-alleged-ms-13-gang-member-is-suing-the-dhs-and-hhs-for-100-million/">Mom of girl strangled in home by alleged MS-13 gang member sues Homeland Security for $100M</a><br />
+<span class=small id="SourceDomain">notthebee.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 09H 28M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">gang</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.freebeacon.com.rst.2" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://freebeacon.com/latest-news/supreme-court-says-biden-admin-can-cut-texass-border-wire-fencing/">Supreme Court Says Biden Admin Can Cut Texas's Border Wire Fencing</a><br />
+<span class=small id="SourceDomain">freebeacon.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 50M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.theepochtimes.com.rst.31" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/supreme-court-allows-federal-government-to-remove-texas-border-wire-5571384">Supreme Court Allows Federal Government to Remove Texas Border Wire</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 41M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.theepochtimes.com.rst.9" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.theepochtimes.com/us/biden-admin-spending-billions-on-programs-to-aid-illegal-immigrants-amid-border-crisis-watchdog-5571270">Biden Admin Spending Billions on Programs to Aid Illegal Immigrants Amid Border Crisis: Watchdog</a><br />
+<span class=small id="SourceDomain">theepochtimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 18H 46M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thecentersquare.com.rst.8" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thecentersquare.com/new_york/article_274f7f42-b937-11ee-a1dc-73799a40a687.html?a">Malliotakis, Staten Island leaders rip Adams' migrant relocation plan</a><br />
+<span class=small id="SourceDomain">thecentersquare.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 08H 01M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thegatewaypundit.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2024/01/other-border-crisis-thousands-dogs-are-being-abandoned/?utm_source=rss&utm_medium=rss&utm_campaign=other-border-crisis-thousands-dogs-are-being-abandoned">THE OTHER BORDER CRISIS: Thousands of Dogs Are Being Abandoned at the Southern Border</a><br />
+<span class=small id="SourceDomain">2024-01-22.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 21H 20M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thegatewaypundit.com.rst.21" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2024/01/breaking-supreme-court-sides-biden-razor-wire-roberts/?utm_source=rss&utm_medium=rss&utm_campaign=breaking-supreme-court-sides-biden-razor-wire-roberts">BREAKING: Supreme Court Sides with Biden Regime, Allows Border Patrol Agents to Remove Razor Wire at Border – Roberts and Amy Coney Barrett Vote with Liberal Justices</a><br />
+<span class=small id="SourceDomain">2024-01-22.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 20M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thegatewaypundit.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2024/01/pawn-stars-rick-harrison-breaks-silence-sons-tragic/?utm_source=rss&utm_medium=rss&utm_campaign=pawn-stars-rick-harrison-breaks-silence-sons-tragic">‘Pawn Stars’ Rick Harrison Breaks Silence Over Son’s Tragic Death Due to Fentanyl Overdose — Blames Biden’s Open Border Policies</a><br />
+<span class=small id="SourceDomain">2024-01-22.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 20H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thegatewaypundit.com.rst.5" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2024/01/i-will-continue-defend-texas-constitutional-authority-secure/?utm_source=rss&utm_medium=rss&utm_campaign=i-will-continue-defend-texas-constitutional-authority-secure">“I Will Continue to Defend Texas’ Constitutional Authority to Secure the Border” – Texas Governor Abbott Responds to Supreme Court Ruling to Open Its Border to Millions of Illegal Aliens</a><br />
+<span class=small id="SourceDomain">2024-01-22.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 40M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thegatewaypundit.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.thegatewaypundit.com/2024/01/this-fight-is-not-texas-attorney-general-ken/?utm_source=rss&utm_medium=rss&utm_campaign=this-fight-is-not-texas-attorney-general-ken">“This Fight is Not Over” – Texas Attorney General Ken Paxton Vows to Defy Supreme Court Ruling on Razor Wire at Southern Border</a><br />
+<span class=small id="SourceDomain">2024-01-22.thegatewaypundit.com.rss</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 19H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thepostmillennial.com.rst.12" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/breaking-supreme-court-rules-biden-border-agents-can-remove-texas-border-barriers">BREAKING: Supreme Court rules Biden border agents can remove Texas' border barriers</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 20M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thepostmillennial.com.rst.13" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/mom-sues-bidens-dhs-after-illegal-immigrant-ms-13-gang-member-charged-with-rape-murder-of-her-autistic-daughter">Mom sues Biden's DHS after illegal immigrant MS-13 gang member charged with rape, murder of her autistic daughter</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 12M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thepostmillennial.com.rst.18" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/honduran-illegal-immigrant-repeat-child-sex-offender-arrested-again-after-previous-same-day-release-in-virginia">Honduran illegal immigrant, repeat child sex-offender arrested again after previous same-day release in Virginia</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 10H 17M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thepostmillennial.com.rst.20" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/new-york-moves-to-provide-free-healthcare-to-illegal-immigrants">New York moves to provide free healthcare to illegal immigrants</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 09H 08M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thepostmillennial.com.rst.8" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thepostmillennial.com/breaking-louisiana-rep-says-biden-is-staging-civil-war-by-pulling-down-texas-border-barriers">BREAKING: Louisiana rep says Biden is 'staging  civil war' by pulling down Texas' border barriers</a><br />
+<span class=small id="SourceDomain">thepostmillennial.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 41M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.americanmilitarynews.com.rst.9" class="control-illegal-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://americanmilitarynews.com/2024/01/video-illegal-immigrant-threatens-journalist/">Video: Illegal immigrant threatens journalist</a><br />
+<span class=small id="SourceDomain">americanmilitarynews.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 12H 23M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal immigrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.dailycaller.com.rst.1" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://dailycaller.com/2024/01/22/ice-nabs-illegal-alien-wanted-murder-who-snuck-country/">ICE Nabs Illegal Alien Wanted For Murder Who Snuck Into The Country</a><br />
+<span class=small id="SourceDomain">dailycaller.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 10H 25M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.dailywire.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailywire.com/news/supreme-court-authorizes-biden-admin-to-tear-down-texas-razor-wire-securing-border">Supreme Court Authorizes Biden Admin To Tear Down Texas Razor Wire Securing Border</a><br />
+<span class=small id="SourceDomain">dailywire.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 11H 13M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.dailysignal.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.dailysignal.com/2024/01/22/supreme-court-allows-biden-admin-remove-texas-border-wire/">Supreme Court Allows Biden Admin to Remove Texas Border Wire</a><br />
+<span class=small id="SourceDomain">dailysignal.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 16H 08M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thehill.com.rst.26" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thehill.com/homenews/senate/4422369-schumer-border-agreement/">Schumer says border agreement 'certainly not a done deal yet'</a><br />
+<span class=small id="SourceDomain">thehill.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 33M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thehill.com.rst.35" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thehill.com/regulation/court-battles/4422203-supreme-court-southern-border-texas-razor-wire-doj/">Supreme Court rules border agents can remove razor wire erected by Texas</a><br />
+<span class=small id="SourceDomain">thehill.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 26M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thehill.com.rst.65" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thehill.com/latino/4421542-hispanic-caucus-senate-border-ukraine-deal-immigration-israel/">Hispanic Caucus snub raises questions about border-Ukraine deal</a><br />
+<span class=small id="SourceDomain">thehill.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 09H 40M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thehill.com.rst.86" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://thehill.com/regulation/court-battles/4421286-texas-bus-company-sues-chicago-migrants/">Texas company sues Chicago over penalties on buses dropping of migrants</a><br />
+<span class=small id="SourceDomain">thehill.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 07H 26M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-narco" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thehill.com.rst.87" class="control-narco"><div class=ArticleDiv><a class=link-text target=_blank href="https://thehill.com/opinion/international/4417945-narcoviolence-in-ecuador-could-worsen-our-migration-crisis/">Narcoviolence in Ecuador could worsen our migration crisis</a><br />
+<span class=small id="SourceDomain">thehill.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 07H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">narco</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.washingtontimes.com.rst.6" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtontimes.com/news/2024/jan/22/supreme-court-allow-biden-administration-cut-texas/?utm_source=RSS_Feed&utm_medium=RSS">Justices side with Biden over Texas in razor wire border fence case</a><br />
+<span class=small id="SourceDomain">washingtontimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 38M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.washingtontimes.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtontimes.com/news/2024/jan/22/supreme-court-federal-agents-can-cut-razor-wire-te/?utm_source=RSS_Feed&utm_medium=RSS">Supreme Court allows federal agents to cut razor wire Texas installed on U.S.-Mexico border</a><br />
+<span class=small id="SourceDomain">washingtontimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 04M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.washingtonexaminer.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/policy/national-security/2811980/biden-has-tools-to-secure-the-border-but-wont-use-them-rubio/">Biden has tools to secure the border but 'won't use them': Marco Rubio</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 21H 25M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.washingtonexaminer.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.washingtonexaminer.com/news/senate/2811822/senate-border-negotiations-wrapping-up-ukraine-vote/">Senate border negotiations 'wrapping up' as leadership eyes Ukraine vote</a><br />
+<span class=small id="SourceDomain">washingtonexaminer.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 18H 49M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.thenewamerican.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://thenewamerican.com/news/supreme-court-rules-5-4-to-remove-u-s-mexico-border-razor-wire/">Supreme Court Rules 5-4 to Remove U.S.-Mexico Border Razor Wire</a><br />
+<span class=small id="SourceDomain">thenewamerican.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 03M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.amren.com.rst.1" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.amren.com/news/2024/01/supreme-court-rules-border-agents-can-remove-razor-wire-erected-by-texas/">Supreme Court Rules Border Agents Can Remove Razor Wire Erected by Texas</a><br />
 <span class=small id="SourceDomain">amren.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 19H 37M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 16H 56M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.legalinsurrection.com.rst.3" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://legalinsurrection.com/2024/01/nyc-mayor-eric-adams-will-implement-curfew-at-some-migrant-shelters/?utm_source=rss&utm_medium=rss&utm_campaign=nyc-mayor-eric-adams-will-implement-curfew-at-some-migrant-shelters">NYC Mayor Eric Adams Will Implement Curfew at Some Migrant Shelters</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.legalinsurrection.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://legalinsurrection.com/2024/01/supreme-court-allows-feds-to-cut-razor-wire-on-texas-border-while-lawsuit-continues/?utm_source=rss&utm_medium=rss&utm_campaign=supreme-court-allows-feds-to-cut-razor-wire-on-texas-border-while-lawsuit-continues">Supreme Court Allows Feds to Cut Razor Wire on Texas Border While Lawsuit Continues Through the Courts</a><br />
 <span class=small id="SourceDomain">legalinsurrection.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 13H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 32M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
+<span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.scnr.com.rst.14" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://scnr.com/article/manchin-says-border-security-greatest-crisis-the-nation-faces_c969e63cb3b511ee9c930242ac1c0002">Manchin Says Border Security 'Greatest Crisis' The Nation Faces</a><br />
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.redstate.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://redstate.com/benkew/2024/01/22/the-fight-is-not-over-texas-wont-give-up-on-securing-its-borders-after-scotus-ruling-n2169083">‘The Fight Is Not Over’: Texas Won’t Give Up on Securing Its Borders After SCOTUS Ruling</a><br />
+<span class=small id="SourceDomain">redstate.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 20H 08M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.redstate.com.rst.13" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://redstate.com/smoosieq/2024/01/22/breaking-scotus-grants-biden-admin-request-to-vacate-injunction-re-razor-wire-on-texas-border-n2169069">BREAKING: SCOTUS Grants Biden Admin. Request to Vacate Injunction re: Razor-Wire on Texas Border</a><br />
+<span class=small id="SourceDomain">redstate.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.redstate.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://redstate.com/sister-toldjah/2024/01/22/reporter-fact-checks-kjp-on-recent-biden-border-visit-as-our-intelligence-gets-insulted-once-again-n2169074">Reporter Fact Checks KJP on 'Recent' Biden 'Border Visit' As Our Intelligence Gets Insulted Once Again</a><br />
+<span class=small id="SourceDomain">redstate.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 17H 07M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.scnr.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://scnr.com/article/supreme-court-rules-federal-government-can-remove-razor-wire-at-border_906f4435b71411ee9c930242ac1c0002">Supreme Court Rules Federal Government Can Remove Razor Wire at Texas Border</a><br />
 <span class=small id="SourceDomain">scnr.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 10H 08M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 17H 00M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.fox5ny.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.fox5ny.com/news/nyc-migrant-crisis-shelter-curfew-starts-tuesday">NYC migrant crisis: Shelter curfews to start Tuesday at 4 sites</a><br />
-<span class=small id="SourceDomain">fox5ny.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 09H 51M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.newsday.com.rst.154" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/opinion/letters/new-york-city-migrants-asylum-seekers-immigration-ji10m9i5">Migrants in NYC bring out LI emotions</a><br />
-<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 08H 30M MST</span>&nbsp;&#183;&nbsp;
-<span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">migrant</span>
-<!-- <input style="float:right;" type=checkbox> --></div></li>
-
-
-<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.newsday.com.rst.169" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/Immigration-asylum-border-courts-deportation-miami-b09641">Fueled by unprecedented border crossings, a record 3 million cases clog US immigration courts</a><br />
-<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 06H 33M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.scnr.com.rst.6" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://scnr.com/article/sen-john-fetterman-calls-for-stricter-border-enforcement_4c0e37c0b94c11ee9c930242ac1c0002">Sen. John Fetterman Calls For Stricter Border Enforcement</a><br />
+<span class=small id="SourceDomain">scnr.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 12H 09M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-immigrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.bostonherald.com.rst.13" class="control-immigrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.bostonherald.com/2024/01/15/massachusetts-immigrant-support-group-very-sad-over-hate-and-misinformation-these-people-are-incredible/">Massachusetts immigrant support group 'very sad' over hate and 'misinformation': 'These people are incredible'</a><br />
-<span class=small id="SourceDomain">bostonherald.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 18H 05M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-illegal" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.spectator.org.rst.4" class="control-illegal"><div class=ArticleDiv><a class=link-text target=_blank href="https://spectator.org/send-every-illegal-you-can-to-washington-dc-from-now-on-gov-abbott-border/?utm_source=rss&utm_medium=rss&utm_campaign=send-every-illegal-you-can-to-washington-dc-from-now-on-gov-abbott-border">Gov. Abbott, Send Every Illegal to Washington, D.C., From Now On</a><br />
+<span class=small id="SourceDomain">spectator.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 20H 16M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">immigrant</span>
+<span class=small id="FoundWord">illegal</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.abc7chicago.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://abc7chicago.com/chicago-migrant-crisis-crest-hill-migrants-suburbs-buses/14328169/">Crest Hill becomes latest Chicago suburb to crack down on unscheduled migrant buses</a><br />
-<span class=small id="SourceDomain">abc7chicago.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 22H 00M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ny1.com.rst.1" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="http://www.ny1.com/nyc/all-boroughs/politics/2024/01/23/city-council-speaker-calls-on-adams-to-end-60-day-shelter-limit-for-mirgrants">City Council speaker calls on Mayor Adams to end 60-day shelter limit for migrants</a><br />
+<span class=small id="SourceDomain">ny1.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 17H 46M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.chicagotribune.com.rst.25" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/suburbs/northbrook/ct-nbs-northbrook-mlk-service-day-tl-0118-20240115-v3hm4w2wgvddnhuq3h4jhhgppu-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">Migrant welcome kits included at this year's annual MLK Service Day at Northbrook United Methodist Church</a><br />
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.ny1.com.rst.14" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="http://www.ny1.com/nyc/all-boroughs/nyer-of-the-week/2024/01/19/jess-beck--a-warm-welcome-for-migrants">Jess Beck: A warm welcome for migrants</a><br />
+<span class=small id="SourceDomain">ny1.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 04H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.nbcnewyork.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcnewyork.com/news/national-international/supreme-court-allows-feds-to-cut-razor-wire-installed-on-texas-mexico-border/5063890/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">nbcnewyork.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 24M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsday.com.rst.112" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/supreme-court-immigration-texas-razor-wire-g47959">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 05M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsday.com.rst.117" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/Mexico-military-weapons-drug-cartels-United-States-j65178">Mexico demands investigation into US military-grade weapons being used by drug cartels</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 12H 52M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">cartel</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsday.com.rst.164" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/spain-morocco-unaccompanied-child-migrants-s28140">Spain's top court says the government broke the law when it sent child migrants back to Morocco</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 09H 21M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsday.com.rst.224" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/pakistan-security-forces-militants-killed-t64701">Pakistani security forces kill 7 militants during a raid near the border with Afghanistan</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 02H 45M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-narco" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsday.com.rst.26" class="control-narco"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/colombia-drugs-submarine-nave-cocaine-i62427">Colombia captures its first narco-submarine of the year carrying almost 800 kilos of cocaine</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 18H 55M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">narco</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsday.com.rst.69" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsday.com/news/nation/Ukraine-border-security-congress-Joe-Biden-j77988">Senators are racing to win support for a border deal as aid to Ukraine hangs in the balance</a><br />
+<span class=small id="SourceDomain">newsday.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 23M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.wgal.com.rst.12" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wgal.com/article/senators-racing-to-finish-work-on-a-border-deal-aid-to-ukraine-hangs-in-balance/46495036">Senators are racing to finish work on a border deal as aid to Ukraine hangs in the balance</a><br />
+<span class=small id="SourceDomain">wgal.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 17H 52M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.nbcboston.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcboston.com/news/national-international/supreme-court-allows-feds-to-cut-razor-wire-installed-on-texas-mexico-border/3254681/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">nbcboston.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 24M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.chicagotribune.com.rst.17" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/politics/ct-pritzker-johnson-migrant-crisis-20240122-np6cndbatratnpp3wqfsbcpfga-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">Gov. J.B. Pritzker says he's 'deeply concerned' with Mayor Brandon Johnson's migrant shelter plan</a><br />
 <span class=small id="SourceDomain">chicagotribune.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 14H 46M MST</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 16H 52M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
 <span class=small id="FoundWord">migrant</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-national" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.tennesseeconservativenews.com.rst.1" class="control-national"><div class=ArticleDiv><a class=link-text target=_blank href="https://tennesseeconservativenews.com/texas-transports-over-100000-foreign-nationals-to-sanctuary-cities/">Texas Transports Over 100,000 Foreign Nationals To 'Sanctuary Cities'</a><br />
-<span class=small id="SourceDomain">tennesseeconservativenews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 09H 15M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.chicagotribune.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/immigration/supreme-court-texas-wire-20240122-komverg2ybb6hj3aat74f2mgwa-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">chicagotribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 21H 12M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">national</span>
+<span class=small id="FoundWord">border</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
-<input id="mark-Illegal-Immigration" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-15.tennesseeconservativenews.com.rst.4" class="control-Illegal-Immigration"><div class=ArticleDiv><a class=link-text target=_blank href="https://tennesseeconservativenews.com/tennessee-rep-jody-barrett-talks-voice-votes-potential-illegal-immigration-bills/">Tennessee Rep. Jody Barrett Talks Voice Votes & Potential Illegal Immigration Bills</a><br />
-<span class=small id="SourceDomain">tennesseeconservativenews.com</span>&nbsp;&#183;&nbsp;
-<span class=small id="DatePublished">2024-01-15 05H 37M MST</span>&nbsp;&#183;&nbsp;
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.chicagotribune.com.rst.36" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.chicagotribune.com/suburbs/barrington/ct-bcr-lake-barrington-migrant-bus-ordinance-tl-0125-20240122-356gkwtwurfx7pj2y6wszawfbm-story.html#ed=rss_www.chicagotribune.com/arcio/rss/">Lake Barrington cites 'public health, safety and welfare' for ordinance banning unplanned migrant bus dropoffs in the small Lake County town</a><br />
+<span class=small id="SourceDomain">chicagotribune.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 42M MST</span>&nbsp;&#183;&nbsp;
 <span class=small>search word(s) found: </span>&nbsp;
-<span class=small id="FoundWord">Illegal Immigration</span>
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.nbcchicago.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcchicago.com/news/national-international/supreme-court-allows-feds-to-cut-razor-wire-installed-on-texas-mexico-border/3334402/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">nbcchicago.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 24M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.wgntv.com.rst.14" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://wgntv.com/migrants-in-chicago/pritzker-critical-of-chicagos-plan-to-handle-reduced-shelter-space-for-migrants/">Pritzker critical of Chicago's plan to handle reduced shelter space for migrants</a><br />
+<span class=small id="SourceDomain">wgntv.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 16H 46M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.wgntv.com.rst.30" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://wgntv.com/news/washington-dc-bureau/senate-eagerly-awaits-breakthrough-border-deal/">Senate eagerly awaits breakthrough border deal</a><br />
+<span class=small id="SourceDomain">wgntv.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 14H 36M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.wgntv.com.rst.43" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://wgntv.com/news/washington-dc-bureau/border-negotiations-continue-in-congress/">Border negotiations continue in Congress</a><br />
+<span class=small id="SourceDomain">wgntv.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 09H 50M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.nbcphiladelphia.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcphiladelphia.com/news/national-international/supreme-court-allows-feds-to-cut-razor-wire-installed-on-texas-mexico-border/3753525/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">nbcphiladelphia.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 24M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.wmtw.com.rst.10" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wmtw.com/article/senators-racing-to-finish-work-on-a-border-deal-aid-to-ukraine-hangs-in-balance/46495036">Senators are racing to finish work on a border deal as aid to Ukraine hangs in the balance</a><br />
+<span class=small id="SourceDomain">wmtw.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 17H 52M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.wfla.com.rst.22" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.wfla.com/news/politics/supreme-court-allows-federal-agents-to-cut-razor-wire-texas-installed-on-us-mexico-border/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">wfla.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 32M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.wsvn.com.rst.0" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://wsvn.com/news/politics/supreme-court-allows-federal-agents-to-cut-razor-wire-texas-installed-on-us-mexico-border/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">wsvn.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 07M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.nbcmiami.com.rst.3" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.nbcmiami.com/news/national-international/supreme-court-allows-feds-to-cut-razor-wire-installed-on-texas-mexico-border/3212930/">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">nbcmiami.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 15H 24M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-migrant" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.cpr.org.rst.0" class="control-migrant"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.cpr.org/2024/01/22/listen-at-auroras-stanley-marketplace-recent-migrant-arrivals-are-showcasing-their-skills-and-making-a-few-dollars-along-the-way/">Listen: At Aurora's Stanley Marketplace, recent migrant arrivals are showcasing their skills and making a few dollars along the way</a><br />
+<span class=small id="SourceDomain">cpr.org</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 20H 03M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">migrant</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-cartel" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.yahoo.com.rst.12" class="control-cartel"><div class=ArticleDiv><a class=link-text target=_blank href="https://news.yahoo.com/mexico-demands-investigation-us-military-195234431.html">Mexico demands investigation into US military-grade weapons being used by drug cartels</a><br />
+<span class=small id="SourceDomain">yahoo.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 12H 52M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">cartel</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.yahoo.com.rst.33" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://news.yahoo.com/supreme-court-allows-federal-agents-200434300.html">Supreme Court allows federal agents to cut razor wire Texas installed on US-Mexico border</a><br />
+<span class=small id="SourceDomain">yahoo.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 04M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.latimes.com.rst.4" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.latimes.com/politics/story/2024-01-22/supreme-court-rules-for-biden-administration-in-texas-border-dispute">Supreme Court rules for Biden administration in Texas border dispute</a><br />
+<span class=small id="SourceDomain">latimes.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 28M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.huffpost.com.rst.11" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.huffpost.com/entry/supreme-court-immigration-razor-wire_n_65aecf66e4b0f55c6e3071cd">Supreme Court Allows Feds To Cut Razor Wire Texas Installed On U.S.-Mexico Border</a><br />
+<span class=small id="SourceDomain">huffpost.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 13H 30M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.infowars.com.rst.1" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/us-supreme-court-openly-endorses-collapse-of-us-border-orders-texas-to-submit-to-illegal-alien-invasion">US Supreme Court Openly Endorses Collapse of US Border, Orders Texas to Submit to Illegal Alien Invasion!</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 12H 25M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.infowars.com.rst.2" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/breaking-exclusive-investigative-journalists-infiltrate-massive-u-s-chinese-funded-illegal-alien-invasion-camps">BREAKING EXCLUSIVE: Investigative Journalists Infiltrate Massive U.S. / Chinese-Funded Illegal Alien Invasion Camps</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 10H 52M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-illegal-alien" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.infowars.com.rst.3" class="control-illegal-alien"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/terror-threat-illegal-alien-ominously-tells-reporter-soon-you-will-know-who-i-am">Terror Threat? Illegal Alien Ominously Tells Reporter, 'Soon, You Will Know Who I Am'</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 10H 18M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">illegal alien</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.infowars.com.rst.5" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/breaking-supreme-court-backs-biden-allows-border-patrol-to-cut-razor-wire-along-texas-border">Breaking: Supreme Court Backs Biden, Allows Border Patrol to Cut Razor Wire Along Texas Border</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 07H 38M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.infowars.com.rst.7" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/take-our-border-back-americans-announce-multi-state-convoy-to-descend-on-southern-border">Take Our Border Back: Americans Announce Multi-State Convoy to Descend on Southern Border</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 06H 29M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-border" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.infowars.com.rst.9" class="control-border"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.infowars.com/posts/monday-live-presidential-election-heats-up-as-americans-awaken-to-border-invasion-globalist-push-for-cashless-tyranny-mass-surveillance-tune-in-now">Monday War Room LIVE: Supreme Court Green-Lights Illegal Invasion, Allow Feds to Cut Razor Wire on Texas Border - TUNE IN NOW!</a><br />
+<span class=small id="SourceDomain">infowars.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 06H 00M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">border</span>
+<!-- <input style="float:right;" type=checkbox> --></div></li>
+
+
+<input id="mark-gang" style=float:right; onclick="updateCheckedCount()" type=checkbox ><li id="2024-01-22.newsmax.com.rst.4" class="control-gang"><div class=ArticleDiv><a class=link-text target=_blank href="https://www.newsmax.com/us/venezuela-gangs-miami/2024/01/22/id/1150521">Police: Notorious Venezuelan Gang Appears in Florida</a><br />
+<span class=small id="SourceDomain">newsmax.com</span>&nbsp;&#183;&nbsp;
+<span class=small id="DatePublished">2024-01-22 11H 46M MST</span>&nbsp;&#183;&nbsp;
+<span class=small>search word(s) found: </span>&nbsp;
+<span class=small id="FoundWord">gang</span>
 <!-- <input style="float:right;" type=checkbox> --></div></li>
 
 
@@ -343,7 +1006,7 @@ min-width:100px;border-radius:5px;text-decoration:none;margin:0 0.1em;}
 
 <script>
 
-let TAGDATE = "2024-01-15";
+let TAGDATE = "2024-01-22";
 
 </script>
 
